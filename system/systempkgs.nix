@@ -29,4 +29,8 @@
     mangohud
     alpaca
   ];
+  # Use Alpaca GPU accel
+  pkgs.alpaca.override {
+  ollama = pkgs.ollama-rocm;
+}
 }
