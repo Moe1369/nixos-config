@@ -28,5 +28,6 @@
     neofetch
     mangohud
     alpaca
+    ibm-plex
   ];
 }
