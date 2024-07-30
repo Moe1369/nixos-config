@@ -29,5 +29,4 @@
     mangohud
     alpaca
   ];
-    pkgs.alpaca.override.ollama = pkgs.ollama-rocm;
 }
