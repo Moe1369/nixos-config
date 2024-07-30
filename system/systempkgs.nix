@@ -27,5 +27,6 @@
     aha
     neofetch
     mangohud
+    alpaca
   ];
 }
