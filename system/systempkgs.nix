@@ -27,7 +27,6 @@
     aha
     neofetch
     mangohud
-    alpaca
     ibm-plex
     citrix_workspace
   ];
