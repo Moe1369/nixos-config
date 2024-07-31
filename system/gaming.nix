@@ -7,6 +7,9 @@
     desktopSession = "plasma";
   };
 
+  jovian.decky-loader.enable = true;
+  jovian.hardware.has.amd.gpu = true;
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
