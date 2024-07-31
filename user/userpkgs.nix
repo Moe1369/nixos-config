@@ -1,4 +1,5 @@
 { config, pkgs, pkgs-unstable,... }:
+{
   environment.systemPackages = with pkgs; [
     wget
     git
@@ -15,3 +16,4 @@
     mangohud
     ibm-plex
   ];
+}
