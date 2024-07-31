@@ -19,7 +19,11 @@
     nixosConfigurations = {
       computer-mo = nixpkgs.lib.nixosSystem {
        inherit system;
-       modules = [./configuration.nix];
+       modules = [
+          ./configuration.nix
+
+          jovian.nixosModules.default
+       ];
        specialArgs = {
          inherit pkgs-stable;
        };
