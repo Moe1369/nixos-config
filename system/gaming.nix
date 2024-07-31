@@ -2,7 +2,7 @@
 {
   jovian.steam = {
     enable = true;
-    autoStart = true;
+    autoStart = false;
     user = "mo";
     desktopSession = "plasma";
   };
