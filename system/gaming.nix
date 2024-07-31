@@ -1,6 +1,6 @@
 { config, pkgs, pkgs-stable, jovian, ... }:
 {
-  jovian.steam. = {
+  jovian.steam = {
     enable = true;
     autoStart = true;
     user = "mo";
