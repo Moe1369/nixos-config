@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-stable, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 {
   # Ignore Dualsense Touchpad in Desktop
   services.udev.extraRules =''

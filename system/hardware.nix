@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-stable, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 {
   services.fwupd.enable = true;
   services.printing.enable = true;

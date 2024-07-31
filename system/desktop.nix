@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-stable, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 {
   services.xserver.enable = false;
   services.displayManager.sddm.wayland.enable = true;
