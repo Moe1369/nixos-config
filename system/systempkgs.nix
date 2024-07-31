@@ -29,5 +29,6 @@
     mangohud
     alpaca
     ibm-plex
+    citrix_workspace
   ];
 }
