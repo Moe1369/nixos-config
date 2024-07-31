@@ -1,7 +1,12 @@
 { config, pkgs, pkgs-stable, jovian, ... }:
 {
-  jovian.steam.enable = true;
-  jovian.steam.autoStart = true;
+  jovian.steam. = {
+    enable = true;
+    autoStart = true;
+    user = "mo";
+    desktopSession = "plasma";
+  };
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
