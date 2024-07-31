@@ -1,6 +1,9 @@
 { config, pkgs, pkgs-unstable, ... }:
 
 {
+  imports = [
+   ./user/userpkgs.nix
+  ]
   home.username = "mo";
   home.homeDirectory = "/home/mo";
   home.stateVersion = "24.05";
