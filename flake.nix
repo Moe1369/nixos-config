@@ -6,6 +6,7 @@
     nixpkgs-stable.url = "nixpkgs/release-24.05";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
   };
 
   outputs = { self,nixpkgs,nixpkgs-stable, home-manager, ...}:
