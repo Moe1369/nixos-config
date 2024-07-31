@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-stable, jovian ... }:
+{ config, pkgs, pkgs-stable, jovian, ... }:
 {
   jovian.steam.enable = true;
   jovian.steam.autoStart = true;
