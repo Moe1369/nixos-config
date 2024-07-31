@@ -9,7 +9,7 @@
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
   };
 
-  outputs = { self,nixpkgs,nixpkgs-stable, home-manager, ...}:
+  outputs = { self,nixpkgs,nixpkgs-stable, home-manager, jovian, ...}:
    let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
