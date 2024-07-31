@@ -2,25 +2,25 @@
   description = "Moe.OS";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/release-24.05";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "nixpkgs/release-24.05";
+    home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self,nixpkgs,nixpkgs-unstable, home-manager, ...}:
+  outputs = { self,nixpkgs,nixpkgs-stable, home-manager, ...}:
    let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+    pkgs-stable = nixpkgs-stable.legacyPackages.${system};
     in {
     nixosConfigurations = {
       computer-mo = nixpkgs.lib.nixosSystem {
        inherit system;
        modules = [./configuration.nix];
        specialArgs = {
-         inherit pkgs-unstable;
+         inherit pkgs-stable;
        };
       };
     };
@@ -29,7 +29,7 @@
       inherit pkgs;
       modules = [./home.nix];
       extraSpecialArgs = {
-        inherit pkgs-unstable;
+        inherit pkgs-stable;
       };
     };
   };

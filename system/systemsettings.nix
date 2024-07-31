@@ -1,2 +1,2 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, pkgs-stable, ... }:
 {}

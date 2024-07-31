@@ -1,4 +1,4 @@
- { config, pkgs, pkgs-unstable, ... }:
+ { config, pkgs, pkgs-stable, ... }:
 {
   networking.hostName = "computer-mo";
   networking.networkmanager.enable = true;
