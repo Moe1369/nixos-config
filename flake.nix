@@ -32,6 +32,9 @@
       extraSpecialArgs = {
         inherit pkgs-stable;
       };
+    jovianConfigurations = {
+
+    };
     };
   };
  };
