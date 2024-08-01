@@ -7,9 +7,10 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
+    plasma-manager.url = "github:nix-community/plasma-manager/trunk";
   };
 
-  outputs = { self,nixpkgs,nixpkgs-stable, home-manager, jovian, ...}:
+  outputs = { self,nixpkgs,nixpkgs-stable, home-manager, jovian, plasma-manager, ...}:
    let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -21,7 +22,6 @@
        inherit system;
        modules = [
           ./configuration.nix
-
           jovian.nixosModules.default
        ];
        specialArgs = {
@@ -32,7 +32,10 @@
     homeConfigurations = {
       mo = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      modules = [./home.nix];
+      modules = [
+      ./home.nix
+      plasma-manager.nixosModules.default
+      ];
       extraSpecialArgs = {
         inherit pkgs-stable;
       };
