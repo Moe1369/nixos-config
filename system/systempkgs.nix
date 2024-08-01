@@ -11,6 +11,7 @@
     ++
 
    (with pkgs-stable; [
+    mangohud
     wget
     git
     vesktop
@@ -26,6 +27,5 @@
     mangohud
     ibm-plex
     nil
-    citrix_workspace
     ]);
 }
