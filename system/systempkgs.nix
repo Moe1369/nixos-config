@@ -4,9 +4,13 @@
     enable = true;
     languagePacks = ["de"];
   };
-  nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages =
+   (with pkgs; [
+    ])
+
+    ++
+
+   (with pkgs-stable; [
     wget
     git
     vesktop
@@ -21,6 +25,7 @@
     neofetch
     mangohud
     ibm-plex
+    nil
     citrix_workspace
-  ];
+    ]);
 }
