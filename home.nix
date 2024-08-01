@@ -3,12 +3,11 @@
 {
   imports = [
    ./user/userpkgs.nix
+   ./user/plasma.nix
   ]
   home.username = "mo";
   home.homeDirectory = "/home/mo";
   home.stateVersion = "24.05";
-  home.packages = [
-  ];
   home.file = {
   };
   home.sessionVariables = {

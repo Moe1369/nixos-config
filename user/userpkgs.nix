@@ -1,3 +1,3 @@
-{ config, pkgs, pkgs-stable,... }:
+{ config, pkgs, pkgs-stable, plasma-manager,... }:
 {
 }
