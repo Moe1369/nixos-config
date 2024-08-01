@@ -34,6 +34,5 @@
     neofetch
     ibm-plex
     nil
-    lightly-qt
     ]);
 }
