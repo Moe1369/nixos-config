@@ -21,6 +21,6 @@
     neofetch
     mangohud
     ibm-plex
-    citrix-workspace
+    citrix_workspace
   ];
 }
