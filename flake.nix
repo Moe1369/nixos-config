@@ -8,6 +8,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     plasma-manager.url = "github:nix-community/plasma-manager/trunk";
+    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
+    plasma-manager.inputs.home-manager.follows = "home-manager";
   };
 
   outputs = { self,nixpkgs,nixpkgs-stable, home-manager, jovian, plasma-manager, ...}:
