@@ -7,8 +7,6 @@
   environment.systemPackages =
    (with pkgs; [
     mangohud
-    lact
-    gpu-screen-recorder
     ])
 
     ++
