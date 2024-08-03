@@ -20,6 +20,7 @@
       ./system/hardware.nix
       ./system/locale.nix
       ./system/networking.nix
+      ./system/systemd.nix
       ./system/systemsettings.nix
       ./system/updates.nix
       ./system/users.nix
