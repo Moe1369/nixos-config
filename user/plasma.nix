@@ -1,7 +1,34 @@
-{ plasma-manager, ... }:
+{ plasma-manager, pkgs, pkgs-stable, ... }:
 {
   programs.plasma = {
     enable = true;
+
+    panels = [
+    {
+      location = "bottom";
+      floating = true;
+      alignment = "center";
+      height = 46;
+      lenghtMode = "fit";
+      hiding = "dodgewindows";
+      widgets  = [
+        "org.kde.plasma.kickoff"
+        "org.kde.plasma.icontasks"
+      ];
+      }
+    {
+      location = "bottom";
+      floating = true;
+      alignment = "right";
+      height = 36;
+      lenghtMode = "fit";
+      hiding = "dodgewindows";
+      widgets  = [
+        "org.kde.plasma.systemtray"
+        "org.kde.plasma.digitalclock"
+      ];
+    }
+    ];
     shortcuts = {
       "ActivityManager"."switch-to-activity-2542e971-497c-477f-9d2b-e944f0cb1535" = ",none,Zu Aktivität „Standard“ wechseln";
       "KDE Keyboard Layout Switcher"."Switch to Last-Used Keyboard Layout" = ",Meta+Alt+L,Switch to Last-Used Keyboard Layout";
