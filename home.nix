@@ -8,11 +8,6 @@
   home.username = "mo";
   home.homeDirectory = "/home/mo";
   home.stateVersion = "24.05";
-  home.file = {
-  };
-  home.sessionVariables = {
-  };
-
   programs.home-manager.enable = true;
   programs.git = {
    enable = true;
