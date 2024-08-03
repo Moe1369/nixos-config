@@ -28,6 +28,7 @@
     kdePackages.ksystemlog
     kdePackages.kcolorchooser
     kdePackages.elisa
+    xwaylandvideobridge
     krita
     haruna
     vesktop
@@ -37,6 +38,6 @@
     aha
     neofetch
     ibm-plex
-    nil
+    nixd
     ]);
 }
