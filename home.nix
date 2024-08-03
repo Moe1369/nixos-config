@@ -2,7 +2,6 @@
 
 {
   imports = [
-   ./user/userpkgs.nix
    ./user/plasma.nix
    ./user/config.nix
   ];
