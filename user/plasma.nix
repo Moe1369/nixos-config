@@ -9,7 +9,7 @@
       floating = true;
       alignment = "center";
       height = 46;
-      lenghtMode = "fit";
+      lengthMode = "fit";
       hiding = "dodgewindows";
       widgets  = [
         "org.kde.plasma.kickoff"
@@ -21,7 +21,7 @@
       floating = true;
       alignment = "right";
       height = 36;
-      lenghtMode = "fit";
+      lengthMode = "fit";
       hiding = "dodgewindows";
       widgets  = [
         "org.kde.plasma.systemtray"
