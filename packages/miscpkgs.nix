@@ -7,6 +7,7 @@
     ++
 
    (with pkgs-stable; [
+    teams-for-linux
 
     ]);
 }
