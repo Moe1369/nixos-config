@@ -5,7 +5,7 @@ system.autoUpgrade = {
     dates = "04:00";
     flake = "../flake.nix";
     flags = [
-        "--update-input" "nixpkgs"
+        "--update-input" "nixpkgs" "--commit-lock-file"
     ];
     allowReboot = true;
 };

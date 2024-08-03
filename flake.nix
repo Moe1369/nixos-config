@@ -9,9 +9,8 @@
     plasma-manager.url = "github:nix-community/plasma-manager/trunk";
     plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
     plasma-manager.inputs.home-manager.follows = "home-manager";
-    agenix.url = "github:ryantm/agenix";
   };
-  outputs = { self,nixpkgs,nixpkgs-stable, home-manager, jovian, plasma-manager, agenix, ...}:
+  outputs = { self,nixpkgs,nixpkgs-stable, home-manager, jovian, plasma-manager, ...}:
    let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -36,7 +35,6 @@
       modules = [
       ./home.nix
       plasma-manager.homeManagerModules.plasma-manager
-      agenix.nixosModules.default
       ];
       extraSpecialArgs = {
         inherit pkgs-stable;

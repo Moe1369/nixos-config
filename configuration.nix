@@ -8,8 +8,10 @@
       ./packages/firefoxpkgs.nix
       ./packages/gamingpkgs.nix
       ./packages/hardwarepkgs.nix
+      ./packages/miscpkgs.nix
       ./packages/plasmapkgs.nix
       ./packages/steampkgs.nix
+      ./packages/systempkgs.nix
       # Settings
       ./system/boot.nix
       ./system/controller.nix
