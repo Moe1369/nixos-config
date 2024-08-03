@@ -3,6 +3,9 @@
   programs.plasma = {
     enable = true;
 
+    kwin.titlebarButtons.left = ["keep-above-windows"];
+    kwin.titlebarButtons.right = ["minimize" "maximize" "close"];
+
     fonts = {
     menu.family = "IBM Plex Sans";
     menu.pointSize = 10;
