@@ -2,6 +2,15 @@
 {
   imports =
     [ 
+      # Packages
+      ./packages/customizationpkgs.nix
+      ./packages/devpkgs.nix
+      ./packages/firefoxpkgs.nix
+      ./packages/gamingpkgs.nix
+      ./packages/hardwarepkgs.nix
+      ./packages/plasmapkgs.nix
+      ./packages/steampkgs.nix
+      # Settings
       ./system/boot.nix
       ./system/controller.nix
       ./system/desktop.nix

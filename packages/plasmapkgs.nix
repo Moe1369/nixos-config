@@ -1,21 +1,7 @@
 { config, pkgs, pkgs-stable, ... }:
 {
-  programs.firefox = {
-    enable = true;
-    languagePacks = ["de"];
-  };
   environment.systemPackages =
    (with pkgs; [
-    mangohud
-    unigine-valley
-    unigine-heaven
-    unigine-tropics
-
-    ])
-
-    ++
-
-   (with pkgs-stable; [
     kdePackages.kate
     kdePackages.gwenview
     kdePackages.okular
@@ -31,13 +17,11 @@
     xwaylandvideobridge
     krita
     haruna
-    vesktop
-    bitwarden-desktop
-    git
-    pciutils
-    aha
-    neofetch
-    ibm-plex
-    nixd
+    ])
+
+    ++
+
+   (with pkgs-stable; [
+
     ]);
 }
