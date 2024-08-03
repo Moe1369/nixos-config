@@ -4,7 +4,7 @@
   imports = [
    ./user/userpkgs.nix
    ./user/plasma.nix
-   ./user/configs.nix
+   ./user/config.nix
   ];
   home.username = "mo";
   home.homeDirectory = "/home/mo";
