@@ -5,4 +5,5 @@ home.file.".local/share/color-schemes/BreezeDunkelFarbe.colors".source = ../conf
 home.file.".local/share/color-schemes/BreezeHellFarbe.colors".source = ../configs/BreezeHellFarbe.colors;
 #home.file.".config/kglobalshortcutsrc".source = ../configs/kglobalshortcutsrc;
 home.file."Bilder/Hintergründe/wallpaper-nix.png".source = ../assets/wallpaper-nix.png;
+home.file.".config/kwinrc".source = ../configs/kwinrc;
 }
