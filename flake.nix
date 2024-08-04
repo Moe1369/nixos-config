@@ -4,6 +4,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/release-24.05";
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
+    jovian.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     plasma-manager.url = "github:nix-community/plasma-manager/trunk";
@@ -23,11 +24,12 @@
        specialArgs = { inherit pkgs pkgs-stable; };
        modules = [
           ./configuration.nix
-          jovian.nixosModules.default
+          #jovian.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = {inherit pkgs;};
             home-manager.users.mo.imports = [./home.nix];
             home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager];
