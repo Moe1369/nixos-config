@@ -14,12 +14,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/5f195b5a-44b6-4d5b-a455-7c58b5007388";
+    { device = "/dev/disk/by-label/nixos-plasma6-24.05-x86_64";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/9E6A-A728";
+    { device = "/dev/disk/by-label/EFIBOOT";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
