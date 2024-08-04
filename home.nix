@@ -5,8 +5,6 @@
    ./user/plasma.nix
    ./user/config.nix
   ];
-  home.username = "mo";
-  home.homeDirectory = "/home/mo";
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;
   programs.git = {
