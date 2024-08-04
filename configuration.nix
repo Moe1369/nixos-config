@@ -2,8 +2,6 @@
 {
   imports =
     [ 
-      # Home Manager
-      <home-manager/nixos>
       # Packages
       ./packages/customizationpkgs.nix
       ./packages/devpkgs.nix

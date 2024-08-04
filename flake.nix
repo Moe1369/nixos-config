@@ -10,7 +10,7 @@
     plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
     plasma-manager.inputs.home-manager.follows = "home-manager";
   };
-  outputs = { self,nixpkgs,nixpkgs-stable, home-manager, jovian, plasma-manager, ...}:
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, jovian, plasma-manager,  ...}:
    let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -20,14 +20,19 @@
     nixosConfigurations = {
       computer-mo = nixpkgs.lib.nixosSystem {
        inherit system;
+       specialArgs = { inherit pkgs pkgs-stable; };
        modules = [
           ./configuration.nix
           jovian.nixosModules.default
           home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = {inherit pkgs;};
+            home-manager.users.mo.imports = [./home.nix];
+            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager];
+          }
        ];
-       specialArgs = {
-         inherit pkgs-stable;
-       };
       };
     };
  };
