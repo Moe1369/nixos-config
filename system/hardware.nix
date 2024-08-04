@@ -13,10 +13,6 @@
     pulse.enable = true;
   };
   services.libinput.enable = false;
-  swapDevices = [ {
-    device = "/var/lib/swapfile";
-    size = 16*1024;
-  } ];
    # GPU Overcloking
     environment.systemPackages = with pkgs; [
     lact
