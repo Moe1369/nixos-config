@@ -20,10 +20,10 @@
     nixosConfigurations = {
       computer-mo = nixpkgs.lib.nixosSystem {
        inherit system;
-       specialArgs = { inherit pkgs pkgs-stable; };
+       specialArgs = { inherit pkgs-stable; };
        modules = [
           ./configuration.nix
-          jovian.nixosModules.default
+          jovian.nixosModules.jovian
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
