@@ -29,17 +29,5 @@
        };
       };
     };
-    homeConfigurations = {
-      mo = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      modules = [
-      ./home.nix
-      plasma-manager.homeManagerModules.plasma-manager
-      ];
-      extraSpecialArgs = {
-        inherit pkgs-stable;
-      };
-    };
-  };
  };
 }
