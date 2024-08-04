@@ -1,4 +1,4 @@
-{ plasma-manager, pkgs, pkgs-stable, ... }:
+{ ... }:
 {
   programs.plasma = {
     enable = true;

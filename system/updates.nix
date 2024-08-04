@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-stable, ... }:
+{ ... }:
 {
 system.autoUpgrade = {
     enable = true;
