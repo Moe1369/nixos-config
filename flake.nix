@@ -23,6 +23,7 @@
        modules = [
           ./configuration.nix
           jovian.nixosModules.default
+          home-manager.nixosModules.home-manager
        ];
        specialArgs = {
          inherit pkgs-stable;
