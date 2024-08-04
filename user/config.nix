@@ -6,4 +6,5 @@ home.file.".local/share/color-schemes/BreezeHellFarbe.colors".source = ../config
 home.file.".config/kglobalshortcutsrc".source = ../configs/kglobalshortcutsrc;
 home.file."Bilder/Hintergründe/wallpaper-nix.png".source = ../assets/wallpaper-nix.png;
 home.file.".config/kwinrc".source = ../configs/kwinrc;
+home.file.".config/kwinoutputconfig.json".source = ../configs/kwinoutputconfig.json;
 }
