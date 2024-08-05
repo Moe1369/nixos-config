@@ -13,6 +13,4 @@
     pulse.enable = true;
   };
   services.libinput.enable = false;
-  };
-
 }
