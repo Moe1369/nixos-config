@@ -3,27 +3,27 @@
   imports =
     [ 
       # Packages
-      ./packages/customizationpkgs.nix
-      ./packages/devpkgs.nix
-      ./packages/firefoxpkgs.nix
-      ./packages/gamingpkgs.nix
-      ./packages/hardwarepkgs.nix
-      ./packages/miscpkgs.nix
-      ./packages/plasmapkgs.nix
-      ./packages/steampkgs.nix
-      ./packages/systempkgs.nix
+      ./packages/pkg-customization.nix
+      ./packages/pkg-dev.nix
+      ./packages/pkg-firefox.nix
+      ./packages/pkg-gaming.nix
+      ./packages/pkg-hardware.nix
+      ./packages/pkg-misc.nix
+      ./packages/pkg-plasma.nix
+      ./packages/pkg-steam.nix
+      ./packages/pkg-system.nix
       # Settings
-      ./system/boot.nix
-      ./system/controller.nix
-      ./system/desktop.nix
-      ./system/hardware-configuration.nix
-      ./system/hardware.nix
-      ./system/locale.nix
-      ./system/networking.nix
-      ./system/systemd.nix
-      ./system/systemsettings.nix
-      ./system/updates.nix
-      ./system/users.nix
+      ./system/set-boot.nix
+      ./system/set-controller.nix
+      ./system/set-desktop.nix
+      ./system/set-hardware-configuration.nix
+      ./system/set-hardware.nix
+      ./system/set-locale.nix
+      ./system/set-networking.nix
+      ./system/set-systemd.nix
+      ./system/set-system.nix
+      ./system/set-updates.nix
+      ./system/set-users.nix
     ];
   system.stateVersion = "24.05";
 }
