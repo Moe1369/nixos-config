@@ -3,11 +3,6 @@
   programs.plasma = {
     enable = true;
 
-    configFile = {
-      "gtk-3.0/settings.ini"."Settings"."gtk-theme-name" = "Breeze";
-      "gtk-4.0/settings.ini"."Settings"."gtk-theme-name" = "Breeze";
-    };
-
     workspace.wallpaper = "/home/mo/Bilder/Hintergründe/wallpaper-nix.png";
     kscreenlocker.wallpaper = "/home/mo/Bilder/Hintergründe/wallpaper-nix.png";
 
