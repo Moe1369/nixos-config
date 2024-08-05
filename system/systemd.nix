@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs,... }:
 {
   systemd.services.lact = {
     description = "AMDGPU Control Daemon";
