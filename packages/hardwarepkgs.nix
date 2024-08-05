@@ -5,6 +5,7 @@
     pciutils
     aha
     lact
+    kdePackages.isoimagewriter
     ])
 
     ++
