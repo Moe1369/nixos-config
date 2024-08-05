@@ -1,0 +1,4 @@
+{ ... }:
+{
+  gtk.theme.name = "Breeze";
+}
