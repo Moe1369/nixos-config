@@ -2,8 +2,8 @@
 
 {
   imports = [
+   ./user/configfiles.nix
    ./user/plasma.nix
-   ./user/config.nix
   ];
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;
