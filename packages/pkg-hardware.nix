@@ -6,7 +6,6 @@
     aha
     lact
     kdePackages.isoimagewriter
-    kdePackages.kamoso
     ])
 
     ++
