@@ -6,7 +6,7 @@ Mirrored on [gitea.chrayed.de](https://gitea.chrayed.de/moe1369/nixos-config)
 
 ### Todo
 
-- [ ] Better autoupgrade
+- [X] Better autoupgrade
 - [ ] Bash/ZSH Settings
 - [ ] ssh key deployment with [agenix](https://github.com/ryantm/agenix)
 - [ ] alternative way to declare .nix files instead of dumping them into configuration.nix
