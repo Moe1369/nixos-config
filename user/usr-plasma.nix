@@ -4,7 +4,7 @@
     enable = true;
 
     workspace.wallpaper = "/home/mo/Bilder/Hintergründe/wallpaper-nix.png";
-    kscreenlocker.wallpaper = "/home/mo/Bilder/Hintergründe/wallpaper-nix.png";
+    kscreenlocker.appearance.wallpaper = "/home/mo/Bilder/Hintergründe/wallpaper-nix.png";
 
     kwin.titlebarButtons.left = ["keep-above-windows"];
     kwin.titlebarButtons.right = ["minimize" "maximize" "close"];
