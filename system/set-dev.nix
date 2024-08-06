@@ -1,0 +1,4 @@
+{ ... }
+{
+  users.defaultUserShell = pkgs.zsh;
+}
