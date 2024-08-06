@@ -6,6 +6,7 @@
    (with pkgs; [
     git
     nil
+    yaml-language-server
     ])
 
     ++
