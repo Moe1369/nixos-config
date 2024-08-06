@@ -8,3 +8,5 @@ Personal NixOS configuration mostly used for learning the Nix language. Makes us
 - [ ] Bash/ZSH Settings
 - [ ] ssh key deployment with [agenix](https://github.com/ryantm/agenix)
 - [ ] alternative way to declare .nix files instead of dumping them into configuration.nix
+- [ ] Multi Host functionality for homelabp
+- [ ] OCI container for common services
