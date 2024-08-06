@@ -12,3 +12,4 @@ Mirrored on [gitea.chrayed.de](https://gitea.chrayed.de/moe1369/nixos-config)
 - [ ] alternative way to declare .nix files instead of dumping them into configuration.nix
 - [ ] Multi Host functionality for homelabp
 - [ ] OCI container for common services
+- [ ] Fix Home-Manager issues with immutable .config files during rebuild
