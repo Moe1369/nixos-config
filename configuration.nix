@@ -16,6 +16,7 @@
       ./system/set-boot.nix
       ./system/set-controller.nix
       ./system/set-desktop.nix
+      ./system/set-dev.nix
       ./system/set-hardware-configuration.nix
       ./system/set-hardware.nix
       ./system/set-locale.nix
