@@ -1,13 +1,13 @@
 { pkgs, pkgs-stable, ... }:
 {
-  programs.zsh.enable = true;
-
   environment.systemPackages =
    (with pkgs; [
-    kdePackages.kate
-    git
-    nil
-    yaml-language-server
+    kdePackages.gwenview
+    kdePackages.okular
+    kdePackages.kdenlive
+    kdePackages.elisa
+    haruna
+    krita
     ])
 
     ++
@@ -16,3 +16,7 @@
 
     ]);
 }
+
+
+
+
