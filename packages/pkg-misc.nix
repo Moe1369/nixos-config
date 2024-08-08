@@ -4,7 +4,6 @@
    (with pkgs; [
     google-chrome
     teams-for-linux
-    citrix_workspace
     ])
 
     ++
