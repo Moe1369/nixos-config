@@ -18,7 +18,7 @@
     pkgs-stable = import nixpkgs-stable {inherit system; config.allowUnfree = true; };
     in {
     nixosConfigurations = {
-      computer-mo = nixpkgs.lib.nixosSystem {
+      computer-mo = lib.nixosSystem {
        inherit system;
        specialArgs = { inherit pkgs-stable; };
        modules = [
