@@ -7,9 +7,9 @@ Mirrored on [gitea.chrayed.de](https://gitea.chrayed.de/moe1369/nixos-config)
 ### Todo
 
 - [X] Better autoupgrade
-- [ ] Bash/ZSH Settings
+- [X] Bash/ZSH Settings
 - [ ] ssh key deployment with [agenix](https://github.com/ryantm/agenix)
 - [ ] alternative way to declare .nix files instead of dumping them into configuration.nix
-- [ ] Multi Host functionality for homelab
+- [ ] Multi Host functionality for homelab - preferably (conditional implementation)[https://nixos.wiki/wiki/Extend_NixOS#Conditional_Implementation]
 - [ ] OCI container for common services
 - [ ] Fix Home-Manager issues with immutable .config files during rebuild
