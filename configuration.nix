@@ -9,7 +9,6 @@
       ./packages/pkg-gaming.nix
       ./packages/pkg-hardware.nix
       ./packages/pkg-misc.nix
-      ./packages/pkg-plasma.nix
       ./packages/pkg-steam.nix
       ./packages/pkg-system.nix
       # Settings
