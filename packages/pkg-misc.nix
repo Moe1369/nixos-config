@@ -2,6 +2,7 @@
 {
   environment.systemPackages =
    (with pkgs; [
+    vesktop
     google-chrome
     teams-for-linux
     kdePackages.kcolorchooser
