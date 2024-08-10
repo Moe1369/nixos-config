@@ -13,7 +13,7 @@
   outputs = { self, nixpkgs, nixpkgs-stable, home-manager, jovian, plasma-manager,  ...}:
    let
     lib = nixpkgs.lib;
-    host = "computer-mo";
+    host = ["computer-mo" "server" "steamdeck" "konsole"];
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system; config.allowUnfree = true; };
     pkgs-stable = import nixpkgs-stable {inherit system; config.allowUnfree = true; };
