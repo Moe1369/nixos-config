@@ -19,7 +19,7 @@
     in {
     nixosConfigurations = {
       ${host} = lib.nixosSystem {
-       inherit system;
+       specialArgs = {inherit lib system user host;};
        modules = [
           ./hosts/${host}/system-imports.nix
           jovian.nixosModules.jovian
