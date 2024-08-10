@@ -79,21 +79,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-stable": {
-      "locked": {
-        "lastModified": 1723287035,
-        "narHash": "sha256-xZmkG9n1fu9FwT15A6YUPbN8XtP3spcbSiY8SXT21MM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "cba99ebd9e488bce91395f24a2ef4deed487c6dd",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "ref": "release-24.05",
-        "type": "indirect"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1723175592,
@@ -138,7 +123,6 @@
         "home-manager": "home-manager",
         "jovian": "jovian",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-stable": "nixpkgs-stable",
         "plasma-manager": "plasma-manager"
       }
     }
