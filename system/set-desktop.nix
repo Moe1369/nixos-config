@@ -1,4 +1,3 @@
-# Desktop Settings
 { ... }:
 {
   services.xserver.enable = false;

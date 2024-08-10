@@ -1,4 +1,3 @@
-# Hardware Packages
 { pkgs, pkgs-stable, ... }:
 {
   environment.systemPackages =

@@ -1,4 +1,3 @@
-# Controller Settings
 { ... }:
 {
   # Ignore Dualsense Touchpad in Desktop

@@ -1,4 +1,3 @@
-# System Packages like Partitionmanager
 { pkgs, pkgs-stable, ... }:
 {
   environment.systemPackages =

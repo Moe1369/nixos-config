@@ -1,4 +1,3 @@
-# Miscellaneous Packages
 { pkgs, pkgs-stable, ... }:
 {
   environment.systemPackages =

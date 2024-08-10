@@ -1,5 +1,4 @@
-# Steam and Jovian Packages used for Gamescope Session and Desktop Steam
-{ ... }:
+{ jovian, ... }:
 {
   jovian.steam = {
     enable = true;

@@ -1,4 +1,3 @@
-# Packages for Desktop Customization
 { pkgs, pkgs-stable, ... }:
 {
   environment.systemPackages =
