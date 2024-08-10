@@ -15,11 +15,11 @@
     host = "computer-mo";
     user = "mo";
     system = "x86_64-linux";
-    pkgs = import nixpkgs {inherit system; config.allowUnfree = true; };
+    pkgs = import nixpkgs {inherit system;};
     in {
     nixosConfigurations = {
       ${host} = lib.nixosSystem {
-       specialArgs = {inherit lib system user host;};
+       specialArgs = {inherit system user host;};
        modules = [
           ./hosts/${host}/system-imports.nix
           jovian.nixosModules.jovian
