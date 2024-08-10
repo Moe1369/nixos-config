@@ -15,17 +15,29 @@
   };
   outputs = { self, nixpkgs, home-manager, jovian, plasma-manager,  ...}:
    let
+    # Different Devices
+    host-computer = "computer-mo";
+    host-server = "server";
+    host-konsole = "konsole";
+    host-steamdeck = "steamdeck";
+
+    user-computer = "mo";
+    user-server = "administrator";
+    user-konsole = "deck";
+    user-steamdeck = "deck";
+
+
     lib = nixpkgs.lib;
-    host = "computer-mo";
-    user = "mo";
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system;};
     in {
+
     nixosConfigurations = {
-      ${host} = lib.nixosSystem {
-       specialArgs = {inherit user host;};
+      ${host-computer} = lib.nixosSystem {
+       specialArgs = {inherit user-computer host-computer;};
        modules = [
-          ./hosts/${host}/system-imports.nix
+          ./hosts/${host-computer}/system-imports.nix
+          ./global/system-imports.nix
           jovian.nixosModules.jovian
           home-manager.nixosModules.home-manager
           {
@@ -33,11 +45,94 @@
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = {inherit pkgs;};
-            home-manager.users.${user}.imports = [./hosts/${host}/user-imports.nix];
+            home-manager.users.${user-computer}.imports = [
+                                          ./hosts/${host-computer}/user-imports.nix
+                                          ./global/user-imports.nix
+                                          ];
             home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager];
           }
        ];
       };
     };
+
+
+    nixosConfigurations = {
+      ${host-server} = lib.nixosSystem {
+       specialArgs = {inherit user-server host-server;};
+       modules = [
+          ./hosts/${host-server}/system-imports.nix
+          ./global/system-imports.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = {inherit pkgs;};
+            home-manager.users.${user-server}.imports = [
+                                          ./hosts/${user-server}/user-imports.nix
+                                          ./global/user-imports.nix
+                                          ];
+          }
+       ];
+      };
+    };
+
+    nixosConfigurations = {
+      ${host-konsole} = lib.nixosSystem {
+       specialArgs = {inherit user-konsole host-konsole;};
+       modules = [
+          ./hosts/${host-konsole}/system-imports.nix
+          ./global/system-imports.nix
+          jovian.nixosModules.jovian
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = {inherit pkgs;};
+            home-manager.users.${user-konsole}.imports = [
+                                          ./hosts/${user-konsole}/user-imports.nix
+                                          ./global/user-imports.nix
+                                          ];
+            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager];
+          }
+       ];
+      };
+    };
+
+    nixosConfigurations = {
+      ${host-steamdeck} = lib.nixosSystem {
+       specialArgs = {inherit user-steamdeck host-steamdeck;};
+       modules = [
+          ./hosts/${host-steamdeck}/system-imports.nix
+          ./global/system-imports.nix
+          jovian.nixosModules.jovian
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = {inherit pkgs;};
+            home-manager.users.${user-steamdeck}.imports = [
+                                          ./hosts/${user-steamdeck}/user-imports.nix
+                                          ./global/user-imports.nix
+                                          ];
+            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager];
+          }
+       ];
+      };
+    };
+
+
+
+
+
+
+
+
+
+
+
+
  };
 }
