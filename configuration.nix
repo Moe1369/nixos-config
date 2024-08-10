@@ -4,6 +4,7 @@
     [ 
       # Packages
       ./packages/pkg-customization.nix
+      ./packages/pkg-desktop.nix
       ./packages/pkg-dev.nix
       ./packages/pkg-firefox.nix
       ./packages/pkg-gaming.nix
