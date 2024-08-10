@@ -13,14 +13,15 @@
   outputs = { self, nixpkgs, nixpkgs-stable, home-manager, jovian, plasma-manager,  ...}:
    let
     lib = nixpkgs.lib;
-    host = ["computer-mo" "server" "steamdeck" "konsole"];
+    host = "computer-mo";
+    user = "mo";
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system; config.allowUnfree = true; };
     pkgs-stable = import nixpkgs-stable {inherit system; config.allowUnfree = true; };
     in {
     nixosConfigurations = {
       ${host} = lib.nixosSystem {
-       inherit system;
+       inherit system host;
        specialArgs = { inherit pkgs-stable; };
        modules = [
           ./hosts/${host}/system-imports.nix
@@ -31,7 +32,7 @@
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = {inherit pkgs;};
-            home-manager.users.mo.imports = [./hosts/${host}/user-imports.nix];
+            home-manager.users.${user}.imports = [./hosts/${host}/user-imports.nix];
             home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager];
           }
        ];

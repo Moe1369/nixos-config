@@ -1,5 +1,5 @@
-{ ... }:
+{ user, ... }:
 {
   services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "mo";
+  services.displayManager.autoLogin.user = user;
 }
