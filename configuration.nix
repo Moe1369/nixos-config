@@ -8,6 +8,7 @@
       ./packages/pkg-firefox.nix
       ./packages/pkg-gaming.nix
       ./packages/pkg-hardware.nix
+      ./packages/pkg-media.nix
       ./packages/pkg-misc.nix
       ./packages/pkg-steam.nix
       ./packages/pkg-system.nix
