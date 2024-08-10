@@ -3,11 +3,15 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
-    home-manager.url = "github:nix-community/home-manager/master";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    plasma-manager.url = "github:nix-community/plasma-manager/trunk";
-    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
-    plasma-manager.inputs.home-manager.follows = "home-manager";
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    plasma-manager = {
+      url= "github:nix-community/plasma-manager/trunk";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
   outputs = { self, nixpkgs, home-manager, jovian, plasma-manager,  ...}:
    let
@@ -19,7 +23,7 @@
     in {
     nixosConfigurations = {
       ${host} = lib.nixosSystem {
-       specialArgs = {inherit system user host;};
+       specialArgs = {inherit user host;};
        modules = [
           ./hosts/${host}/system-imports.nix
           jovian.nixosModules.jovian
