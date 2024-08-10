@@ -1,4 +1,4 @@
-{ lib, host,  ... }:
+{ lib,  ... }:
 {
   networking.useDHCP = lib.mkDefault true;
   networking.networkmanager.enable = true;
