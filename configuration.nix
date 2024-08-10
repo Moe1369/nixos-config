@@ -28,5 +28,4 @@
       ./system-settings/sys.set-updates.nix
       ./system-settings/sys.set-users.nix
     ];
-  system.stateVersion = "24.05";
 }
