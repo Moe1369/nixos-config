@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, ... }:
+{ pkgs, ... }:
 {
   programs.zsh.enable = true;
 
@@ -8,11 +8,5 @@
     git
     nil
     yaml-language-server
-    ])
-
-    ++
-
-   (with pkgs-stable; [
-
     ]);
 }

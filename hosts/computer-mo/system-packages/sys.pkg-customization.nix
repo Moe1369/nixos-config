@@ -1,15 +1,9 @@
-{ pkgs, pkgs-stable, ... }:
+{ pkgs, ... }:
 {
   environment.systemPackages =
    (with pkgs; [
     kde-rounded-corners
     neofetch
     ibm-plex
-    ])
-
-    ++
-
-   (with pkgs-stable; [
-
     ]);
 }

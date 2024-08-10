@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, ... }:
+{ pkgs, ... }:
 {
   environment.systemPackages =
    (with pkgs; [
@@ -8,12 +8,6 @@
     kdePackages.elisa
     haruna
     krita
-    ])
-
-    ++
-
-   (with pkgs-stable; [
-
     ]);
 }
 

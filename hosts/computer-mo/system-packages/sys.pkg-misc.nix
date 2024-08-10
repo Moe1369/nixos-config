@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, ... }:
+{ pkgs, ... }:
 {
   environment.systemPackages =
    (with pkgs; [
@@ -11,11 +11,5 @@
     kdePackages.kcalc
     kdePackages.filelight
     kdePackages.skanlite
-    ])
-
-    ++
-
-   (with pkgs-stable; [
-
     ]);
 }

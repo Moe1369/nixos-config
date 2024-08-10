@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, ... }:
+{ pkgs, ... }:
 {
   environment.systemPackages =
    (with pkgs; [
@@ -6,11 +6,5 @@
     aha
     lact
     kdePackages.isoimagewriter
-    ])
-
-    ++
-
-   (with pkgs-stable; [
-
     ]);
 }
