@@ -13,16 +13,17 @@
   outputs = { self, nixpkgs, nixpkgs-stable, home-manager, jovian, plasma-manager,  ...}:
    let
     lib = nixpkgs.lib;
+    host = "computer-mo";
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system; config.allowUnfree = true; };
     pkgs-stable = import nixpkgs-stable {inherit system; config.allowUnfree = true; };
     in {
     nixosConfigurations = {
-      computer-mo = lib.nixosSystem {
+      ${host} = lib.nixosSystem {
        inherit system;
        specialArgs = { inherit pkgs-stable; };
        modules = [
-          ./configuration.nix
+          ./hosts/${host}/system-imports.nix
           jovian.nixosModules.jovian
           home-manager.nixosModules.home-manager
           {
@@ -30,7 +31,7 @@
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = {inherit pkgs;};
-            home-manager.users.mo.imports = [./home.nix];
+            home-manager.users.mo.imports = [./hosts/${host}/user-imports.nix];
             home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager];
           }
        ];
