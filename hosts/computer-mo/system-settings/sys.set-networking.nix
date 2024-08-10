@@ -1,6 +1,6 @@
-{ lib, ... }:
+{ lib, host,  ... }:
 {
   networking.useDHCP = lib.mkDefault true;
-  networking.hostName = "computer-mo";
+  networking.hostName = host;
   networking.networkmanager.enable = true;
 }
