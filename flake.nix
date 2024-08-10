@@ -2,7 +2,6 @@
   description = "Moe.OS";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "nixpkgs/release-24.05";
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -10,19 +9,17 @@
     plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
     plasma-manager.inputs.home-manager.follows = "home-manager";
   };
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, jovian, plasma-manager,  ...}:
+  outputs = { self, nixpkgs, home-manager, jovian, plasma-manager,  ...}:
    let
     lib = nixpkgs.lib;
     host = "computer-mo";
     user = "mo";
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system; config.allowUnfree = true; };
-    pkgs-stable = import nixpkgs-stable {inherit system; config.allowUnfree = true; };
     in {
     nixosConfigurations = {
       ${host} = lib.nixosSystem {
-       inherit system host;
-       specialArgs = { inherit pkgs-stable; };
+       specialArgs = {inherit lib system user host;};
        modules = [
           ./hosts/${host}/system-imports.nix
           jovian.nixosModules.jovian
