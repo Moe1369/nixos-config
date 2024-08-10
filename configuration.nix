@@ -3,29 +3,30 @@
   imports =
     [ 
       # Packages
-      ./packages/pkg-customization.nix
-      ./packages/pkg-desktop.nix
-      ./packages/pkg-dev.nix
-      ./packages/pkg-firefox.nix
-      ./packages/pkg-gaming.nix
-      ./packages/pkg-hardware.nix
-      ./packages/pkg-media.nix
-      ./packages/pkg-misc.nix
-      ./packages/pkg-steam.nix
-      ./packages/pkg-system.nix
+      ./system-packages/sys.pkg-customization.nix
+      ./system-packages/sys.pkg-desktop.nix
+      ./system-packages/sys.pkg-dev.nix
+      ./system-packages/sys.pkg-firefox.nix
+      ./system-packages/sys.pkg-gaming.nix
+      ./system-packages/sys.pkg-hardware.nix
+      ./system-packages/sys.pkg-media.nix
+      ./system-packages/sys.pkg-misc.nix
+      ./system-packages/sys.pkg-steam.nix
+      ./system-packages/sys.pkg-system.nix
       # Settings
-      ./system/set-boot.nix
-      ./system/set-controller.nix
-      ./system/set-desktop.nix
-      ./system/set-dev.nix
-      ./system/set-filesystems.nix
-      ./system/set-hardware.nix
-      ./system/set-locale.nix
-      ./system/set-networking.nix
-      ./system/set-systemd.nix
-      ./system/set-system.nix
-      ./system/set-updates.nix
-      ./system/set-users.nix
+      ./system-settings/sys.set-boot.nix
+      ./system-settings/sys.set-controller.nix
+      ./system-settings/sys.set-desktop.nix
+      ./system-settings/sys.set-dev.nix
+      ./system-settings/sys.set-filesystems.nix
+      ./system-settings/sys.set-hardware.nix
+      ./system-settings/sys.set-locale.nix
+      ./system-settings/sys.set-networking.nix
+      ./system-settings/sys.set-steam.nix
+      ./system-settings/sys.set-system.nix
+      ./system-settings/sys.set-systemd.nix
+      ./system-settings/sys.set-updates.nix
+      ./system-settings/sys.set-users.nix
     ];
   system.stateVersion = "24.05";
 }
