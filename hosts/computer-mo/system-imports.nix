@@ -17,15 +17,9 @@
       ./system-settings/sys.set-boot.nix
       ./system-settings/sys.set-controller.nix
       ./system-settings/sys.set-desktop.nix
-      ./system-settings/sys.set-dev.nix
       ./system-settings/sys.set-filesystems.nix
       ./system-settings/sys.set-hardware.nix
-      ./system-settings/sys.set-locale.nix
-      ./system-settings/sys.set-networking.nix
       ./system-settings/sys.set-steam.nix
-      ./system-settings/sys.set-system.nix
       ./system-settings/sys.set-systemd.nix
-      ./system-settings/sys.set-updates.nix
-      ./system-settings/sys.set-users.nix
     ];
 }

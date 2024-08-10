@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
+  programs.zsh.enable = true;
+
   environment.systemPackages =
    (with pkgs; [
-    kdePackages.kate
-    nil
-    yaml-language-server
+    git
     ]);
 }
