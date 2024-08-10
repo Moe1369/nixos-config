@@ -1,3 +1,4 @@
+# Packages for Development
 { pkgs, pkgs-stable, ... }:
 {
   programs.zsh.enable = true;

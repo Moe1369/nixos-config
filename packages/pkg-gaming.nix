@@ -1,3 +1,4 @@
+# Gaming Packages excluding Steam
 { pkgs, pkgs-stable, ... }:
 {
   environment.systemPackages =

@@ -1,3 +1,4 @@
+# Firefox Package; use programs.firefox
 { ... }:
 {
   programs.firefox = {
