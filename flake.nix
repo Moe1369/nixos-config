@@ -21,7 +21,7 @@
     in {
     nixosConfigurations = {
       ${host} = lib.nixosSystem {
-       inherit system host;
+       inherit system;
        specialArgs = { inherit pkgs-stable; };
        modules = [
           ./hosts/${host}/system-imports.nix
