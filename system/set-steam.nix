@@ -1,7 +1,9 @@
 { ... }:
 {
   jovian.steam = {
-    enable = true;
+    autoStart = false;
+    user = "mo";
+    desktopSession = "plasma";
   };
 
   jovian.hardware.has.amd.gpu = true;
@@ -9,7 +11,6 @@
   jovian.steamos.enableBluetoothConfig = true;
 
   programs.steam = {
-    enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
