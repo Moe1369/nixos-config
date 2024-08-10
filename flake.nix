@@ -26,7 +26,6 @@
        specialArgs = {inherit user host;};
        modules = [
           ./hosts/${host}/system-imports.nix
-          ./global/system-imports.nix
           jovian.nixosModules.jovian
           home-manager.nixosModules.home-manager
           {
@@ -34,10 +33,7 @@
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = {inherit pkgs;};
-            home-manager.users.${user}.imports = [
-                                  ./hosts/${host}/user-imports.nix
-                                  ./global/user-imports.nix
-                                  ];
+            home-manager.users.${user}.imports = [./hosts/${host}/user-imports.nix];
             home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager];
           }
        ];
