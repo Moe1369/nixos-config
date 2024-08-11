@@ -12,10 +12,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    nypkgs = {
-      url = "github:yunfachi/nypkgs";
-      inputs.nixpkgs.follows = "nixpkgs";
-  };
   };
   outputs = { self, nixpkgs, home-manager, jovian, plasma-manager, ...}:
    let
