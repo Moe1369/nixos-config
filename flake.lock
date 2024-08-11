@@ -94,26 +94,6 @@
         "type": "indirect"
       }
     },
-    "nypkgs": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1720792364,
-        "narHash": "sha256-3AvMMvTKkvtDPlTtBZADrQaIRHjW09EO9uyEZNdHOkw=",
-        "owner": "yunfachi",
-        "repo": "nypkgs",
-        "rev": "209a7be0d39ee9a3f5a726abddcdf79753c4f47e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yunfachi",
-        "repo": "nypkgs",
-        "type": "github"
-      }
-    },
     "plasma-manager": {
       "inputs": {
         "home-manager": [
@@ -143,7 +123,6 @@
         "home-manager": "home-manager",
         "jovian": "jovian",
         "nixpkgs": "nixpkgs_2",
-        "nypkgs": "nypkgs",
         "plasma-manager": "plasma-manager"
       }
     }
