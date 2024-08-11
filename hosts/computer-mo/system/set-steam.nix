@@ -1,8 +1,8 @@
-{ user-computer, ... }:
+{ ... }:
 {
   jovian.steam = {
     autoStart = false;
-    user = user-computer;
+    user = "mo";
     desktopSession = "plasma";
   };
 
