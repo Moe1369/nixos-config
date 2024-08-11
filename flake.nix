@@ -30,7 +30,7 @@
 
     nixosConfigurations = {
       ${host-computer} = lib.nixosSystem {
-       specialArgs = {inherit user-computer host-computer;};
+       specialArgs = {};
        modules = [
           ./hosts/${host-computer}/system
           ./global/system
