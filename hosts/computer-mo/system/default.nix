@@ -16,9 +16,7 @@
     ./set-desktop.nix
     ./set-filesystems.nix
     ./set-hardware.nix
-    ./set-hostname.nix
     ./set-steam.nix
     ./set-systemd.nix
-    ./set-users.nix
   ];
 }
