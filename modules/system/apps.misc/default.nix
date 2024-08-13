@@ -2,9 +2,13 @@
 {
   environment.systemPackages =
    (with pkgs; [
+    ibm-plex
+    mangohud
     pciutils
     aha
     lact
-    kdePackages.isoimagewriter
+    vesktop
+    google-chrome
+    teams-for-linux
     ]);
 }

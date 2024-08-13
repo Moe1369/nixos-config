@@ -2,7 +2,8 @@
 {
   environment.systemPackages =
    (with pkgs; [
-    kdePackages.ksystemlog
-    kdePackages.partitionmanager
+    git
+    nil
+    yaml-language-server
     ]);
 }

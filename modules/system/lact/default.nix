@@ -1,5 +1,17 @@
 { pkgs,... }:
 {
+  # Install LACT Package
+  environment.systemPackages =
+   (with pkgs; [
+    lact
+    ]);
+
+  # Enable Modprobe
+  boot.extraModprobeConfig = ''
+    options amdgpu ppfeaturemask=0xFFF7FFFF
+'';
+
+  # Enable Systemd Service
   systemd.services.lact = {
     enable = true;
     description = "AMDGPU Control Daemon";

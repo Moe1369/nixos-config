@@ -22,9 +22,15 @@
       pkgs = import nixpkgs { inherit system; };
 
       commonModules = [
-        ./global/system
-        jovian.nixosModules.jovian
         home-manager.nixosModules.home-manager
+        ./modules/system/boot
+        ./modules/system/devices
+        ./modules/system/locale
+        ./modules/system/networking
+        ./modules/system/nixsettings
+        ./modules/system/shell
+        ./modules/system/systemversion
+        ./modules/system/upgrades
       ];
 
       homeManagerConfig = {
@@ -39,7 +45,7 @@
       hosts = {
         computer-mo = {
           user = "mo";
-          extraModules = [ ./hosts/computer-mo/system ];
+          extraModules = [];
           userConfig = {
             isNormalUser = true;
             home = "/home/mo";
@@ -50,7 +56,7 @@
 
         steamdeck = {
           user = "deck";
-          extraModules = [ ./hosts/steamdeck/system ];
+          extraModules = [];
           userConfig = {
             isNormalUser = true;
             home = "/home/deck";
@@ -70,8 +76,6 @@
 
             # Home Manager user imports
             { home-manager.users.${hostConfig.user}.imports = [
-                ./hosts/${hostName}/user
-                ./global/user
               ];
             }
             homeManagerConfig
