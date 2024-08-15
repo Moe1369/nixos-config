@@ -23,14 +23,23 @@
 
       commonModules = [
         home-manager.nixosModules.home-manager
-        ./modules/system/boot
-        ./modules/system/devices
-        ./modules/system/locale
-        ./modules/system/networking
-        ./modules/system/nixsettings
-        ./modules/system/shell
-        ./modules/system/systemversion
-        ./modules/system/upgrades
+        jovian.nixosModules.jovian
+        ./modules/apps.misc
+        ./modules/apps.shell
+        ./modules/boot
+        ./modules/browser
+        ./modules/controller
+        ./modules/devices
+        ./modules/jovian.desktop
+        ./modules/lact
+        ./modules/locale
+        ./modules/networking
+        ./modules/nixsettings
+        ./modules/plasma
+        ./modules/shell
+        ./modules/steam
+        ./modules/systemversion
+        ./modules/upgrade
       ];
 
       homeManagerConfig = {
@@ -76,6 +85,9 @@
 
             # Home Manager user imports
             { home-manager.users.${hostConfig.user}.imports = [
+              ./modules/git
+              ./modules/homeversion
+              ./modules/plasma
               ];
             }
             homeManagerConfig
