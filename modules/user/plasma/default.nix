@@ -1,4 +1,4 @@
-{ ... }:
+{ user, ... }:
 {
   home.file."Code/.directory".source = ../../../dotfiles/directory;
   home.file.".config/haruna/haruna.conf".source = ../../../dotfiles/haruna.conf;
@@ -13,8 +13,8 @@
   programs.plasma = {
 
     enable = true;
-    workspace.wallpaper = "/home/mo/Bilder/Hintergründe/wallpaper-nix.png";
-    kscreenlocker.appearance.wallpaper = "/home/mo/Bilder/Hintergründe/wallpaper-nix.png";
+    workspace.wallpaper = "/home/${user}/Bilder/Hintergründe/wallpaper-nix.png";
+    kscreenlocker.appearance.wallpaper = "/home/${user}/Bilder/Hintergründe/wallpaper-nix.png";
 
     kwin.titlebarButtons.left = ["keep-above-windows"];
     kwin.titlebarButtons.right = ["minimize" "maximize" "close"];
