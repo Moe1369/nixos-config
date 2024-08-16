@@ -6,7 +6,6 @@
     mangohud
     pciutils
     aha
-    lact
     vesktop
     google-chrome
     teams-for-linux
