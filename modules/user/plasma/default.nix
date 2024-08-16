@@ -18,6 +18,7 @@
 
     enable = true;
     workspace.wallpaperSlideShow.path = /home/mo/Bilder/Wallpaper;
+    workspace.wallpaperSlideShow.interval = 864000;
     #workspace.wallpaper = "/home/mo/Bilder/Wallpaper/wallpaper-nix.png";
     kscreenlocker.appearance.wallpaper = "/home/mo/Bilder/Wallpaper/wallpaper-nix.png";
 
