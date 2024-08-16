@@ -1,6 +1,5 @@
 {
   description = "Moe.OS";
-
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager = {
@@ -19,8 +18,7 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system;};
     lib = nixpkgs.lib;
-  in
-  {
+
     systemModules = [
       home-manager.nixosModules.home-manager
       ./modules/system/apps-shell
@@ -39,11 +37,15 @@
       ./modules/user/git
       ./modules/user/homeversion
     ];
+  in
+  {
 
     nixosConfigurations = {
-      computer-mo = nixpkgs.lib.nixosSystem {
-        hostName = "computer-mo";
-        user = "mo";
+      computer-mo = let
+      user = "mo";
+      hostName = "computer-mo";
+      in lib.nixosSystem {
+        specialArgs = {inherit systemModules; inherit userModules; inherit system;};
         system = system;
         modules = systemModules ++ [
           jovian.nixosModules.jovian
@@ -56,11 +58,10 @@
           ./modules/system/plasma
           ./modules/system/steam
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${user} = import ./modules/user/plasma;
-            home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { inherit pkgs; };
+
+            home-manager.users.${user}.imports = userModules ++ [
+            ./modules/user/plasma
+            ];
             home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
           }
         ];
