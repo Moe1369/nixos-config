@@ -18,7 +18,7 @@
   programs.plasma = {
 
     enable = true;
-    workspace.wallpaperSlideShow.path = home/mo/Bilder/Wallpaper;
+    workspace.wallpaperSlideShow.path = /home/mo/Bilder/Wallpaper;
     #workspace.wallpaper = "/home/mo/Bilder/Wallpaper/wallpaper-nix.png";
     kscreenlocker.appearance.wallpaper = "/home/mo/Bilder/Wallpaper/wallpaper-nix.png";
 
