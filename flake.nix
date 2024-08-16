@@ -73,7 +73,7 @@
               ./modules/system/apps-misc
               ./modules/system/browser
               ./modules/system/controller
-              ./modules/system/jovian-desktop
+              ./modules/system/jovian-${hostName}
               ./modules/system/lact
               ./modules/system/plasma
               ./modules/system/steam
@@ -111,7 +111,7 @@
             ./modules/system/apps-misc
             ./modules/system/browser
             ./modules/system/controller
-            ./modules/system/jovian-desktop
+            ./modules/system/jovian-${hostName}
             ./modules/system/lact
             ./modules/system/plasma
             ./modules/system/steam
