@@ -52,10 +52,10 @@
       nixosConfigurations = {
         # Workstation config
         # user and hostName variable inside hostConfig so we can call it in other modules
-        computer-mo =
+        workstation =
           let
             user = "mo";
-            hostName = "computer-mo";
+            hostName = "workstation";
           in
           lib.nixosSystem {
             specialArgs = {
