@@ -6,6 +6,9 @@
   home.file.".local/share/color-schemes/BreezeHellFarbe.colors".source = ../../../dotfiles/BreezeHellFarbe.colors;
   home.file.".config/kglobalshortcutsrc".source = ../../../dotfiles/kglobalshortcutsrc;
   home.file."Bilder/Hintergründe/wallpaper-nix.png".source = ../../../assets/wallpaper-nix.png;
+  home.file."Bilder/Hintergründe/wallpaper-asia.png".source = ../../../assets/wallpaper-asia.png;
+  home.file."Bilder/Hintergründe/wallpaper-kame.png".source = ../../../assets/wallpaper-kame.png;
+  home.file."Bilder/Hintergründe/wallpaper-retrogirl.png".source = ../../../assets/wallpaper-retrogirl.png;
   home.file.".config/kwinrc".source = ../../../dotfiles/kwinrc;
   home.file.".config/kwinoutputconfig.json".source = ../../../dotfiles/kwinoutputconfig.json;
 
