@@ -34,6 +34,7 @@
         ./modules/system/apps-shell
         ./modules/system/boot
         ./modules/system/devices
+        ./modules/system/home-manager
         ./modules/system/locale
         ./modules/system/networking
         ./modules/system/nixsettings
