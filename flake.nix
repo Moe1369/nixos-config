@@ -3,96 +3,68 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     plasma-manager = {
       url = "github:nix-community/plasma-manager/trunk";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
   };
+  outputs = { nixpkgs, home-manager, jovian, plasma-manager, ...}:
+  let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs { inherit system;};
+    lib = nixpkgs.lib;
+  in
+  {
+    systemModules = [
+      home-manager.nixosModules.home-manager
+      ./modules/system/apps-shell
+      ./modules/system/boot
+      ./modules/system/devices
+      ./modules/system/locale
+      ./modules/system/networking
+      ./modules/system/nixsettings
+      ./modules/system/shell
+      ./modules/system/systemversion
+      ./modules/system/upgrades
+      ./modules/system/users
+    ];
 
-  outputs = { self, nixpkgs, home-manager, jovian, plasma-manager, ... }:
-    let
-      lib = nixpkgs.lib;
-      system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
+    userModules = [
+      ./modules/user/git
+      ./modules/user/homeversion
+    ];
 
-      commonModules = [
-        home-manager.nixosModules.home-manager
-        jovian.nixosModules.jovian
-        ./modules/apps.misc
-        ./modules/apps.shell
-        ./modules/boot
-        ./modules/browser
-        ./modules/controller
-        ./modules/devices
-        ./modules/jovian.desktop
-        ./modules/lact
-        ./modules/locale
-        ./modules/networking
-        ./modules/nixsettings
-        ./modules/plasma
-        ./modules/shell
-        ./modules/steam
-        ./modules/systemversion
-        ./modules/upgrade
-      ];
-
-      homeManagerConfig = {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.backupFileExtension = "backup";
-        home-manager.extraSpecialArgs = { inherit pkgs; };
-        home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+    nixosConfigurations = {
+      computer-mo = nixpkgs.lib.nixosSystem {
+        hostName = "computer-mo";
+        user = "mo";
+        system = system;
+        modules = systemModules ++ [
+          jovian.nixosModules.jovian
+          ./hosts/${hostName}
+          ./modules/system/apps-misc
+          ./modules/system/browser
+          ./modules/system/controller
+          ./modules/system/jovian-desktop
+          ./modules/system/lact
+          ./modules/system/plasma
+          ./modules/system/steam
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${user} = import ./modules/user/plasma;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = { inherit pkgs; };
+            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+          }
+        ];
       };
-
-      # Host-specific configurations
-      hosts = {
-        computer-mo = {
-          user = "mo";
-          extraModules = [];
-          userConfig = {
-            isNormalUser = true;
-            home = "/home/mo";
-            shell = pkgs.zsh;
-            extraGroups = [ "wheel" "networkmanager" ];
-          };
-        };
-
-        steamdeck = {
-          user = "deck";
-          extraModules = [];
-          userConfig = {
-            isNormalUser = true;
-            home = "/home/deck";
-            shell = pkgs.zsh;
-            extraGroups = [ "wheel" "networkmanager" ];
-          };
-        };
-      };
-
-    in {
-      nixosConfigurations = lib.mapAttrs (hostName: hostConfig:
-        lib.nixosSystem {
-          specialArgs = {};
-          modules = commonModules ++ hostConfig.extraModules ++ [
-            # Users configuration
-            { users.users.${hostConfig.user} = hostConfig.userConfig; }
-
-            # Home Manager user imports
-            { home-manager.users.${hostConfig.user}.imports = [
-              ./modules/git
-              ./modules/homeversion
-              ./modules/plasma
-              ];
-            }
-            homeManagerConfig
-          ];
-        }
-      ) hosts;
     };
+  };
 }
