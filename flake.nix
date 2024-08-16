@@ -76,7 +76,7 @@
               ./modules/system/controller
               ./modules/system/jovian-${hostName}
               ./modules/system/lact
-             #./modules/system/sddm
+              ./modules/system/sddm
               ./modules/system/plasma
               ./modules/system/steam
               {
