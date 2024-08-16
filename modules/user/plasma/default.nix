@@ -11,6 +11,7 @@
   home.file."Bilder/Wallpaper/wallpaper-retrogirl.png".source = ../../../assets/wallpaper-retrogirl.png;
   home.file.".config/kwinrc".source = ../../../dotfiles/kwinrc;
   home.file.".config/kwinoutputconfig.json".source = ../../../dotfiles/kwinoutputconfig.json;
+  home.file.".local/share/user-places.xbel".source = ../../../dotfiles/user-places.xbel;
 
 
   programs.plasma = {
