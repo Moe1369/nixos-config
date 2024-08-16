@@ -45,7 +45,7 @@
       user = "mo";
       hostName = "computer-mo";
       in lib.nixosSystem {
-        specialArgs = {inherit systemModules; inherit userModules; inherit system;};
+        specialArgs = {inherit systemModules; inherit userModules; inherit system; inherit user; inherit hostName;};
         system = system;
         modules = systemModules ++ [
           jovian.nixosModules.jovian
