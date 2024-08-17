@@ -39,6 +39,7 @@
         ./modules/system/networking
         ./modules/system/nixsettings
         ./modules/system/shell
+        ./modules/system/syncthing
         ./modules/system/systemversion
         ./modules/system/upgrades
         ./modules/system/users
