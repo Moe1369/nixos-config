@@ -1,9 +1,9 @@
-{ ... }:
+{ user, ... }:
 {
   jovian.steam = {
     enable = true;
     autoStart = false;
-    user = "mo";
+    user = user;
     desktopSession = "plasma";
   };
   jovian.hardware.has.amd.gpu = true;

@@ -1,86 +1,132 @@
 {
   description = "Moe.OS";
-
+  # Define Inputs
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     plasma-manager = {
       url = "github:nix-community/plasma-manager/trunk";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
   };
-
-  outputs = { self, nixpkgs, home-manager, jovian, plasma-manager, ... }:
+  # Define Outputs, import Modules
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      jovian,
+      plasma-manager,
+      ...
+    }:
     let
-      lib = nixpkgs.lib;
+      # Define system globally since I have no aarch devices
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
-
-      commonModules = [
+      lib = nixpkgs.lib;
+      # NixOS Modules for all hosts
+      systemModules = [
         home-manager.nixosModules.home-manager
+        ./modules/system/apps-shell
         ./modules/system/boot
         ./modules/system/devices
+        ./modules/system/home-manager
         ./modules/system/locale
         ./modules/system/networking
         ./modules/system/nixsettings
         ./modules/system/shell
+        ./modules/system/syncthing
         ./modules/system/systemversion
         ./modules/system/upgrades
+        ./modules/system/users
       ];
-
-      homeManagerConfig = {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.backupFileExtension = "backup";
-        home-manager.extraSpecialArgs = { inherit pkgs; };
-        home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
-      };
-
-      # Host-specific configurations
-      hosts = {
-        computer-mo = {
-          user = "mo";
-          extraModules = [];
-          userConfig = {
-            isNormalUser = true;
-            home = "/home/mo";
-            shell = pkgs.zsh;
-            extraGroups = [ "wheel" "networkmanager" ];
+      # Home Manager Modules for all hosts
+      userModules = [
+        ./modules/user/git
+        ./modules/user/homeversion
+      ];
+    in
+    {
+      nixosConfigurations = {
+        # Workstation config
+        # user and hostName variable inside hostConfig so we can call it in other modules
+        workstation =
+          let
+            user = "mo";
+            hostName = "workstation";
+          in
+          lib.nixosSystem {
+            specialArgs = {
+              inherit systemModules;
+              inherit userModules;
+              inherit system;
+              inherit user;
+              inherit hostName;
+            };
+            system = system;
+            # Device specific NixOS Modules
+            modules = systemModules ++ [
+              jovian.nixosModules.jovian
+              ./hosts/${hostName}
+              ./modules/system/apps-misc
+              ./modules/system/browser
+              ./modules/system/controller
+              ./modules/system/jovian-${hostName}
+              ./modules/system/lact
+              ./modules/system/sddm
+              ./modules/system/plasma
+              ./modules/system/steam
+              {
+                # Device specific Home Manager Modules
+                home-manager.users.${user}.imports = userModules ++ [
+                  ./modules/user/plasma
+                ];
+                # Issue with Plasma Manager, has to be imported in a special way
+                home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+              }
+            ];
           };
-        };
-
-        steamdeck = {
+      };
+      # Steamdeck config
+      # user and hostName variable inside hostConfig so we can call it in other modules
+      steamdeck =
+        let
           user = "deck";
-          extraModules = [];
-          userConfig = {
-            isNormalUser = true;
-            home = "/home/deck";
-            shell = pkgs.zsh;
-            extraGroups = [ "wheel" "networkmanager" ];
-          };
-        };
-      };
-
-    in {
-      nixosConfigurations = lib.mapAttrs (hostName: hostConfig:
+          hostName = "steamdeck";
+        in
         lib.nixosSystem {
-          specialArgs = {};
-          modules = commonModules ++ hostConfig.extraModules ++ [
-            # Users configuration
-            { users.users.${hostConfig.user} = hostConfig.userConfig; }
-
-            # Home Manager user imports
-            { home-manager.users.${hostConfig.user}.imports = [
+          specialArgs = {
+            inherit systemModules;
+            inherit userModules;
+            inherit system;
+            inherit user;
+            inherit hostName;
+          };
+          system = system;
+          # Device specific NixOS Modules
+          modules = systemModules ++ [
+            jovian.nixosModules.jovian
+            ./hosts/${hostName}
+            ./modules/system/apps-misc
+            ./modules/system/browser
+            ./modules/system/controller
+            ./modules/system/jovian-${hostName}
+            ./modules/system/lact
+            ./modules/system/plasma
+            ./modules/system/steam
+            {
+              # Device specific Home Manager Modules
+              home-manager.users.${user}.imports = userModules ++ [
+                ./modules/user/plasma
               ];
+              # Issue with Plasma Manager, has to be imported in a special way
+              home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
             }
-            homeManagerConfig
           ];
-        }
-      ) hosts;
+        };
     };
 }

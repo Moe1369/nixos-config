@@ -1,19 +1,26 @@
-{ ... }:
+{ user, ... }:
 {
-  home.file.".config/haruna/haruna.conf".source = ../dotfiles/haruna.conf;
-  home.file.".local/share/color-schemes/BreezeDunkelFarbe.colors".source = ../dotfiles/BreezeDunkelFarbe.colors;
-  home.file.".local/share/color-schemes/BreezeHellFarbe.colors".source = ../dotfiles/BreezeHellFarbe.colors;
-  home.file.".config/kglobalshortcutsrc".source = ../dotfiles/kglobalshortcutsrc;
-  home.file."Bilder/Hintergründe/wallpaper-nix.png".source = ../assets/wallpaper-nix.png;
-  home.file.".config/kwinrc".source = ../dotfiles/kwinrc;
-  home.file.".config/kwinoutputconfig.json".source = ../dotfiles/kwinoutputconfig.json;
+  home.file."Code/.directory".source = ../../../dotfiles/directory;
+  home.file.".config/haruna/haruna.conf".source = ../../../dotfiles/haruna.conf;
+  home.file.".local/share/color-schemes/BreezeDunkelFarbe.colors".source = ../../../dotfiles/BreezeDunkelFarbe.colors;
+  home.file.".local/share/color-schemes/BreezeHellFarbe.colors".source = ../../../dotfiles/BreezeHellFarbe.colors;
+  home.file.".config/kglobalshortcutsrc".source = ../../../dotfiles/kglobalshortcutsrc;
+  home.file."Bilder/Wallpaper/wallpaper-nix.png".source = ../../../assets/wallpaper-nix.png;
+  home.file."Bilder/Wallpaper/wallpaper-asia.jpg".source = ../../../assets/wallpaper-asia.jpg;
+  home.file."Bilder/Wallpaper/wallpaper-kame.jpg".source = ../../../assets/wallpaper-kame.jpg;
+  home.file."Bilder/Wallpaper/wallpaper-retrogirl.png".source = ../../../assets/wallpaper-retrogirl.png;
+  home.file.".config/kwinrc".source = ../../../dotfiles/kwinrc;
+  home.file.".local/share/user-places.xbel".source = ../../../dotfiles/user-places.xbel;
+  home.file.".zshrc".source = ../../../dotfiles/zshrc;
 
 
   programs.plasma = {
 
     enable = true;
-    workspace.wallpaper = "/home/mo/Bilder/Hintergründe/wallpaper-nix.png";
-    kscreenlocker.appearance.wallpaper = "/home/mo/Bilder/Hintergründe/wallpaper-nix.png";
+    workspace.wallpaperSlideShow.path = /home/mo/Bilder/Wallpaper;
+    workspace.wallpaperSlideShow.interval = 864000;
+    #workspace.wallpaper = "/home/mo/Bilder/Wallpaper/wallpaper-nix.png";
+    kscreenlocker.appearance.wallpaper = "/home/mo/Bilder/Wallpaper/wallpaper-nix.png";
 
     kwin.titlebarButtons.left = ["keep-above-windows"];
     kwin.titlebarButtons.right = ["minimize" "maximize" "close"];
