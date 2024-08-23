@@ -77,7 +77,7 @@
               ./modules/system/controller
               ./modules/system/jovian-konsole
               ./modules/system/lact
-              ./modules/system/sddm
+              #./modules/system/sddm
               ./modules/system/plasma
               ./modules/system/steam
               {
