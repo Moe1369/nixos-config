@@ -75,7 +75,7 @@
               ./modules/system/apps-misc
               ./modules/system/browser
               ./modules/system/controller
-              ./modules/system/jovian-${hostName}
+              ./modules/system/jovian-konsole
               ./modules/system/lact
               ./modules/system/sddm
               ./modules/system/plasma
