@@ -5,7 +5,7 @@ system.autoUpgrade = {
     dates = "04:00";
     flake = "github:Moe1369/nixos-config#${hostName}";
     flags = [
-        "--update-input" "nixpkgs" "--commit-lock-file"
+        "--update-input" "nixpkgs" "-L" "--commit-lock-file"
     ];
     allowReboot = true;
 };
