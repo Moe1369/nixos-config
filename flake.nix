@@ -128,5 +128,42 @@
             }
           ];
         };
+
+      konsole =
+        let
+          user = "deck";
+          hostName = "konsole";
+        in
+        lib.nixosSystem {
+          specialArgs = {
+            inherit systemModules;
+            inherit userModules;
+            inherit system;
+            inherit user;
+            inherit hostName;
+          };
+          system = system;
+          # Device specific NixOS Modules
+          modules = systemModules ++ [
+            jovian.nixosModules.jovian
+            ./hosts/${hostName}
+            ./modules/system/apps-misc
+            ./modules/system/browser
+            ./modules/system/controller
+            ./modules/system/jovian-${hostName}
+            ./modules/system/lact
+            ./modules/system/plasma
+            ./modules/system/steam
+            {
+              # Device specific Home Manager Modules
+              home-manager.users.${user}.imports = userModules ++ [
+                ./modules/user/plasma
+              ];
+              # Issue with Plasma Manager, has to be imported in a special way
+              home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+            }
+          ];
+        };
+
     };
 }
