@@ -12,7 +12,6 @@
   home.file."Bilder/Wallpaper/wallpaper-retrogirl.png".source = ../../../assets/wallpaper-retrogirl.png;
   home.file.".config/kwinrc".source = ../../../dotfiles/kwinrc;
   home.file.".local/share/user-places.xbel".source = ../../../dotfiles/user-places.xbel;
-  home.file.".zshrc".source = ../../../dotfiles/zshrc;
 
 
   programs.plasma = {

@@ -47,6 +47,7 @@
       userModules = [
         ./modules/user/git
         ./modules/user/homeversion
+        ./modules/user/shell
       ];
     in
     {
