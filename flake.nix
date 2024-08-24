@@ -167,5 +167,35 @@
           ];
         };
 
+       server =
+        let
+          user = "administrator";
+          hostName = "server";
+        in
+        lib.nixosSystem {
+          specialArgs = {
+            inherit systemModules;
+            inherit userModules;
+            inherit system;
+            inherit user;
+            inherit hostName;
+          };
+          system = system;
+          # Device specific NixOS Modules
+          modules = systemModules ++ [
+            ./hosts/${hostName}
+            ./modules/docker
+            ./modules/system/syncthing
+            {
+              # Device specific Home Manager Modules
+              home-manager.users.${user}.imports = userModules ++ [
+              ];
+              # Issue with Plasma Manager, has to be imported in a special way
+              home-manager.sharedModules = [];
+            }
+          ];
+        };
+
+
     };
 }
