@@ -39,7 +39,6 @@
         ./modules/system/networking
         ./modules/system/nixsettings
         ./modules/system/shell
-        ./modules/system/syncthing
         ./modules/system/systemversion
         ./modules/system/upgrades
         ./modules/system/users
@@ -77,7 +76,7 @@
               ./modules/system/controller
               ./modules/system/jovian-konsole
               ./modules/system/lact
-              #./modules/system/sddm
+              ./modules/system/syncthing
               ./modules/system/plasma
               ./modules/system/steam
               {
@@ -118,6 +117,7 @@
             ./modules/system/lact
             ./modules/system/plasma
             ./modules/system/steam
+            ./modules/system/syncthing
             {
               # Device specific Home Manager Modules
               home-manager.users.${user}.imports = userModules ++ [
@@ -154,6 +154,7 @@
             ./modules/system/lact
             ./modules/system/plasma
             ./modules/system/steam
+            ./modules/system/syncthing
             {
               # Device specific Home Manager Modules
               home-manager.users.${user}.imports = userModules ++ [
