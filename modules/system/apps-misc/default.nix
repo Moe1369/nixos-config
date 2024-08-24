@@ -9,5 +9,6 @@
     vesktop
     google-chrome
     teams-for-linux
+    protonup-qt
     ]);
 }
