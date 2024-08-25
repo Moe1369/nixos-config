@@ -80,9 +80,10 @@
               ./modules/system/controller
               ./modules/system/jovian-${hostName}
               ./modules/system/lact
-              ./modules/system/syncthing
               ./modules/system/plasma
+              ./modules/system/retrodeck
               ./modules/system/steam
+              ./modules/system/syncthing
               ./modules/system/sddm
               {
                 # Device specific Home Manager Modules
@@ -121,6 +122,7 @@
             ./modules/system/jovian-${hostName}
             ./modules/system/lact
             ./modules/system/plasma
+            ./modules/system/retrodeck
             ./modules/system/steam
             ./modules/system/syncthing
             {
@@ -158,6 +160,7 @@
             ./modules/system/jovian-${hostName}
             ./modules/system/lact
             ./modules/system/plasma
+            ./modules/system/retrodeck
             ./modules/system/steam
             ./modules/system/syncthing
             {
