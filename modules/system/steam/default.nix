@@ -18,7 +18,10 @@
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
   };
-  environment.systemPackages = [
-    pkgs.gamescope
-  ];
+  environment.systemPackages =
+   (with pkgs; [
+    gamescope
+    mangohud
+    protonup-qt
+    ]);
 }
