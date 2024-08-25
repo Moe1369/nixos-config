@@ -13,6 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
   };
   # Define Outputs, import Modules
   outputs =
@@ -21,6 +22,7 @@
       home-manager,
       jovian,
       plasma-manager,
+      nix-flatpak,
       ...
     }:
     let
@@ -31,6 +33,7 @@
       # NixOS Modules for all hosts
       systemModules = [
         home-manager.nixosModules.home-manager
+        nix-flatpak.nixosModules.nix-flatpak
         ./modules/system/apps-shell
         ./modules/system/boot
         ./modules/system/devices
