@@ -75,11 +75,12 @@
               ./modules/system/apps-misc
               ./modules/system/browser
               ./modules/system/controller
-              ./modules/system/jovian-konsole
+              ./modules/system/jovian-${hostName}
               ./modules/system/lact
               ./modules/system/syncthing
               ./modules/system/plasma
               ./modules/system/steam
+              ./modules/system/sddm
               {
                 # Device specific Home Manager Modules
                 home-manager.users.${user}.imports = userModules ++ [
