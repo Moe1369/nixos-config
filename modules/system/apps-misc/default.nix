@@ -3,7 +3,6 @@
   environment.systemPackages =
    (with pkgs; [
     ibm-plex
-    mangohud
     pciutils
     aha
     vesktop

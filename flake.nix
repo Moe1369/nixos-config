@@ -13,6 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
   };
   # Define Outputs, import Modules
   outputs =
@@ -21,6 +22,7 @@
       home-manager,
       jovian,
       plasma-manager,
+      nix-flatpak,
       ...
     }:
     let
@@ -31,6 +33,7 @@
       # NixOS Modules for all hosts
       systemModules = [
         home-manager.nixosModules.home-manager
+        nix-flatpak.nixosModules.nix-flatpak
         ./modules/system/apps-shell
         ./modules/system/boot
         ./modules/system/devices
@@ -39,7 +42,6 @@
         ./modules/system/networking
         ./modules/system/nixsettings
         ./modules/system/shell
-        ./modules/system/syncthing
         ./modules/system/systemversion
         ./modules/system/upgrades
         ./modules/system/users
@@ -48,6 +50,7 @@
       userModules = [
         ./modules/user/git
         ./modules/user/homeversion
+        ./modules/user/shell
       ];
     in
     {
@@ -77,9 +80,11 @@
               ./modules/system/controller
               ./modules/system/jovian-${hostName}
               ./modules/system/lact
-              ./modules/system/sddm
               ./modules/system/plasma
+              ./modules/system/retrodeck
               ./modules/system/steam
+              ./modules/system/syncthing
+              ./modules/system/sddm
               {
                 # Device specific Home Manager Modules
                 home-manager.users.${user}.imports = userModules ++ [
@@ -117,7 +122,9 @@
             ./modules/system/jovian-${hostName}
             ./modules/system/lact
             ./modules/system/plasma
+            ./modules/system/retrodeck
             ./modules/system/steam
+            ./modules/system/syncthing
             {
               # Device specific Home Manager Modules
               home-manager.users.${user}.imports = userModules ++ [
@@ -128,5 +135,74 @@
             }
           ];
         };
+
+      konsole =
+        let
+          user = "deck";
+          hostName = "konsole";
+        in
+        lib.nixosSystem {
+          specialArgs = {
+            inherit systemModules;
+            inherit userModules;
+            inherit system;
+            inherit user;
+            inherit hostName;
+          };
+          system = system;
+          # Device specific NixOS Modules
+          modules = systemModules ++ [
+            jovian.nixosModules.jovian
+            ./hosts/${hostName}
+            ./modules/system/apps-misc
+            ./modules/system/browser
+            ./modules/system/controller
+            ./modules/system/jovian-${hostName}
+            ./modules/system/lact
+            ./modules/system/plasma
+            ./modules/system/retrodeck
+            ./modules/system/steam
+            ./modules/system/syncthing
+            {
+              # Device specific Home Manager Modules
+              home-manager.users.${user}.imports = userModules ++ [
+                ./modules/user/plasma
+              ];
+              # Issue with Plasma Manager, has to be imported in a special way
+              home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+            }
+          ];
+        };
+
+       server =
+        let
+          user = "administrator";
+          hostName = "server";
+        in
+        lib.nixosSystem {
+          specialArgs = {
+            inherit systemModules;
+            inherit userModules;
+            inherit system;
+            inherit user;
+            inherit hostName;
+          };
+          system = system;
+          # Device specific NixOS Modules
+          modules = systemModules ++ [
+            ./hosts/${hostName}
+            ./modules/docker
+            ./modules/system/syncthing
+            {
+              # Device specific Home Manager Modules
+              home-manager.users.${user}.imports = userModules ++ [
+              ];
+              # Issue with Plasma Manager, has to be imported in a special way
+              home-manager.sharedModules = [];
+            }
+          ];
+        };
+
+
     };
 }

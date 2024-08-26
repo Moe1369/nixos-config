@@ -1,17 +1,23 @@
 { user, ... }:
 {
+  # Configuration Files
   home.file."Code/.directory".source = ../../../dotfiles/directory;
   home.file.".config/haruna/haruna.conf".source = ../../../dotfiles/haruna.conf;
   home.file.".local/share/color-schemes/BreezeDunkelFarbe.colors".source = ../../../dotfiles/BreezeDunkelFarbe.colors;
   home.file.".local/share/color-schemes/BreezeHellFarbe.colors".source = ../../../dotfiles/BreezeHellFarbe.colors;
   home.file.".config/kglobalshortcutsrc".source = ../../../dotfiles/kglobalshortcutsrc;
+  home.file.".config/kwinrulesrc".source = ../../../dotfiles/kwinrulesrc;
+  home.file.".config/kwinrc".source = ../../../dotfiles/kwinrc;
+  home.file.".local/share/user-places.xbel".source = ../../../dotfiles/user-places.xbel;
+
+  # Wallpaper
   home.file."Bilder/Wallpaper/wallpaper-nix.png".source = ../../../assets/wallpaper-nix.png;
   home.file."Bilder/Wallpaper/wallpaper-asia.jpg".source = ../../../assets/wallpaper-asia.jpg;
   home.file."Bilder/Wallpaper/wallpaper-kame.jpg".source = ../../../assets/wallpaper-kame.jpg;
   home.file."Bilder/Wallpaper/wallpaper-retrogirl.png".source = ../../../assets/wallpaper-retrogirl.png;
-  home.file.".config/kwinrc".source = ../../../dotfiles/kwinrc;
-  home.file.".local/share/user-places.xbel".source = ../../../dotfiles/user-places.xbel;
-  home.file.".zshrc".source = ../../../dotfiles/zshrc;
+  home.file."Bilder/Wallpaper/wallpaper-sword.jpg".source = ../../../assets/wallpaper-sword.jpg;
+  home.file."Bilder/Wallpaper/wallpaper-clouds.png".source = ../../../assets/wallpaper-clouds.png;
+
 
 
   programs.plasma = {
@@ -19,7 +25,6 @@
     enable = true;
     workspace.wallpaperSlideShow.path = /home/mo/Bilder/Wallpaper;
     workspace.wallpaperSlideShow.interval = 864000;
-    #workspace.wallpaper = "/home/mo/Bilder/Wallpaper/wallpaper-nix.png";
     kscreenlocker.appearance.wallpaper = "/home/mo/Bilder/Wallpaper/wallpaper-nix.png";
 
     kwin.titlebarButtons.left = ["keep-above-windows"];
