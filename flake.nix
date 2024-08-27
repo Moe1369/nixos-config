@@ -14,6 +14,10 @@
       inputs.home-manager.follows = "home-manager";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   # Define Outputs, import Modules
   outputs =
