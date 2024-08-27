@@ -78,6 +78,7 @@
               ./modules/system/apps-misc
               ./modules/system/browser
               ./modules/system/controller
+              ./modules/system/flatpak
               ./modules/system/jovian-${hostName}
               ./modules/system/lact
               ./modules/system/plasma
@@ -119,6 +120,7 @@
             ./modules/system/apps-misc
             ./modules/system/browser
             ./modules/system/controller
+            ./modules/system/flatpak
             ./modules/system/jovian-${hostName}
             ./modules/system/lact
             ./modules/system/plasma
@@ -157,6 +159,7 @@
             ./modules/system/apps-misc
             ./modules/system/browser
             ./modules/system/controller
+            ./modules/system/flatpak
             ./modules/system/jovian-${hostName}
             ./modules/system/lact
             ./modules/system/plasma
