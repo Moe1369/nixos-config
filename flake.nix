@@ -27,6 +27,7 @@
       jovian,
       plasma-manager,
       nix-flatpak,
+      lanzaboote,
       ...
     }:
     let
@@ -36,6 +37,7 @@
       lib = nixpkgs.lib;
       # NixOS Modules for all hosts
       systemModules = [
+        lanzaboote.nixosModules.lanzaboote
         home-manager.nixosModules.home-manager
         nix-flatpak.nixosModules.nix-flatpak
         ./modules/system/apps-shell
