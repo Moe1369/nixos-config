@@ -81,6 +81,7 @@
             modules = systemModules ++ [
               jovian.nixosModules.jovian
               ./hosts/${hostName}
+              ./modules/system/ai
               ./modules/system/apps-misc
               ./modules/system/browser
               ./modules/system/controller
