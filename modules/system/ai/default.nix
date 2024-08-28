@@ -1,6 +1,8 @@
 { ... }:
 {
-  environment.systemPackages = [
-    pkgs.ollama-rocm
-  ];
+
+  environment.systemPackages =
+   (with pkgs; [
+    ollama-rocm
+    ]);
 }
