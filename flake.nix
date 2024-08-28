@@ -1,5 +1,6 @@
 {
   description = "Moe.OS";
+
   # Define Inputs
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -19,93 +20,93 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
   # Define Outputs, import Modules
-  outputs =
-    {
-      nixpkgs,
-      home-manager,
-      jovian,
-      plasma-manager,
-      nix-flatpak,
-      lanzaboote,
-      ...
-    }:
-    let
-      # Define system globally since I have no aarch devices
-      system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
-      lib = nixpkgs.lib;
-      # NixOS Modules for all hosts
-      systemModules = [
-        lanzaboote.nixosModules.lanzaboote
-        home-manager.nixosModules.home-manager
-        nix-flatpak.nixosModules.nix-flatpak
-        ./modules/system/apps-shell
-        ./modules/system/boot
-        ./modules/system/devices
-        ./modules/system/home-manager
-        ./modules/system/locale
-        ./modules/system/networking
-        ./modules/system/nixsettings
-        ./modules/system/shell
-        ./modules/system/systemversion
-        ./modules/system/upgrades
-        ./modules/system/users
-      ];
-      # Home Manager Modules for all hosts
-      userModules = [
-        ./modules/user/git
-        ./modules/user/homeversion
-        ./modules/user/shell
-      ];
-    in
-    {
-      nixosConfigurations = {
-        # Workstation config
-        # user and hostName variable inside hostConfig so we can call it in other modules
-        workstation =
-          let
-            user = "mo";
-            hostName = "workstation";
-          in
-          lib.nixosSystem {
-            specialArgs = {
-              inherit systemModules;
-              inherit userModules;
-              inherit system;
-              inherit user;
-              inherit hostName;
-            };
-            system = system;
-            # Device specific NixOS Modules
-            modules = systemModules ++ [
-              jovian.nixosModules.jovian
-              ./hosts/${hostName}
-              ./modules/system/ai
-              ./modules/system/apps-misc
-              ./modules/system/browser
-              ./modules/system/controller
-              ./modules/system/flatpak
-              ./modules/system/jovian-${hostName}
-              ./modules/system/lact
-              ./modules/system/plasma
-              ./modules/system/retrodeck
-              ./modules/system/steam
-              ./modules/system/syncthing
-              ./modules/system/sddm
-              {
-                # Device specific Home Manager Modules
-                home-manager.users.${user}.imports = userModules ++ [
-                  ./modules/user/plasma
-                ];
-                # Issue with Plasma Manager, has to be imported in a special way
-                home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
-              }
-            ];
+  outputs = {
+    nixpkgs,
+    home-manager,
+    jovian,
+    plasma-manager,
+    nix-flatpak,
+    lanzaboote,
+    ...
+  }:
+  let
+    # Define system globally since I have no aarch devices
+    system = "x86_64-linux";
+    pkgs = import nixpkgs { inherit system; };
+    lib = nixpkgs.lib;
+
+    # NixOS Modules for all hosts
+    systemModules = [
+      lanzaboote.nixosModules.lanzaboote
+      home-manager.nixosModules.home-manager
+      nix-flatpak.nixosModules.nix-flatpak
+      ./modules/system/apps-shell
+      ./modules/system/boot
+      ./modules/system/devices
+      ./modules/system/home-manager
+      ./modules/system/locale
+      ./modules/system/networking
+      ./modules/system/nixsettings
+      ./modules/system/shell
+      ./modules/system/systemversion
+      ./modules/system/upgrades
+      ./modules/system/users
+    ];
+
+    # Home Manager Modules for all hosts
+    userModules = [
+      ./modules/user/git
+      ./modules/user/homeversion
+      ./modules/user/shell
+    ];
+  in
+  {
+    nixosConfigurations = {
+      # Workstation config
+      workstation =
+        let
+          user = "mo";
+          hostName = "workstation";
+        in
+        lib.nixosSystem {
+          specialArgs = {
+            inherit systemModules;
+            inherit userModules;
+            inherit system;
+            inherit user;
+            inherit hostName;
           };
-      };
+          system = system;
+          # Device specific NixOS Modules
+          modules = systemModules ++ [
+            jovian.nixosModules.jovian
+            ./hosts/${hostName}
+            ./modules/system/ai
+            ./modules/system/apps-misc
+            ./modules/system/browser
+            ./modules/system/controller
+            ./modules/system/flatpak
+            ./modules/system/jovian-${hostName}
+            ./modules/system/lact
+            ./modules/system/plasma
+            ./modules/system/retrodeck
+            ./modules/system/steam
+            ./modules/system/syncthing
+            ./modules/system/sddm
+            {
+              # Device specific Home Manager Modules
+              home-manager.users.${user}.imports = userModules ++ [
+                ./modules/user/plasma
+              ];
+              # Issue with Plasma Manager, has to be imported in a special way
+              home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+            }
+          ];
+        };
+
       # Steamdeck config
-      # user and hostName variable inside hostConfig so we can call it in other modules
       steamdeck =
         let
           user = "deck";
@@ -145,6 +146,7 @@
           ];
         };
 
+      # Konsole config
       konsole =
         let
           user = "deck";
@@ -184,7 +186,8 @@
           ];
         };
 
-       server =
+      # Server config
+      server =
         let
           user = "administrator";
           hostName = "server";
@@ -205,14 +208,12 @@
             ./modules/system/syncthing
             {
               # Device specific Home Manager Modules
-              home-manager.users.${user}.imports = userModules ++ [
-              ];
+              home-manager.users.${user}.imports = userModules;
               # Issue with Plasma Manager, has to be imported in a special way
               home-manager.sharedModules = [];
             }
           ];
         };
-
-
     };
+  };
 }
