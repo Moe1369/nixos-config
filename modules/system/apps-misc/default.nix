@@ -7,6 +7,5 @@
     aha
     vesktop
     google-chrome
-    teams-for-linux
     ]);
 }
