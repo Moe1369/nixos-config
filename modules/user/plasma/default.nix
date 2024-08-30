@@ -28,9 +28,9 @@
   programs.plasma = {
 
     enable = true;
-  #  workspace.wallpaperSlideShow.path = ../../../assets;
-  #  workspace.wallpaperSlideShow.interval = 864000;
-  # kscreenlocker.appearance.wallpaper = "../../../assets/wallpaper-nix.png";
+    workspace.wallpaperSlideShow.path = /home/${user}/Bilder/Wallpaper;
+    workspace.wallpaperSlideShow.interval = 864000;
+    kscreenlocker.appearance.wallpaper = "/home/${user}/Bilder/Wallpaper/wallpaper-nix.png";
 
     kwin.titlebarButtons.left = ["keep-above-windows"];
     kwin.titlebarButtons.right = ["minimize" "maximize" "close"];
