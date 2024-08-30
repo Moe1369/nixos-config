@@ -15,10 +15,6 @@
       inputs.home-manager.follows = "home-manager";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   # Define Outputs, import Modules
@@ -39,7 +35,6 @@
 
     # NixOS Modules for all hosts
     systemModules = [
-      lanzaboote.nixosModules.lanzaboote
       home-manager.nixosModules.home-manager
       nix-flatpak.nixosModules.nix-flatpak
       ./modules/system/apps-shell
@@ -101,6 +96,7 @@
                 ./modules/user/plasma
               ];
               # Issue with Plasma Manager, has to be imported in a special way
+              home-manager.extraSpecialArgs = { inherit user; inherit hostName;};
               home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
             }
           ];
@@ -141,6 +137,7 @@
                 ./modules/user/plasma
               ];
               # Issue with Plasma Manager, has to be imported in a special way
+              home-manager.extraSpecialArgs = { inherit user; inherit hostName;};
               home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
             }
           ];
@@ -181,6 +178,7 @@
                 ./modules/user/plasma
               ];
               # Issue with Plasma Manager, has to be imported in a special way
+              home-manager.extraSpecialArgs = { inherit user; inherit hostName;};
               home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
             }
           ];
@@ -210,6 +208,7 @@
               # Device specific Home Manager Modules
               home-manager.users.${user}.imports = userModules;
               # Issue with Plasma Manager, has to be imported in a special way
+              home-manager.extraSpecialArgs = { inherit user; inherit hostName;};
               home-manager.sharedModules = [];
             }
           ];
