@@ -16,11 +16,8 @@
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
   };
-
-  # Define Outputs, import Modules
   outputs = { nixpkgs, home-manager, plasma-manager, jovian, nix-flatpak, ... }:
   let
-    # Define system globally since I have no aarch devices
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
     lib = nixpkgs.lib;

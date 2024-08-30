@@ -1,9 +1,5 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  environment.systemPackages = [
-    pkgs.alpaca
-  ];
-
 services.ollama = {
   enable = true;
   acceleration = "rocm";
