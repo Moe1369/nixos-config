@@ -76,24 +76,72 @@
   in
   {
     nixosConfigurations = {
-      # Workstation config
       workstation =
         let
           user = "mo";
           hostName = "workstation";
         in
         lib.nixosSystem {
-          specialArgs = {inherit user; inherit hostName;};
-          system = system;
-          # Device specific NixOS Modules
+          specialArgs = {inherit user; inherit hostName; inherit system;};
           modules = externalSystemModules ++ baseSystemModules ++ desktopSystemModules ++ displaySystemModules ++ gamingSystemModules ++ [
             ./hosts/${hostName}
             ./modules/system/jovian-${hostName}
             {
-              # Device specific Home Manager Modules
-              home-manager.users.${user}.imports = baseUserModules ++ desktopUserModules ++ [
+              home-manager.users.${user}.imports = baseUserModules ++ desktopUserModules ++ gamingUserModules ++ [
               ];
-              # Issue with Plasma Manager, has to be imported in a special way
+              home-manager.extraSpecialArgs = { inherit user; inherit hostName;};
+              home-manager.sharedModules =  externalUserModules;
+            }
+          ];
+        };
+      konsole =
+        let
+          user = "deck";
+          hostName = "konsole";
+        in
+        lib.nixosSystem {
+          specialArgs = {inherit user; inherit hostName; inherit system;};
+          modules = externalSystemModules ++ baseSystemModules ++ desktopSystemModules ++ gamingSystemModules ++ [
+            ./hosts/${hostName}
+            ./modules/system/jovian-${hostName}
+            {
+              home-manager.users.${user}.imports = baseUserModules ++ desktopUserModules ++ gamingUserModules ++ [
+              ];
+              home-manager.extraSpecialArgs = { inherit user; inherit hostName;};
+              home-manager.sharedModules =  externalUserModules;
+            }
+          ];
+        };
+      steamdeck =
+        let
+          user = "deck";
+          hostName = "steamdeck";
+        in
+        lib.nixosSystem {
+          specialArgs = {inherit user; inherit hostName; inherit system;};
+          modules = externalSystemModules ++ baseSystemModules ++ desktopSystemModules ++ gamingSystemModules ++ [
+            ./hosts/${hostName}
+            ./modules/system/jovian-${hostName}
+            {
+              home-manager.users.${user}.imports = baseUserModules ++ desktopUserModules ++ gamingUserModules ++ [
+              ];
+              home-manager.extraSpecialArgs = { inherit user; inherit hostName;};
+              home-manager.sharedModules =  externalUserModules;
+            }
+          ];
+        };
+      server =
+        let
+          user = "administrator";
+          hostName = "server";
+        in
+        lib.nixosSystem {
+          specialArgs = {inherit user; inherit hostName; inherit system;};
+          modules = externalSystemModules ++ baseSystemModules ++ serverSystemModules ++ [
+            ./hosts/${hostName}
+            {
+              home-manager.users.${user}.imports = baseUserModules ++ serverUserModules ++ [
+              ];
               home-manager.extraSpecialArgs = { inherit user; inherit hostName;};
               home-manager.sharedModules =  externalUserModules;
             }
