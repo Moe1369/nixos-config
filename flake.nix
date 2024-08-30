@@ -24,7 +24,6 @@
     jovian,
     plasma-manager,
     nix-flatpak,
-    lanzaboote,
     ...
   }:
   let
@@ -66,13 +65,7 @@
           hostName = "workstation";
         in
         lib.nixosSystem {
-          specialArgs = {
-            inherit systemModules;
-            inherit userModules;
-            inherit system;
-            inherit user;
-            inherit hostName;
-          };
+          specialArgs = {inherit user; inherit hostName;};
           system = system;
           # Device specific NixOS Modules
           modules = systemModules ++ [
@@ -109,13 +102,7 @@
           hostName = "steamdeck";
         in
         lib.nixosSystem {
-          specialArgs = {
-            inherit systemModules;
-            inherit userModules;
-            inherit system;
-            inherit user;
-            inherit hostName;
-          };
+          specialArgs = {inherit user; inherit hostName;};
           system = system;
           # Device specific NixOS Modules
           modules = systemModules ++ [
@@ -150,13 +137,7 @@
           hostName = "konsole";
         in
         lib.nixosSystem {
-          specialArgs = {
-            inherit systemModules;
-            inherit userModules;
-            inherit system;
-            inherit user;
-            inherit hostName;
-          };
+          specialArgs = {inherit user; inherit hostName;};
           system = system;
           # Device specific NixOS Modules
           modules = systemModules ++ [
@@ -191,13 +172,7 @@
           hostName = "server";
         in
         lib.nixosSystem {
-          specialArgs = {
-            inherit systemModules;
-            inherit userModules;
-            inherit system;
-            inherit user;
-            inherit hostName;
-          };
+          specialArgs = {inherit user; inherit hostName;};
           system = system;
           # Device specific NixOS Modules
           modules = systemModules ++ [
