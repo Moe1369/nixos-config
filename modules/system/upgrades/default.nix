@@ -2,7 +2,7 @@
 {
 nix.optimise.automatic = true;
 nix.settings.auto-optimise-store = true;
-nix.optimise.dates = "03:45";
+nix.optimise.dates = [ "03:45" ];
 system.autoUpgrade = {
     enable = true;
     dates = "04:00";
