@@ -7,6 +7,7 @@
     desktopSession = "plasma";
   };
   jovian.decky-loader.enable = true;
+  jovian.decky-loader.user = user;
   jovian.devices.steamdeck = {
     enable = true;
     autoUpdate = true;
