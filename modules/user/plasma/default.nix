@@ -5,15 +5,17 @@
   home.file.".config/haruna/haruna.conf".source = ../../../dotfiles/haruna.conf;
   home.file.".local/share/color-schemes/BreezeDunkelFarbe.colors".source = ../../../dotfiles/BreezeDunkelFarbe.colors;
   home.file.".local/share/color-schemes/BreezeHellFarbe.colors".source = ../../../dotfiles/BreezeHellFarbe.colors;
-  home.file.".local/share/user-places.xbel".source = ../../../dotfiles/user-places.xbel;
   home.file.".config/kwinrulesrc".source = ../../../dotfiles/kwinrulesrc;
 
+  # Use user Variables
+  #home.file.".local/share/user-places.xbel".source = ../../../dotfiles/user-places.xbel;
 
-  home.file.".config/kglobalshortcutsrc".source = ../../../dotfiles/kglobalshortcutsrc;
-  home.file.".config/kwinrc".source = ../../../dotfiles/kwinrc;
 
-  home.file.".config/kglobalshortcutsrc".force = true;
-  home.file.".config/kwinrc".force = true;
+  # Immutable Issues
+  #home.file.".config/kglobalshortcutsrc".source = ../../../dotfiles/kglobalshortcutsrc;
+  #home.file.".config/kwinrc".source = ../../../dotfiles/kwinrc;
+  #home.file.".config/kglobalshortcutsrc".force = true;
+  #home.file.".config/kwinrc".force = true;
 
   # Wallpaper
   home.file."Bilder/Wallpaper/wallpaper-nix.png".source = ../../../assets/wallpaper-nix.png;
