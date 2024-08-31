@@ -74,7 +74,7 @@
       lengthMode = "fit";
       hiding = "dodgewindows";
       widgets  = [
-        "org.kde.plasma.kickoff"
+        "org.kde.plasma.kickerdash"
         "org.kde.plasma.icontasks"
       ];
       }
