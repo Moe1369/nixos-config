@@ -1,18 +1,13 @@
 { user, hostName, ... }:
 {
-  # Configuration Files
   home.file."Code/.directory".source = ../../../dotfiles/directory;
   home.file.".config/haruna/haruna.conf".source = ../../../dotfiles/haruna.conf;
   home.file.".local/share/color-schemes/BreezeDunkelFarbe.colors".source = ../../../dotfiles/BreezeDunkelFarbe.colors;
   home.file.".local/share/color-schemes/BreezeHellFarbe.colors".source = ../../../dotfiles/BreezeHellFarbe.colors;
   home.file.".config/kwinrulesrc".source = ../../../dotfiles/kwinrulesrc;
-
-  # Use user Variables
   home.file.".local/share/user-places.xbel".source = ../../../dotfiles/user-places.xbel-${hostName};
   home.file.".config/kglobalshortcutsrc".source = ../../../dotfiles/kglobalshortcutsrc;
   home.file.".config/kwinrc".source = ../../../dotfiles/kwinrc;
-
-  # Wallpaper
   home.file."Bilder/Wallpaper/wallpaper-nix.png".source = ../../../assets/wallpaper-nix.png;
   home.file."Bilder/Wallpaper/wallpaper-asia.jpg".source = ../../../assets/wallpaper-asia.jpg;
   home.file."Bilder/Wallpaper/wallpaper-kame.jpg".source = ../../../assets/wallpaper-kame.jpg;
@@ -23,9 +18,6 @@
 
 
   programs.plasma = {
-
-
-
     enable = true;
     workspace.wallpaperSlideShow.path = /home/${user}/Bilder/Wallpaper;
     workspace.wallpaperSlideShow.interval = 864000;
@@ -33,12 +25,8 @@
     kscreenlocker.lockOnResume = false;
     kscreenlocker.lockOnStartup = false;
     kscreenlocker.passwordRequired = false;
-
-
-
     kwin.titlebarButtons.left = ["keep-above-windows"];
     kwin.titlebarButtons.right = ["minimize" "maximize" "close"];
-
     fonts = {
     menu.family = "IBM Plex Sans";
     menu.pointSize = 10;
@@ -59,15 +47,12 @@
     windowTitle.pointSize = 12;
     windowTitle.weight = "medium";
     };
-
     workspace.cursor = {
       size = 24;
       theme = "Breeze_Light";
     };
-
     workspace.lookAndFeel = "org.kde.breeze.desktop";
     workspace.colorScheme = "BreezeHellFarbe";
-
     panels = [
     {
       location = "bottom";
