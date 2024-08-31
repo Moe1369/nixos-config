@@ -3,9 +3,9 @@
 services = {
   syncthing = {
     enable = true;
-    user = user;
-    dataDir = "/home/${user}/Sync";
-    configDir = "/home/${user}/.config/syncthing";
+    user = "root";
+    dataDir = "/${user}/Sync";
+    configDir = "/${user}/.config/syncthing";
     overrideDevices = true;
     overrideFolders = true;
     settings = {
