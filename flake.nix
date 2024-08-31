@@ -58,7 +58,6 @@
         ./modules/system/lact
         ./modules/system/retrodeck
         ./modules/system/steam
-        ./modules/system/syncthing
     ];
 
     serverSystemModules = [
@@ -88,6 +87,7 @@
           modules = externalSystemModules ++ baseSystemModules ++ desktopSystemModules ++ displaySystemModules ++ gamingSystemModules ++ [
             ./hosts/${hostName}
             ./modules/system/jovian-${hostName}
+            ./modules/system/syncthing-${hostName}
             {
               home-manager.users.${user}.imports = baseUserModules ++ desktopUserModules ++ gamingUserModules ++ [
               ];
@@ -106,6 +106,7 @@
           modules = externalSystemModules ++ baseSystemModules ++ desktopSystemModules ++ gamingSystemModules ++ [
             ./hosts/${hostName}
             ./modules/system/jovian-${hostName}
+            ./modules/system/syncthing-${hostName}
             {
               home-manager.users.${user}.imports = baseUserModules ++ desktopUserModules ++ gamingUserModules ++ [
               ];
@@ -124,6 +125,7 @@
           modules = externalSystemModules ++ baseSystemModules ++ desktopSystemModules ++ gamingSystemModules ++ [
             ./hosts/${hostName}
             ./modules/system/jovian-${hostName}
+            ./modules/system/syncthing-${hostName}
             {
               home-manager.users.${user}.imports = baseUserModules ++ desktopUserModules ++ gamingUserModules ++ [
               ];
@@ -141,6 +143,7 @@
           specialArgs = {inherit user; inherit hostName; inherit system;};
           modules = externalSystemModules ++ baseSystemModules ++ serverSystemModules ++ [
             ./hosts/${hostName}
+            ./modules/system/syncthing-${hostName}
             {
               home-manager.users.${user}.imports = baseUserModules ++ serverUserModules ++ [
               ];

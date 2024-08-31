@@ -1,5 +1,7 @@
 { user, ... }:
 {
+networking.firewall.allowedTCPPorts = [ 8384 22000 ];
+networking.firewall.allowedUDPPorts = [ 22000 21027 ];
 services = {
   syncthing = {
     enable = true;
@@ -11,12 +13,11 @@ services = {
     settings = {
       devices = {
         "workstation" = { id = "3TLJKSV-QURWERW-PZ7FUI4-LXL22PU-CFXXWRN-UBWTSPK-BJLHVWD-VMHEOQ2"; };
-        "steamdeck" = { id = "WOVNOIM-PCQX56E-WUWRCFO-7JFBAWF-QCE564I-4KXAHYW-ONZHHOT-DPHCEQ6"; };
       };
       folders = {
         "Decky-Loader" = {
           path = "/var/lib/decky-loader";
-          devices = [ "workstation" "steamdeck"];
+          devices = [ "workstation" ];
         };
       };
     };
