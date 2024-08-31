@@ -9,7 +9,8 @@
 
   # Use user Variables
   home.file.".local/share/user-places.xbel".source = ../../../dotfiles/user-places.xbel-${hostName};
-
+  home.file.".config/kglobalshortcutsrc".source = ../../../dotfiles/kglobalshortcutsrc;
+  home.file.".config/kwinrc".source = ../../../dotfiles/kwinrc;
 
   # Wallpaper
   home.file."Bilder/Wallpaper/wallpaper-nix.png".source = ../../../assets/wallpaper-nix.png;
@@ -23,8 +24,6 @@
 
   programs.plasma = {
 
-    file.".config/kglobalshortcutsrc".source = ../../../dotfiles/kglobalshortcutsrc;
-    file.".config/kwinrc".source = ../../../dotfiles/kwinrc;
 
 
     enable = true;
