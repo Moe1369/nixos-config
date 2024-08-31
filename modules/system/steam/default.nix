@@ -6,7 +6,7 @@
     description = "Open Steam in the background at boot";
     serviceConfig = {
       ExecStart = "${pkgs.steam}/bin/steam -nochatui -nofriendsui -silent %U";
-      wantedBy = [ "graphical-session.target" ];
+      wantedBy= [ "default.target" ];
       Restart = "on-failure";
       RestartSec = "5s";
     };
