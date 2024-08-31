@@ -23,4 +23,5 @@
     kdePackages.ksystemlog
     kdePackages.partitionmanager
     ]);
+
 }

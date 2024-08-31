@@ -15,19 +15,19 @@
     };
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
-    kostek001-pkgs = {
-      url = "github:kostek001/pkgs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
-  outputs = { nixpkgs, home-manager, plasma-manager, jovian, nix-flatpak, kostek001-pkgs, ... }:
+  outputs = { nixpkgs, home-manager, plasma-manager, jovian, nix-flatpak, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
     lib = nixpkgs.lib;
     # External Modules
-    externalSystemModules = [ home-manager.nixosModules.home-manager jovian.nixosModules.jovian nix-flatpak.nixosModules.nix-flatpak kostek001-pkgs.nixosModules.kostek001-pkgs ];
-    externalUserModules = [ plasma-manager.homeManagerModules.plasma-manager];
+    externalSystemModules = [
+      home-manager.nixosModules.home-manager
+      jovian.nixosModules.jovian
+      nix-flatpak.nixosModules.nix-flatpak
+      ];
+    externalUserModules = [ plasma-manager.homeManagerModules.plasma-manager ];
     # System Module groups
     baseSystemModules = [
         ./modules/system/apps-shell
