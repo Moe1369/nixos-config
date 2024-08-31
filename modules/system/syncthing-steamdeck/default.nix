@@ -12,7 +12,7 @@ services = {
     overrideFolders = true;
     settings = {
       devices = {
-        "workstation" = { id = "JKW7OC4-WUQJS3V-M7UYBCI-2T52P5L-HT5GP6F-FDANKRZ-SFBOJ2S-6G5A4QQ"; };
+        "workstation" = { id = "3ZJ5HJI-MEYRN5Y-WHA4CAB-M3WI33G-CFNUSXK-G6RQMFZ-C3QNCV4-JM7LPAO"; };
       };
       folders = {
         "Decky-Loader" = {
