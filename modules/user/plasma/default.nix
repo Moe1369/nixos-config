@@ -8,7 +8,7 @@
   home.file.".config/kwinrulesrc".source = ../../../dotfiles/kwinrulesrc;
 
   # Use user Variables
-  home.file.".local/share/user-places.xbel-${hostName}".source = ../../../dotfiles/user-places.xbel;
+  home.file.".local/share/user-places.xbel".source = ../../../dotfiles/user-places.xbel-${hostName};
 
 
   # Wallpaper
