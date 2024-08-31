@@ -8,6 +8,7 @@
   home.file.".local/share/user-places.xbel".source = ../../../dotfiles/user-places.xbel-${hostName};
   home.file.".config/kglobalshortcutsrc".source = ../../../dotfiles/kglobalshortcutsrc;
   home.file.".config/kwinrc".source = ../../../dotfiles/kwinrc;
+  home.file.".config/krunnerrc".source = ../../../dotfiles/krunnerrc;
   home.file."Bilder/Wallpaper/wallpaper-nix.png".source = ../../../assets/wallpaper-nix.png;
   home.file."Bilder/Wallpaper/wallpaper-asia.jpg".source = ../../../assets/wallpaper-asia.jpg;
   home.file."Bilder/Wallpaper/wallpaper-kame.jpg".source = ../../../assets/wallpaper-kame.jpg;
@@ -18,15 +19,13 @@
 
 
   programs.plasma = {
-    enable = true;
+    enable = false;
     workspace.wallpaperSlideShow.path = /home/${user}/Bilder/Wallpaper;
     workspace.wallpaperSlideShow.interval = 864000;
     kscreenlocker.appearance.wallpaper = "/home/${user}/Bilder/Wallpaper/wallpaper-nix.png";
     kscreenlocker.lockOnResume = false;
     kscreenlocker.lockOnStartup = false;
     kscreenlocker.passwordRequired = false;
-    kwin.titlebarButtons.left = ["keep-above-windows"];
-    kwin.titlebarButtons.right = ["minimize" "maximize" "close"];
     fonts = {
     menu.family = "IBM Plex Sans";
     menu.pointSize = 10;
