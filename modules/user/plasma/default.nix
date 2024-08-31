@@ -11,12 +11,6 @@
   #home.file.".local/share/user-places.xbel".source = ../../../dotfiles/user-places.xbel;
 
 
-  # Immutable Issues
-  #home.file.".config/kglobalshortcutsrc".source = ../../../dotfiles/kglobalshortcutsrc;
-  #home.file.".config/kwinrc".source = ../../../dotfiles/kwinrc;
-  #home.file.".config/kglobalshortcutsrc".force = true;
-  #home.file.".config/kwinrc".force = true;
-
   # Wallpaper
   home.file."Bilder/Wallpaper/wallpaper-nix.png".source = ../../../assets/wallpaper-nix.png;
   home.file."Bilder/Wallpaper/wallpaper-asia.jpg".source = ../../../assets/wallpaper-asia.jpg;
@@ -29,10 +23,19 @@
 
   programs.plasma = {
 
+    file.".config/kglobalshortcutsrc".source = ../../../dotfiles/kglobalshortcutsrc;
+    file.".config/kwinrc".source = ../../../dotfiles/kwinrc;
+
+
     enable = true;
     workspace.wallpaperSlideShow.path = /home/${user}/Bilder/Wallpaper;
     workspace.wallpaperSlideShow.interval = 864000;
     kscreenlocker.appearance.wallpaper = "/home/${user}/Bilder/Wallpaper/wallpaper-nix.png";
+    kscreenlocker.lockOnResume = false;
+    kscreenlocker.lockOnStartup = false;
+    kscreenlocker.passwordRequired = false;
+
+
 
     kwin.titlebarButtons.left = ["keep-above-windows"];
     kwin.titlebarButtons.right = ["minimize" "maximize" "close"];
@@ -60,9 +63,10 @@
 
     workspace.cursor = {
       size = 24;
-      theme = "Breeze_Snow";
+      theme = "Breeze_Light";
     };
 
+    workspace.lookAndFeel = "org.kde.breeze.desktop";
     workspace.colorScheme = "BreezeHellFarbe";
 
     panels = [
