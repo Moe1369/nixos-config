@@ -12,7 +12,7 @@ services = {
     overrideFolders = true;
     settings = {
       devices = {
-        "steamdeck" = { id = "FRVFN5U-CAJCDOR-CXOCKGI-FHHVCYP-MYVCVPK-LN53JOU-YFYB5HZ-5W4IMAW"; };
+        "steamdeck" = { id = "G75YXSQ-GBB2F3T-25G4WNI-YYR3NFO-6DRWLPC-CDYEOCZ-QXRGSSA-E4MP7QT"; };
       };
       folders = {
         "Decky-Loader" = {
