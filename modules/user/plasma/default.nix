@@ -19,7 +19,7 @@
 
 
   programs.plasma = {
-    enable = false;
+    enable = true;
     immutableByDefault = false;
     workspace.wallpaperSlideShow.path = /home/${user}/Bilder/Wallpaper;
     workspace.wallpaperSlideShow.interval = 864000;
