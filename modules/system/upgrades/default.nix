@@ -16,6 +16,6 @@
             "-L"
             "--commit-lock-file"
         ];
-        allowReboot = true;
+        allowReboot = false;
     };
 }
