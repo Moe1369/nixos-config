@@ -77,7 +77,8 @@ dconf.settings = {
 # Mutter Settings
 dconf.settings = {
    "org/gnome/mutter" = {
-   edge-tiling = true;
+     edge-tiling = true;
+     dynamic-workspaces = true;
    };
   };
 # Customization
