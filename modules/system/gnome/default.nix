@@ -14,6 +14,8 @@
   ];
   # Don't install unneeded applications
   environment.gnome.excludePackages = (with pkgs; [
+  xterm
+  gnome-software
   gnome-photos
   gnome-tour
   gedit

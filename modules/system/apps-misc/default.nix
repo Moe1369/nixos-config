@@ -6,6 +6,5 @@
     pciutils
     aha
     vesktop
-    google-chrome
     ]);
 }

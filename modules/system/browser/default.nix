@@ -1,7 +1,7 @@
 { ... }:
 {
-  programs.firefox = {
-    enable = true;
-    languagePacks = ["de"];
-  };
+  environment.systemPackages =
+   (with pkgs; [
+    google-chrome
+    ]);
 }
