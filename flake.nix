@@ -48,10 +48,10 @@
         ./modules/system/apps-misc
         ./modules/system/browser
         ./modules/system/flatpak
-        ./modules/system/plasma
+        ./modules/system/gnome
     ];
     displaySystemModules = [
-        ./modules/system/sddm
+        ./modules/system/gdm
     ];
     gamingSystemModules = [
         ./modules/system/controller
@@ -70,7 +70,7 @@
         ./modules/user/shell
     ];
     desktopUserModules = [
-        ./modules/user/plasma
+        ./modules/user/gnome
     ];
     gamingUserModules = [];
     serverUserModules = [];
