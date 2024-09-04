@@ -16,8 +16,6 @@
   home.file."Bilder/Wallpaper/wallpaper-sword.jpg".source = ../../../assets/wallpaper-sword.jpg;
   home.file."Bilder/Wallpaper/wallpaper-clouds.png".source = ../../../assets/wallpaper-clouds.png;
 
-
-
   programs.plasma = {
     enable = true;
     immutableByDefault = false;
