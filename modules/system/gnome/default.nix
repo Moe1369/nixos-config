@@ -9,13 +9,19 @@
   services.gnome.tracker.enable = true;
   environment.systemPackages = with pkgs; [
   gnome-text-editor
+  dconf-editor
+  mission-center
+  cartridges
   gnomeExtensions.appindicator
-
   ];
   # Don't install unneeded applications
   environment.gnome.excludePackages = (with pkgs; [
   xterm
   gnome-software
+  gnome-contacts
+  gnome-connections
+  gnome-maps
+  gnome-weather
   gnome-photos
   gnome-tour
   gedit
