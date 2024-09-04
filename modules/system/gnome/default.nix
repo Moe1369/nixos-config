@@ -14,7 +14,10 @@
   cartridges
   gnome-tweaks
   adw-gtk3
+  adwsteamgtk
+  gdm-settings
   gnomeExtensions.appindicator
+  gnomeExtensions.rounded-window-corners-reborn
   ];
   # Don't install unneeded applications
   environment.gnome.excludePackages = (with pkgs; [
