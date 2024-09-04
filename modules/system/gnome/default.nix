@@ -12,6 +12,7 @@
   dconf-editor
   mission-center
   cartridges
+  gnome-tweaks
   adw-gtk3
   gnomeExtensions.appindicator
   ];
