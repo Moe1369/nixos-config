@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   # Install gnome
-  services.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
   services.xserver.enable = false;
 
   # Install Applications
@@ -16,10 +16,9 @@
   environment.gnome.excludePackages = (with pkgs; [
   gnome-photos
   gnome-tour
-  ]) ++ (with pkgs.gnome; [
+  gedit
   gnome-music
   gnome-terminal
-  gedit
   epiphany
   geary
   evince
