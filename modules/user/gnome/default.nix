@@ -77,6 +77,7 @@ dconf.settings = {
 # Mutter Settings
 dconf.settings = {
    "org/gnome/mutter" = {
+     center-new-windows = true;
      edge-tiling = true;
      dynamic-workspaces = true;
    };
