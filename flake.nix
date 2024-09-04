@@ -51,7 +51,7 @@
         ./modules/system/plasma
     ];
     displaySystemModules = [
-        ./modules/system/sddm
+        ./modules/system/gdm
     ];
     gamingSystemModules = [
         ./modules/system/controller
@@ -70,7 +70,7 @@
         ./modules/user/shell
     ];
     desktopUserModules = [
-        ./modules/user/plasma
+        ./modules/user/gnome
     ];
     gamingUserModules = [];
     serverUserModules = [];
