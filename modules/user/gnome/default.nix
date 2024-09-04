@@ -1,6 +1,6 @@
 { user, ... }:
 {
-# Hotkey Configuration
+# Global Hotkeys
 dconf.settings = {
    "org/gnome/shell/keybindings" = {
    focus-active-notification = [];
@@ -74,12 +74,13 @@ dconf.settings = {
     unmaximize = [];
    };
   };
+# Mutter Settings
 dconf.settings = {
    "org/gnome/mutter" = {
    edge-tiling = true;
-
    };
   };
+# Customization
 dconf.settings = {
    "org/gnome/desktop/interface" = {
       font-name = "IBM Plex Sans 11";
@@ -97,6 +98,7 @@ dconf.settings = {
     picture-uri = "file://" + /home/${user}/Bilder/Wallpaper/wallpaper-asia.jpg;
    };
  };
+  # Wallpaper
   home.file."Bilder/Wallpaper/wallpaper-nix.png".source = ../../../assets/wallpaper-nix.png;
   home.file."Bilder/Wallpaper/wallpaper-asia.jpg".source = ../../../assets/wallpaper-asia.jpg;
   home.file."Bilder/Wallpaper/wallpaper-kame.jpg".source = ../../../assets/wallpaper-kame.jpg;
