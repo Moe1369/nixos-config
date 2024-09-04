@@ -48,7 +48,7 @@
         ./modules/system/apps-misc
         ./modules/system/browser
         ./modules/system/flatpak
-        ./modules/system/plasma
+        ./modules/system/gnome
     ];
     displaySystemModules = [
         ./modules/system/gdm
