@@ -27,6 +27,7 @@
   gnomeExtensions.clipboard-indicator
   gnomeExtensions.wallpaper-slideshow
   gnomeExtensions.alphabetical-app-grid
+  gnomeExtensions.night-theme-switcher
   ];
   # Don't install unneeded applications
   environment.gnome.excludePackages = (with pkgs; [

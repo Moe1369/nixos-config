@@ -108,7 +108,13 @@ dconf.settings = {
     picture-uri = "file://" + /home/${user}/Bilder/Wallpaper/wallpaper-asia.jpg;
    };
  };
- 
+  dconf.settings = {
+    "org/gnome/shell/extensions/nightthemeswitcher/commands" = {
+	enabled = true;
+	sunrise = "gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3' && gsettings set org.gnome.desktop.interface color-scheme 'default'";
+	sunset = "gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark' && gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'";
+   };
+  };
   # Wallpaper
   home.file."Bilder/Wallpaper/wallpaper-nix.png".source = ../../../assets/wallpaper-nix.png;
   home.file."Bilder/Wallpaper/wallpaper-asia.jpg".source = ../../../assets/wallpaper-asia.jpg;
