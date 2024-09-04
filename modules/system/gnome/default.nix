@@ -11,7 +11,6 @@
   gnome-text-editor
   dconf-editor
   mission-center
-  gedit
   amberol
   clapper
   video-trimmer
