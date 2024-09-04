@@ -107,6 +107,7 @@ dconf.settings = {
     picture-uri = "file://" + /home/${user}/Bilder/Wallpaper/wallpaper-asia.jpg;
    };
  };
+ 
   # Wallpaper
   home.file."Bilder/Wallpaper/wallpaper-nix.png".source = ../../../assets/wallpaper-nix.png;
   home.file."Bilder/Wallpaper/wallpaper-asia.jpg".source = ../../../assets/wallpaper-asia.jpg;
