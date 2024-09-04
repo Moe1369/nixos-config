@@ -106,5 +106,5 @@ dconf.settings = {
   home.file."Bilder/Wallpaper/wallpaper-retrogirl.png".source = ../../../assets/wallpaper-retrogirl.png;
   home.file."Bilder/Wallpaper/wallpaper-sword.jpg".source = ../../../assets/wallpaper-sword.jpg;
   home.file."Bilder/Wallpaper/wallpaper-clouds.png".source = ../../../assets/wallpaper-clouds.png;
-  home.file.".face.jpg".source = ../../../assets/face.jpg;
+  home.file.".face.png".source = ../../../assets/face.png;
 }
