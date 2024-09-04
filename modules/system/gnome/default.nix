@@ -12,6 +12,7 @@
   dconf-editor
   mission-center
   cartridges
+  adw-gtk3
   gnomeExtensions.appindicator
   ];
   # Don't install unneeded applications
