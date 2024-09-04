@@ -94,6 +94,9 @@ dconf.settings = {
       border-width = -3;
       skip-libadwaita-app = false;
    };
+    "org/gnome/shell/extensions/clipboard-indicator" = {
+      toggle-menu = ["<Super>V"];
+   };
    "org/gnome/desktop/background" = {
     color-shading-type = "solid";
     picture-options = "zoom";
