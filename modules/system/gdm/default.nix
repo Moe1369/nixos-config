@@ -1,7 +1,7 @@
 { user, ... }:
 {
 services.xserver.displayManager.gdm.enable = true;
-services.xserver.displayManager.autoLogin.enable = true;
-services.xserver.displayManager.autoLogin.user = user;
+services.displayManager.autoLogin.enable = true;
+services.displayManager.autoLogin.user = user;
 
 }
