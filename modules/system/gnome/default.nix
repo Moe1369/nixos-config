@@ -9,10 +9,6 @@
   services.gnome.tracker.enable = true;
   environment.systemPackages = with pkgs; [
   gnome-text-editor
-
-  ];
-  # Install Extensions
-  environment.systemPackages = with pkgs; [
   gnomeExtensions.appindicator
 
   ];
