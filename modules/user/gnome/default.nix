@@ -91,6 +91,7 @@ dconf.settings = {
       enable-hot-corners = false;
    };
     "org/gnome/shell/extensions/rounded-window-corners-reborn" = {
+      border-width = -3;
       skip-libadwaita-app = false;
    };
    "org/gnome/desktop/background" = {

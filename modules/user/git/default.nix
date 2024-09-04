@@ -6,6 +6,7 @@
    userEmail = "mohamed@chrayed.de";
    extraConfig = {
      init.defaultBranch = "main";
+     core.editor = "re.sonny.Commit";
    };
   };
 }

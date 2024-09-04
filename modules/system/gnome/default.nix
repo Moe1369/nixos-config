@@ -11,13 +11,22 @@
   gnome-text-editor
   dconf-editor
   mission-center
+  gedit
+  amberol
+  clapper
+  video-trimmer
+  diebahn
+  commit
   cartridges
+  gnome-obfuscate
   gnome-tweaks
   adw-gtk3
   adwsteamgtk
   gdm-settings
   gnomeExtensions.appindicator
   gnomeExtensions.rounded-window-corners-reborn
+  gnomeExtensions.clipboard-indicator
+  gnomeExtensions.wallpaper-slideshow
   ];
   # Don't install unneeded applications
   environment.gnome.excludePackages = (with pkgs; [
