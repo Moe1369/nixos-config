@@ -1,8 +1,10 @@
 { user, ... }:
 {
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    autoPrune.enable = true;
+    daemon.settings.data-root =  "/docker/data-root";
+  };
+  virtualisation.oci-containers.backend = "docker";
   users.users.${user}.extraGroups = [ "docker" ];
-  virtualisation.docker.daemon.settings = {
-  data-root = "/docker/data-root";
-};
 }
