@@ -2,7 +2,7 @@
 {
 # Global Hotkeys
 dconf.settings = {
-   "org/gnome/shell/keybindings" = {
+"org/gnome/shell/keybindings" = {
    focus-active-notification = [];
    open-new-window-application-1 = [];
    open-new-window-application-2 = [];
@@ -15,9 +15,7 @@ dconf.settings = {
    open-new-window-application-9 = [];
    toggle-message-tray = ["<Super>N"];
    };
-  };
-dconf.settings = {
-   "org/gnome/settings-daemon/plugins/media-keys" = {
+"org/gnome/settings-daemon/plugins/media-keys" = {
    help = [];
    home = ["<Super>E"];
    screenreader = [];
@@ -25,9 +23,7 @@ dconf.settings = {
    magnifier-zoom-in = [];
    magnifier-zoom-out = [];
    };
-  };
-dconf.settings = {
-   "org/gnome/desktop/wm/keybindings" = {
+    "org/gnome/desktop/wm/keybindings" = {
     activate-window-menu = [];
     always-on-top = ["<Super>T"];
     begin-move = ["<Super>M"];
@@ -73,18 +69,13 @@ dconf.settings = {
     toggle-on-all-workspaces = ["<Super>S"];
     unmaximize = [];
    };
-  };
-# Mutter Settings
-dconf.settings = {
-   "org/gnome/mutter" = {
+      "org/gnome/mutter" = {
+     experimental-features = "['variable-refresh-rate']";
      center-new-windows = true;
      edge-tiling = true;
      dynamic-workspaces = true;
    };
-  };
-# Customization
-dconf.settings = {
-   "org/gnome/desktop/interface" = {
+     "org/gnome/desktop/interface" = {
       font-name = "IBM Plex Sans 11";
       document-font-name = "IBM Plex Sans 11";
       monospace-font-name = "IBM Plex Mono 11";
@@ -106,14 +97,12 @@ dconf.settings = {
     color-shading-type = "solid";
     picture-options = "zoom";
     picture-uri = "file://" + /home/${user}/Bilder/Wallpaper/wallpaper-asia.jpg;
-   };
- };
-  dconf.settings = {
-    "org/gnome/shell/extensions/nightthemeswitcher/commands" = {
+   }; 
+      "org/gnome/shell/extensions/nightthemeswitcher/commands" = {
 	enabled = true;
 	sunrise = "gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3' && gsettings set org.gnome.desktop.interface color-scheme 'default'";
 	sunset = "gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark' && gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'";
-   };
+   }; 
   };
   # Wallpaper
   home.file."Bilder/Wallpaper/wallpaper-nix.png".source = ../../../assets/wallpaper-nix.png;
