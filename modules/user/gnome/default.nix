@@ -70,7 +70,7 @@ dconf.settings = {
     unmaximize = [];
    };
       "org/gnome/mutter" = {
-     experimental-features = "['variable-refresh-rate']";
+     experimental-features = ["variable-refresh-rate"];
      center-new-windows = true;
      edge-tiling = true;
      dynamic-workspaces = true;
