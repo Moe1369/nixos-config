@@ -4,11 +4,36 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  boot.zfs.enabled = true;
+  services.zfs.autoScrub.enable = true;
 
+  fileSystems."/" =
+    { device = "zpool/root";
+      fsType = "zfs";
+    };
 
-    fileSystems."/" =
-    { device = "/dev/disk/by-partlabel/root";
-      fsType = "ext4";
+  fileSystems."/nix" =
+    { device = "zpool/nix";
+      fsType = "zfs";
+    };
+
+  fileSystems."/var" =
+    { device = "zpool/var";
+      fsType = "zfs";
+    };
+
+  fileSystems."/home" =
+    { device = "zpool/home";
+      fsType = "zfs";
+    };
+
+  fileSystems."/container" =
+    { device = "zpool/container";
+      fsType = "zfs";
+    };
+  fileSystems."/daten" =
+    { device = "zpool/daten";
+      fsType = "zfs";
     };
 
   fileSystems."/boot" =
@@ -16,9 +41,4 @@
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
-
-  swapDevices = [ {
-    device = "/var/lib/swapfile";
-    size = 16*1024;
-  }];
 }
