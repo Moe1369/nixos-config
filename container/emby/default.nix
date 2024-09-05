@@ -1,6 +1,6 @@
-{ pkgs, lib,... }:
+{ lib,... }:
 {
-  virtualisation.oci-containers.containers."ct-emby" = {
+  virtualisation.oci-containers.containers."emby" = {
     image = "emby/embyserver:beta";
     environment = {
       "GID" = "100";
@@ -14,12 +14,11 @@
     log-driver = "journald";
     extraOptions = [
       "--device=/dev/dri:/dev/dri"
-      "--network-alias=ct-emby"
-      "--network=nw-emby"
-      "--network=nw-proxy"
+      "--network-alias=emby"
+      "--network=emby"
     ];
   };
-  systemd.services."docker-ct-emby" = {
+  systemd.services."docker-emby" = {
     serviceConfig = {
       Restart = lib.mkOverride 500 "always";
       RestartMaxDelaySec = lib.mkOverride 500 "1m";
