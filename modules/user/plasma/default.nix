@@ -63,18 +63,30 @@
         "org.kde.plasma.icontasks"
       ];
       }
-    {
-      location = "bottom";
-      floating = true;
-      alignment = "right";
-      height = 36;
-      lengthMode = "fit";
-      hiding = "dodgewindows";
-      widgets  = [
-        "org.kde.plasma.systemtray"
-        "org.kde.plasma.digitalclock"
-      ];
-    }
+
+      {
+        location = "top";
+        height = 26;
+        widgets = [
+          "org.kde.plasma.appmenu"
+          "org.kde.plasma.systemtray"
+          "org.kde.plasma.digitalclock"
+        ];
+      }
+    ];
+
+#    {
+#      location = "bottom";
+#      floating = true;
+#      alignment = "right";
+#      height = 36;
+#      lengthMode = "fit";
+#      hiding = "dodgewindows";
+#      widgets  = [
+#        "org.kde.plasma.systemtray"
+#        "org.kde.plasma.digitalclock"
+#      ];
+#    }
     ];
     };
 }
