@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, user,  ... }:
 {
   services.desktopManager.plasma6.enable = true;
   services.xserver.enable = false;
@@ -22,6 +22,11 @@
     kdePackages.skanlite
     kdePackages.ksystemlog
     kdePackages.partitionmanager
+    kdePackages.plasma-browser-integration
     ]);
+
+  system.activationScripts.deleteFile = ''
+    rm -f /home/${user}/.config/kglobalshortcutsrc
+  '';
 
 }
