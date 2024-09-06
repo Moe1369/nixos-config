@@ -73,7 +73,6 @@
           "org.kde.plasma.digitalclock"
         ];
       }
-    ];
 
 #    {
 #      location = "bottom";
