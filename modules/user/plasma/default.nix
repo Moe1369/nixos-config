@@ -11,17 +11,9 @@
   home.file.".config/krunnerrc".source = ../../../dotfiles/krunnerrc;
   home.file.wallpaper = {
     recursive = true;
-    source = "Bilder/Wallpaper";
-    target = ../../../assets;
+    source = ../../../assets;
+    target = "Bilder/Wallpaper";
   };
-  #home.file."Bilder/Wallpaper/wallpaper-nix.png".source = ../../../assets/wallpaper-nix.png;
-  #home.file."Bilder/Wallpaper/wallpaper-asia.jpg".source = ../../../assets/wallpaper-asia.jpg;
-  #home.file."Bilder/Wallpaper/wallpaper-kame.jpg".source = ../../../assets/wallpaper-kame.jpg;
-  #home.file."Bilder/Wallpaper/wallpaper-retrogirl.png".source = ../../../assets/wallpaper-retrogirl.png;
-  #home.file."Bilder/Wallpaper/wallpaper-sword.jpg".source = ../../../assets/wallpaper-sword.jpg;
-  #home.file."Bilder/Wallpaper/wallpaper-clouds.png".source = ../../../assets/wallpaper-clouds.png;
-  #home.file."Bilder/Wallpaper/wallpaper-sake.jpg".source = ../../../assets/wallpaper-sake.jpg;
-  #home.file."Bilder/Wallpaper/wallpaper-street.jpg".source = ../../../assets/wallpaper-street.jpg;
 
   programs.plasma = {
     enable = true;
