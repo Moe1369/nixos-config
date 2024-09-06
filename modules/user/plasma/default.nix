@@ -55,11 +55,10 @@
       location = "bottom";
       floating = true;
       alignment = "center";
-      height = 46;
+      height = 50;
       lengthMode = "fit";
       hiding = "dodgewindows";
       widgets  = [
-        "org.kde.plasma.kickerdash"
         "org.kde.plasma.icontasks"
       ];
       }
@@ -68,7 +67,9 @@
         location = "top";
         height = 26;
         widgets = [
+          "org.kde.plasma.kickerdash"
           "org.kde.plasma.appmenu"
+          "org.kde.plasma.panelspacer"
           "org.kde.plasma.systemtray"
           "org.kde.plasma.digitalclock"
         ];
