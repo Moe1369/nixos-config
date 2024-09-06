@@ -17,7 +17,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
     agenix.url = "github:ryantm/agenix";
   };
-  outputs = { nixpkgs, home-manager, plasma-manager, jovian, nix-flatpak, agenix, ... }:
+  outputs = { nixpkgs, home-manager, plasma-manager, jovian, nix-flatpak, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
@@ -27,7 +27,6 @@
       home-manager.nixosModules.home-manager
       jovian.nixosModules.jovian
       nix-flatpak.nixosModules.nix-flatpak
-      agenix.nixosModules.agenix
       ];
     externalUserModules = [ plasma-manager.homeManagerModules.plasma-manager ];
     # System Module groups
