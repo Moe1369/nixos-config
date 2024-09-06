@@ -59,10 +59,21 @@
       lengthMode = "fit";
       hiding = "dodgewindows";
       widgets  = [
-        "org.kde.plasma.icontasks"
-      ];
+          {
+            iconTasks = {
+              launchers = [
+                "applications:org.kde.dolphin.desktop"
+                "applications:org.kde.konsole.desktop"
+                "applications:google-chrome.desktop"
+                "applications:org.kde.kwrite.desktop"
+                "applications:org.kde.kate.desktop"
+                "applications:steam.desktop"
+                "applications:vesktop.desktop"
+              ];
+            };
+          }
+        ];
       }
-
       {
         location = "top";
         height = 26;
@@ -74,19 +85,6 @@
           "org.kde.plasma.digitalclock"
         ];
       }
-
-#    {
-#      location = "bottom";
-#      floating = true;
-#      alignment = "right";
-#      height = 36;
-#      lengthMode = "fit";
-#      hiding = "dodgewindows";
-#      widgets  = [
-#        "org.kde.plasma.systemtray"
-#        "org.kde.plasma.digitalclock"
-#      ];
-#    }
     ];
     };
 }
