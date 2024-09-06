@@ -1,17 +1,5 @@
 { pkgs, ... }:
 {
-
-  systemd.user.services.steam = {
-    enable = true;
-    description = "Open Steam in the background at boot";
-    serviceConfig = {
-      ExecStart = "${pkgs.steam}/bin/steam -nochatui -nofriendsui -silent %U";
-      wantedBy= [ "default.target" ];
-      Restart = "on-failure";
-      RestartSec = "5s";
-    };
-  };
-
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;

@@ -73,7 +73,9 @@
     desktopUserModules = [
         ./modules/user/plasma
     ];
-    gamingUserModules = [];
+    gamingUserModules = [
+        ./modules/user/steam
+    ];
     serverUserModules = [];
   in
   {
