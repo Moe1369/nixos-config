@@ -15,6 +15,8 @@
   home.file."Bilder/Wallpaper/wallpaper-retrogirl.png".source = ../../../assets/wallpaper-retrogirl.png;
   home.file."Bilder/Wallpaper/wallpaper-sword.jpg".source = ../../../assets/wallpaper-sword.jpg;
   home.file."Bilder/Wallpaper/wallpaper-clouds.png".source = ../../../assets/wallpaper-clouds.png;
+  home.file."Bilder/Wallpaper/wallpaper-sake.jpg".source = ../../../assets/wallpaper-sake.jpg;
+  home.file."Bilder/Wallpaper/wallpaper-street.jpg".source = ../../../assets/wallpaper-street.jpg;
 
   programs.plasma = {
     enable = true;
