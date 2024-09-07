@@ -30,7 +30,8 @@
       ];
     externalUserModules = [ plasma-manager.homeManagerModules.plasma-manager ];
     # System Module groups
-    baseSystemModules = [
+    baseSystemModules = hostName:[
+        ./hosts/${hostName}
         ./modules/system/apps-shell
         ./modules/system/boot
         ./modules/system/devices
@@ -44,18 +45,20 @@
         ./modules/system/upgrades
         ./modules/system/users
     ];
-    desktopSystemModules = [
+    desktopSystemModules = hostName:[
         ./modules/system/ai
         ./modules/system/apps-misc
         ./modules/system/browser
         ./modules/system/flatpak
         ./modules/system/plasma
+        ./modules/system/syncthing-${hostName}
     ];
     displaySystemModules = [
         ./modules/system/sddm
     ];
-    gamingSystemModules = [
+    gamingSystemModules = hostName:[
         ./modules/system/controller
+        ./modules/system/jovian-${hostName}
         ./modules/system/lact
         ./modules/system/retrodeck
         ./modules/system/steam
@@ -87,10 +90,7 @@
         in
         lib.nixosSystem {
           specialArgs = {inherit user; inherit hostName; inherit system;};
-          modules = externalSystemModules ++ baseSystemModules ++ desktopSystemModules ++ displaySystemModules ++ gamingSystemModules ++ [
-            ./hosts/${hostName}
-            ./modules/system/jovian-${hostName}
-            ./modules/system/syncthing-${hostName}
+          modules = externalSystemModules ++ (baseSystemModules hostName) ++ (desktopSystemModules hostName) ++ displaySystemModules ++ (gamingSystemModules hostName) ++ [
             {
               home-manager.users.${user}.imports = baseUserModules ++ desktopUserModules ++ gamingUserModules ++ [
               ];
@@ -106,12 +106,9 @@
         in
         lib.nixosSystem {
           specialArgs = {inherit user; inherit hostName; inherit system;};
-          modules = externalSystemModules ++ baseSystemModules ++ desktopSystemModules ++ gamingSystemModules ++ [
-            ./hosts/${hostName}
-            ./modules/system/jovian-${hostName}
-            ./modules/system/syncthing-${hostName}
+          modules = externalSystemModules ++ (baseSystemModules hostName) ++ (desktopSystemModules hostName) ++ (gamingSystemModules hostName) ++ [
             {
-              home-manager.users.${user}.imports = baseUserModules ++ desktopUserModules ++ gamingUserModules ++ [
+              home-manager.users.${user}.imports = baseUserModules ++ desktopUserModules ++ gamingSystemModules ++ [
               ];
               home-manager.extraSpecialArgs = { inherit user; inherit hostName;};
               home-manager.sharedModules =  externalUserModules;
@@ -125,10 +122,7 @@
         in
         lib.nixosSystem {
           specialArgs = {inherit user; inherit hostName; inherit system;};
-          modules = externalSystemModules ++ baseSystemModules ++ desktopSystemModules ++ gamingSystemModules ++ [
-            ./hosts/${hostName}
-            ./modules/system/jovian-${hostName}
-            ./modules/system/syncthing-${hostName}
+          modules = externalSystemModules ++ (baseSystemModules hostName) ++ (desktopSystemModules hostName) ++ (gamingSystemModules hostName) ++ [
             {
               home-manager.users.${user}.imports = baseUserModules ++ desktopUserModules ++ gamingUserModules ++ [
               ];
@@ -144,9 +138,7 @@
         in
         lib.nixosSystem {
           specialArgs = {inherit user; inherit hostName; inherit system;};
-          modules = externalSystemModules ++ baseSystemModules ++ serverSystemModules ++ [
-            ./hosts/${hostName}
-            ./modules/system/syncthing-${hostName}
+          modules = externalSystemModules ++ (baseSystemModules hostName) ++ serverSystemModules ++ [
             {
               home-manager.users.${user}.imports = baseUserModules ++ serverUserModules ++ [
               ];
