@@ -51,6 +51,17 @@
     workspace.lookAndFeel = "org.kde.breeze.desktop";
     workspace.colorScheme = "BreezeHellFarbe";
     panels = [
+        {
+      location = "bottom";
+      floating = true;
+      alignment = "left";
+      height = 50;
+      lengthMode = "fit";
+      hiding = "dodgewindows";
+      widgets  = [
+        "org.kde.plasma.kickerdash"
+      ];
+    }
     {
       location = "bottom";
       floating = true;
