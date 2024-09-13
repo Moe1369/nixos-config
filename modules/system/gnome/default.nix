@@ -22,6 +22,7 @@
   adw-gtk3
   adwsteamgtk
   gdm-settings
+  graphite-cursors
   gnomeExtensions.appindicator
   gnomeExtensions.rounded-window-corners-reborn
   gnomeExtensions.clipboard-indicator
