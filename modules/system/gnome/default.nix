@@ -25,7 +25,10 @@
   graphite-cursors
   gnomeExtensions.appindicator
   gnomeExtensions.rounded-window-corners-reborn
+  gnomeExtensions.blur-my-shell
+  gnomeExtensions.blur-my-light-shell
   gnomeExtensions.clipboard-indicator
+  gnomeExtensions.middle-click-to-close-in-overview
   gnomeExtensions.wallpaper-slideshow
   gnomeExtensions.alphabetical-app-grid
   gnomeExtensions.night-theme-switcher
