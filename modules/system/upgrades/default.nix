@@ -13,8 +13,8 @@
             #"--update-input" "home-manager"
             #"--update-input" "jovian"
             #"--update-input" "nix-flatpak"
-            "-L"
-            "--commit-lock-file"
+            #"-L"
+            #"--commit-lock-file"
         ];
         allowReboot = false;
     };
