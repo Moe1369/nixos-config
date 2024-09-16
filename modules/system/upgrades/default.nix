@@ -9,10 +9,10 @@
         persistent = true;
         flake = "github:Moe1369/nixos-config#${hostName}";
         flags = [
-            "--update-input" "nixpkgs"
-            "--update-input" "home-manager"
-            "--update-input" "jovian"
-            "--update-input" "nix-flatpak"
+            #"--update-input" "nixpkgs"
+            #"--update-input" "home-manager"
+            #"--update-input" "jovian"
+            #"--update-input" "nix-flatpak"
             "-L"
             "--commit-lock-file"
         ];
