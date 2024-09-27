@@ -46,7 +46,7 @@
         ./modules/system/users
     ];
     desktopSystemModules = hostName:[
-        ./modules/system/ai
+        #./modules/system/ai
         ./modules/system/apps-misc
         ./modules/system/browser
         ./modules/system/flatpak
