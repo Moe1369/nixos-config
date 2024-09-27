@@ -50,7 +50,7 @@
         ./modules/system/apps-misc
         ./modules/system/browser
         ./modules/system/flatpak
-        ./modules/system/gnome
+        ./modules/system/plasma
         ./modules/system/syncthing-${hostName}
     ];
     displaySystemModules = [
@@ -74,7 +74,7 @@
         ./modules/user/shell
     ];
     desktopUserModules = [
-        ./modules/user/gnome
+        ./modules/user/plasma
     ];
     gamingUserModules = [
         ./modules/user/steam
