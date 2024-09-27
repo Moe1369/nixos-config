@@ -9,4 +9,5 @@
   jovian.decky-loader.enable = true;
   jovian.decky-loader.user = user;
   jovian.steamos.enableBluetoothConfig = true;
+  hardware.enableRedistributableFirmware = true;
 }
