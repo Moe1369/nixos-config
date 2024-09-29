@@ -108,7 +108,7 @@
           specialArgs = {inherit user; inherit hostName; inherit system;};
           modules = externalSystemModules ++ (baseSystemModules hostName) ++ (desktopSystemModules hostName) ++ (gamingSystemModules hostName) ++ [
             {
-              home-manager.users.${user}.imports = baseUserModules ++ desktopUserModules ++ gamingSystemModules ++ [
+              home-manager.users.${user}.imports = baseUserModules ++ desktopUserModules ++ gamingUserModules ++ [
               ];
               home-manager.extraSpecialArgs = { inherit user; inherit hostName;};
               home-manager.sharedModules =  externalUserModules;
