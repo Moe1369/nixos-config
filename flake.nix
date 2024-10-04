@@ -62,6 +62,7 @@
         ./modules/system/lact
         ./modules/system/retrodeck
         ./modules/system/steam
+        ./modules/system/sunshine-${hostName}
     ];
 
     serverSystemModules = [
