@@ -46,21 +46,19 @@
         ./modules/system/users
     ];
     desktopSystemModules = hostName:[
-        #./modules/system/ai
         ./modules/system/apps-misc
         ./modules/system/browser
         ./modules/system/flatpak
-        ./modules/system/plasma
+        ./modules/system/gnome
         ./modules/system/syncthing-${hostName}
     ];
     displaySystemModules = [
-        ./modules/system/sddm
+        ./modules/system/gdm
     ];
     gamingSystemModules = hostName:[
         ./modules/system/controller
         ./modules/system/jovian-${hostName}
         ./modules/system/lact
-        ./modules/system/retrodeck
         ./modules/system/steam
         ./modules/system/sunshine-${hostName}
     ];
@@ -75,7 +73,7 @@
         ./modules/user/shell
     ];
     desktopUserModules = [
-        ./modules/user/plasma
+        ./modules/user/gnome
     ];
     gamingUserModules = [
         ./modules/user/steam
