@@ -90,13 +90,13 @@ dconf.settings = {
       toggle-menu = ["<Super>V"];
    };
      "org/gnome/shell/extensions/azwallpaper" = {
-      slideshow-directory = "/home/${user}/Bilder/Wallpaper";
+      #slideshow-directory = "/home/${user}/Bilder/Wallpaper";
       slideshow-use-absolute-time-for-duration = true;
    };
    "org/gnome/desktop/background" = {
     color-shading-type = "solid";
     picture-options = "zoom";
-    picture-uri = "file://" + /home/${user}/Bilder/Wallpaper/wallpaper-asia.jpg;
+ #   picture-uri = "file://" + /home/${user}/Bilder/Wallpaper/wallpaper-asia.jpg;
    }; 
       "org/gnome/shell/extensions/nightthemeswitcher/commands" = {
 	enabled = true;
