@@ -27,16 +27,6 @@
     pywal
     ]);
 
-systemd.user.services.kdematerialyoucolors = {
-  script = ''
-    kde-material-you-colors
-  '';
-  wantedBy = [ "graphical-session.target" ];
-  partOf = [ "graphical-session.target" ];
-};
-
-
-
   system.activationScripts.deleteFile = ''
     rm -f /home/${user}/.config/kglobalshortcutsrc
   '';
