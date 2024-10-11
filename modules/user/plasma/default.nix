@@ -50,7 +50,7 @@
       theme = "Breeze_Light";
     };
     workspace.lookAndFeel = "org.kde.breeze.desktop";
-    workspace.colorScheme = "BreezeHellFarbe";
+    workspace.colorScheme = "MaterialYouLight";
     panels = [
         {
       location = "bottom";
