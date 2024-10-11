@@ -53,17 +53,6 @@
     workspace.lookAndFeel = "org.kde.breeze.desktop";
     workspace.colorScheme = "MaterialYouLight";
     panels = [
-        {
-      location = "bottom";
-      floating = true;
-      alignment = "left";
-      height = 50;
-      lengthMode = "fit";
-      hiding = "dodgewindows";
-      widgets  = [
-        "org.kde.plasma.kickerdash"
-      ];
-    }
     {
       location = "bottom";
       floating = true;
@@ -73,6 +62,15 @@
       hiding = "dodgewindows";
       widgets  = [
           {
+          name = "org.kde.plasma.kickerdash";
+          config = {
+            General = {
+              icon = "nix-snowflake-white";
+            };
+            };
+          }
+          "org.kde.plasma.marginsseparator"
+        {
             iconTasks = {
               launchers = [
                 "applications:org.kde.dolphin.desktop"
@@ -84,21 +82,19 @@
                 "applications:vesktop.desktop"
               ];
             };
+        }
+        "org.kde.plasma.marginsseparator"
+         {
+            systemTray.items = {
+              shown = [
+                "org.kde.plasma.bluetooth"
+                "org.kde.plasma.networkmanagement"
+              ];
+            };
+
           }
         ];
       }
-    {
-      location = "bottom";
-      floating = true;
-      alignment = "right";
-      height = 36;
-      lengthMode = "fit";
-      hiding = "dodgewindows";
-      widgets  = [
-        "org.kde.plasma.systemtray"
-        "org.kde.plasma.digitalclock"
-      ];
-    }
     ];
     };
 }
