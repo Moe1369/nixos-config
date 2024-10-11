@@ -9,6 +9,7 @@
   home.file.".config/kglobalshortcutsrc".source = ../../../dotfiles/kglobalshortcutsrc;
   home.file.".config/kwinrc".source = ../../../dotfiles/kwinrc;
   home.file.".config/krunnerrc".source = ../../../dotfiles/krunnerrc;
+  home.file.".config/kde-material-you-colors/config.conf".source = ../../../dotfiles/config.conf;
   home.file.wallpaper = {
     recursive = true;
     source = ../../../assets;
