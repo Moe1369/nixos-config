@@ -60,7 +60,6 @@
         ./modules/system/jovian-${hostName}
         ./modules/system/lact
         ./modules/system/steam
-        ./modules/system/sunshine-${hostName}
     ];
 
     serverSystemModules = [
