@@ -65,7 +65,7 @@
           name = "org.kde.plasma.kickerdash";
           config = {
             General = {
-              icon = "nix-snowflake-white";
+              icon = "nix-snowflake";
             };
             };
           }
