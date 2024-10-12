@@ -47,7 +47,6 @@
         ./modules/system/apps-misc
         ./modules/system/browser
         ./modules/system/plasma
-        ./modules/system/syncthing-${hostName}
     ];
     displaySystemModules = [
         ./modules/system/sddm
