@@ -13,7 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    jovian.url = "github:Jovian-Experiments/Jovian-NixOS/developmenflat";
+    jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     agenix.url = "github:ryantm/agenix";
   };
   outputs = { nixpkgs, home-manager, plasma-manager, jovian, ... }:
