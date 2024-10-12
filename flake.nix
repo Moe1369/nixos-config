@@ -13,11 +13,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
+    jovian.url = "github:Jovian-Experiments/Jovian-NixOS/developmenflat";
     agenix.url = "github:ryantm/agenix";
   };
-  outputs = { nixpkgs, home-manager, plasma-manager, jovian, nix-flatpak, ... }:
+  outputs = { nixpkgs, home-manager, plasma-manager, jovian, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
@@ -26,7 +25,6 @@
     externalSystemModules = [
       home-manager.nixosModules.home-manager
       jovian.nixosModules.jovian
-      nix-flatpak.nixosModules.nix-flatpak
       ];
     externalUserModules = [ plasma-manager.homeManagerModules.plasma-manager ];
     # System Module groups
@@ -48,7 +46,6 @@
     desktopSystemModules = hostName:[
         ./modules/system/apps-misc
         ./modules/system/browser
-        ./modules/system/flatpak
         ./modules/system/plasma
         ./modules/system/syncthing-${hostName}
     ];
