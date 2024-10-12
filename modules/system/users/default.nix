@@ -2,7 +2,7 @@
 {
   users.users.${user} = {
     isNormalUser = true;
-    name = "Mohamed Chrayed"
+    name = "Mohamed Chrayed";
     extraGroups = [ "wheel" "networkmanager" "decky" ];
   };
 }
