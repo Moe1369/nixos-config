@@ -81,7 +81,7 @@
                 "applications:steam.desktop"
                 "applications:vesktop.desktop"
                 "applications:org.kde.plasma-systemmonitor.desktop"
-                "applications:kdesystemsettings.desktop"
+                "applications:systemsettings.desktop"
               ];
             };
         }
