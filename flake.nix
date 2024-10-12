@@ -50,6 +50,7 @@
         ./modules/system/apps-misc
         ./modules/system/browser
         ./modules/system/plasma
+        ./modules/system/plasma-nur
     ];
     displaySystemModules = [
         ./modules/system/sddm
