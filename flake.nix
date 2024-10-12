@@ -15,8 +15,10 @@
     };
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     agenix.url = "github:ryantm/agenix";
+    nur.url = "github:nix-community/NUR";
+
   };
-  outputs = { nixpkgs, home-manager, plasma-manager, jovian, ... }:
+  outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
@@ -25,6 +27,7 @@
     externalSystemModules = [
       home-manager.nixosModules.home-manager
       jovian.nixosModules.jovian
+      nur.nixosModules.nur
       ];
     externalUserModules = [ plasma-manager.homeManagerModules.plasma-manager ];
     # System Module groups
