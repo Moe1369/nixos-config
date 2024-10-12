@@ -59,7 +59,7 @@
       location = "bottom";
       floating = true;
       alignment = "center";
-      height = 50;
+      height = 46;
       lengthMode = "fit";
       hiding = "dodgewindows";
       widgets  = [
@@ -95,7 +95,12 @@
                 "org.kde.plasma.networkmanagement"
               ];
             };
-
+          }
+          {
+            digitalClock = {
+              calendar.firstDayOfWeek = "monday";
+              time.format = "24h";
+            };
           }
         ];
       }
