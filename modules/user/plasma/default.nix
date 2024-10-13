@@ -78,12 +78,14 @@
                 "applications:org.kde.dolphin.desktop"
                 "applications:org.kde.konsole.desktop"
                 "applications:google-chrome.desktop"
+                "applications:org.kde.gwenview.desktop"
                 "applications:org.kde.kwrite.desktop"
                 "applications:org.kde.kate.desktop"
                 "applications:steam.desktop"
                 "applications:vesktop.desktop"
                 "applications:org.kde.plasma-systemmonitor.desktop"
                 "applications:systemsettings.desktop"
+                "applications:org.kde.filelight.desktop"
               ];
             };
         }
