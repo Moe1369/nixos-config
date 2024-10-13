@@ -1,7 +1,7 @@
 { hostName, ... }:
 {
-    nix.optimise.automatic = true;
-    nix.settings.auto-optimise-store = true;
+    nix.optimise.automatic = false;
+    nix.settings.auto-optimise-store = false;
     nix.optimise.dates = [ "03:45" ];
     system.autoUpgrade = {
         enable = true;
