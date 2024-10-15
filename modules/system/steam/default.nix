@@ -28,6 +28,7 @@
   environment.systemPackages =
    (with pkgs; [
     gamescope
+    jq
     mangohud
     protonup-qt
     ]);
