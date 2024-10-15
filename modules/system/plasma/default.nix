@@ -25,7 +25,6 @@
     kdePackages.plasma-browser-integration
     python312Packages.kde-material-you-colors
     python312Packages.pywal
-    plasmusic-toolbar
     ]);
 
   system.activationScripts.deleteFile = ''

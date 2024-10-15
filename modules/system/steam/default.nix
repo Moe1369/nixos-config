@@ -1,8 +1,5 @@
 { pkgs, ... }:
 {
-
-  programs.nix-ld.enable = true;
-
   nixpkgs.config.packageOverrides = pkgs: {
     steam = pkgs.steam.override {
       extraPkgs = pkgs: with pkgs; [
@@ -28,9 +25,6 @@
   environment.systemPackages =
    (with pkgs; [
     gamescope
-    jq
-    jql
-    python312Packages.jq
     mangohud
     protonup-qt
     ]);
