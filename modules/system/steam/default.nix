@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
-# Workaround for Warhammer Login Issue
-  security.pki.certificateFiles = [ ../../../dotfiles/api.neocoregames.com.cert ];
+
+  programs.nix-ld.enable = true;
 
   nixpkgs.config.packageOverrides = pkgs: {
     steam = pkgs.steam.override {
