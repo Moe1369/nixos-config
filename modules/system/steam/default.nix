@@ -29,6 +29,7 @@
    (with pkgs; [
     gamescope
     jq
+    jql
     mangohud
     protonup-qt
     ]);
