@@ -24,7 +24,7 @@
     kdePackages.partitionmanager
     kdePackages.plasma-browser-integration
     python312Packages.kde-material-you-colors
-    pywal
+    python312Packages.pywal
     ]);
 
   system.activationScripts.deleteFile = ''
