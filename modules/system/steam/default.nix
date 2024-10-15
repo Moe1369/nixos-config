@@ -30,6 +30,7 @@
     gamescope
     jq
     jql
+    python312Packages.jq
     mangohud
     protonup-qt
     ]);
