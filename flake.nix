@@ -1,7 +1,5 @@
 {
   description = "Moe.OS";
-
-  # Define Inputs
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager = {
@@ -21,16 +19,14 @@
   outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, ... }:
   let
     system = "x86_64-linux";
-    pkgs = import nixpkgs { inherit system; };
+    #pkgs = import nixpkgs { inherit system; };
     lib = nixpkgs.lib;
-    # External Modules
     externalSystemModules = [
       home-manager.nixosModules.home-manager
       jovian.nixosModules.jovian
       nur.nixosModules.nur
       ];
     externalUserModules = [ plasma-manager.homeManagerModules.plasma-manager ];
-    # System Module groups
     baseSystemModules = hostName:[
         ./hosts/${hostName}
         ./modules/system/apps-shell
@@ -52,7 +48,7 @@
         ./modules/system/plasma
         ./modules/system/plasma-nur
     ];
-    displaySystemModules = [
+    displaySystemModules = hostName:[
         ./modules/system/sddm
     ];
     gamingSystemModules = hostName:[
@@ -62,22 +58,21 @@
         ./modules/system/steam
     ];
 
-    serverSystemModules = [
+    serverSystemModules = hostName:[
         ./modules/system/docker
     ];
-    # USER Module groups
-    baseUserModules = [
+    baseUserModules = hostName:[
         ./modules/user/git
         ./modules/user/homeversion
         ./modules/user/shell
     ];
-    desktopUserModules = [
+    desktopUserModules = hostName:[
         ./modules/user/plasma
     ];
-    gamingUserModules = [
+    gamingUserModules = hostName:[
         ./modules/user/steam
     ];
-    serverUserModules = [];
+    serverUserModules = hostName:[];
   in
   {
     nixosConfigurations = {
@@ -88,9 +83,9 @@
         in
         lib.nixosSystem {
           specialArgs = {inherit user; inherit hostName; inherit system;};
-          modules = externalSystemModules ++ (baseSystemModules hostName) ++ (desktopSystemModules hostName) ++ displaySystemModules ++ (gamingSystemModules hostName) ++ [
+          modules = (externalSystemModules hostName) ++ (baseSystemModules hostName) ++ (desktopSystemModules hostName) ++ (displaySystemModules hostName) ++ (gamingSystemModules hostName) ++ [
             {
-              home-manager.users.${user}.imports = baseUserModules ++ desktopUserModules ++ gamingUserModules ++ [
+              home-manager.users.${user}.imports = (baseUserModules hostName) ++ (desktopUserModules hostName) ++ (gamingUserModules hostName)++ [
               ];
               home-manager.extraSpecialArgs = { inherit user; inherit hostName;};
               home-manager.sharedModules =  externalUserModules;
@@ -104,9 +99,9 @@
         in
         lib.nixosSystem {
           specialArgs = {inherit user; inherit hostName; inherit system;};
-          modules = externalSystemModules ++ (baseSystemModules hostName) ++ (desktopSystemModules hostName) ++ (gamingSystemModules hostName) ++ [
+          modules = (externalSystemModules hostName) ++ (baseSystemModules hostName) ++ (desktopSystemModules hostName) ++ (gamingSystemModules hostName) ++ [
             {
-              home-manager.users.${user}.imports = baseUserModules ++ desktopUserModules ++ gamingUserModules ++ [
+              home-manager.users.${user}.imports = (baseUserModules hostName) ++ (desktopUserModules hostName) ++ (gamingUserModules hostName) ++ [
               ];
               home-manager.extraSpecialArgs = { inherit user; inherit hostName;};
               home-manager.sharedModules =  externalUserModules;
@@ -120,9 +115,9 @@
         in
         lib.nixosSystem {
           specialArgs = {inherit user; inherit hostName; inherit system;};
-          modules = externalSystemModules ++ (baseSystemModules hostName) ++ (desktopSystemModules hostName) ++ (gamingSystemModules hostName) ++ [
+          modules = (externalSystemModules hostName) ++ (baseSystemModules hostName) ++ (desktopSystemModules hostName) ++ (gamingSystemModules hostName) ++ [
             {
-              home-manager.users.${user}.imports = baseUserModules ++ desktopUserModules ++ gamingUserModules ++ [
+              home-manager.users.${user}.imports = (baseUserModules hostName) ++ (desktopUserModules hostName) ++ (gamingUserModules hostName) ++ [
               ];
               home-manager.extraSpecialArgs = { inherit user; inherit hostName;};
               home-manager.sharedModules =  externalUserModules;
@@ -136,9 +131,9 @@
         in
         lib.nixosSystem {
           specialArgs = {inherit user; inherit hostName; inherit system;};
-          modules = externalSystemModules ++ (baseSystemModules hostName) ++ serverSystemModules ++ [
+          modules = externalSystemModules ++ (baseSystemModules hostName) ++ (serverSystemModules hostName) ++ [
             {
-              home-manager.users.${user}.imports = baseUserModules ++ serverUserModules ++ [
+              home-manager.users.${user}.imports = (baseUserModules hostName) ++ (serverUserModules hostName) ++ [
               ];
               home-manager.extraSpecialArgs = { inherit user; inherit hostName;};
               home-manager.sharedModules =  externalUserModules;
