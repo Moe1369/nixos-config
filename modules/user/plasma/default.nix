@@ -29,7 +29,7 @@
     kscreenlocker.lockOnStartup = false;
     kscreenlocker.passwordRequired = false;
     powerdevil.AC.dimDisplay.enable = false;
-    programs.plasma.powerdevil.AC.turnOffDisplay.idleTimeoutWhenLocked = 600;
+    powerdevil.AC.turnOffDisplay.idleTimeoutWhenLocked = 600;
     fonts = {
     menu.family = "IBM Plex Sans";
     menu.pointSize = 10;
