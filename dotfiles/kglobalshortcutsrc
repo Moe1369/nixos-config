@@ -224,7 +224,7 @@ powerProfile=Battery,Battery\tMeta+B,Energieprofil wechseln
 
 [plasmashell]
 _k_friendly_name=plasmashell
-activate application launcher=Alt+F1,Meta\tAlt+F1,Activate Application Launcher
+activate application launcher=Meta,Activate Application Launcher
 activate task manager entry 1=Meta+1,Meta+1,Fensterleisteneintrag 1 aktivieren
 activate task manager entry 10=Meta+0,Meta+0,Fensterleisteneintrag 10 aktivieren
 activate task manager entry 2=Meta+2,Meta+2,Fensterleisteneintrag 2 aktivieren
@@ -257,7 +257,7 @@ toggle do not disturb=none,,Nicht stören umschalten
 _launch=Meta+Return
 
 [services][org.kde.krunner.desktop]
-_launch=Meta\tAlt+F2\tSearch
+_launch=Alt+Space
 
 [services][org.kde.plasma.emojier.desktop]
 _launch=none
