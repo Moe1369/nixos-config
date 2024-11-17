@@ -66,7 +66,7 @@
       hiding = "dodgewindows";
       widgets  = [
           {
-          name = "org.kde.plasma.kickerdash";
+          name = "org.kde.plasma.kickoff";
           config = {
             General = {
               icon = "nix-snowflake";
