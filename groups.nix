@@ -13,7 +13,6 @@
       ./hosts/server
     ];
     base = [
-      ./modules/system/cachix
       ./modules/system/apps-shell
       ./modules/system/boot
       ./modules/system/devices
