@@ -1,5 +1,8 @@
 {
   system = {
+    workstation = [
+      ./hosts/workstation
+    ];
     base = [
       ./modules/system/apps-shell
       ./modules/system/boot
@@ -37,7 +40,7 @@
       ./modules/system/lact
       ./modules/system/steam
     ];
-    server = [
+    container = [
       ./modules/system/docker
     ];
   };
@@ -54,6 +57,6 @@
     gaming = [
       ./modules/user/steam
     ];
-    server = [];
+    container = [];
   };
 }

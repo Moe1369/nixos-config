@@ -46,7 +46,7 @@
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
-            ./hosts/${hostName} ++
+            groups.system.workstation ++
             externalSystemModules ++
             groups.system.base ++
             groups.system.plasma ++
@@ -71,7 +71,7 @@
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
-            ./hosts/${hostName} ++
+            groups.system.konsole ++
             externalSystemModules ++
             groups.system.base ++
             groups.system.plasma ++
@@ -96,7 +96,7 @@
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
-            ./hosts/${hostName} ++
+            groups.system.steamdeck ++
             externalSystemModules ++
             groups.system.base ++
             groups.system.plasma ++
@@ -121,14 +121,14 @@
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
-            ./hosts/${hostName} ++
+            groups.system.server ++
             externalSystemModules ++
             groups.system.base ++
-            groups.system.server ++ [
+            groups.system.container ++ [
               {
                 home-manager.users.${user}.imports =
                   groups.user.base ++
-                  groups.user.server;
+                  groups.user.container;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = externalUserModules;
               }

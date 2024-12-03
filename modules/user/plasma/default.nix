@@ -22,8 +22,8 @@
   programs.plasma = {
     enable = true;
     immutableByDefault = false;
-    workspace.wallpaperSlideShow.path = /home/${user}/Bilder/Wallpaper;
-    workspace.wallpaperSlideShow.interval = 864000;
+    #workspace.wallpaperSlideShow.path = /home/${user}/Bilder/Wallpaper;
+    #workspace.wallpaperSlideShow.interval = 864000;
     kscreenlocker.appearance.wallpaper = "/home/${user}/Bilder/Wallpaper/wallpaper-nix.png";
     kscreenlocker.lockOnResume = false;
     kscreenlocker.lockOnStartup = false;
