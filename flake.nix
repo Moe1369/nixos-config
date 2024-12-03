@@ -46,11 +46,12 @@
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
+            ./hosts/${hostName} ++
             externalSystemModules ++
-            (groups.system.base hostName) ++
-            (groups.system.plasma hostName) ++
+            groups.system.base ++
+            groups.system.plasma ++
             groups.system.sddm ++
-            (groups.system.gaming hostName) ++ [
+            groups.system.gaming ++ [
               {
                 home-manager.users.${user}.imports =
                   groups.user.base ++
@@ -70,11 +71,12 @@
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
+            ./hosts/${hostName} ++
             externalSystemModules ++
-            (groups.system.base hostName) ++
-            (groups.system.plasma hostName) ++
+            groups.system.base ++
+            groups.system.plasma ++
             groups.system.sddm ++
-            (groups.system.gaming hostName) ++ [
+            groups.system.gaming ++ [
               {
                 home-manager.users.${user}.imports =
                   groups.user.base ++
@@ -94,11 +96,12 @@
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
+            ./hosts/${hostName} ++
             externalSystemModules ++
-            (groups.system.base hostName) ++
-            (groups.system.plasma hostName) ++
+            groups.system.base ++
+            groups.system.plasma ++
             groups.system.sddm ++
-            (groups.system.gaming hostName) ++ [
+            groups.system.gaming ++ [
               {
                 home-manager.users.${user}.imports =
                   groups.user.base ++
@@ -118,8 +121,9 @@
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
+            ./hosts/${hostName} ++
             externalSystemModules ++
-            (groups.system.base hostName) ++
+            groups.system.base ++
             groups.system.server ++ [
               {
                 home-manager.users.${user}.imports =

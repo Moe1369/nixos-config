@@ -1,7 +1,6 @@
 {
   system = {
-    base = hostName: [
-      ./hosts/${hostName}
+    base = [
       ./modules/system/apps-shell
       ./modules/system/boot
       ./modules/system/devices
@@ -15,12 +14,12 @@
       ./modules/system/upgrades
       ./modules/system/users
     ];
-    gnome = hostName: [
+    gnome = [
       ./modules/system/apps-misc
       ./modules/system/browser
       ./modules/system/gnome
     ];
-    plasma = hostName: [
+    plasma = [
       ./modules/system/apps-misc
       ./modules/system/browser
       ./modules/system/plasma
@@ -32,9 +31,9 @@
     sddm = [
       ./modules/system/sddm
     ];
-    gaming = hostName: [
+    gaming = [
       ./modules/system/controller
-      ./modules/system/jovian-${hostName}
+      ./modules/system/jovian-workstation
       ./modules/system/lact
       ./modules/system/steam
     ];
@@ -43,7 +42,6 @@
     ];
   };
 
-  # Define grouped modules for user configuration
   user = {
     base = [
       ./modules/user/git
