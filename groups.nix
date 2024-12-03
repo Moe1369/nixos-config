@@ -3,6 +3,15 @@
     workstation = [
       ./hosts/workstation
     ];
+    konsole = [
+      ./hosts/konsole
+    ];
+    steamdeck = [
+      ./hosts/steamdeck
+    ];
+    server = [
+      ./hosts/server
+    ];
     base = [
       ./modules/system/apps-shell
       ./modules/system/boot
@@ -50,6 +59,9 @@
       ./modules/user/git
       ./modules/user/homeversion
       ./modules/user/shell
+    ];
+    gnome = [
+      ./modules/user/gnome
     ];
     plasma = [
       ./modules/user/plasma

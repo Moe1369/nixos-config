@@ -20,20 +20,19 @@
 
   outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, ... }:
   let
+    groups = import ./groups.nix;
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
     lib = nixpkgs.lib;
 
-    # Import module groups
-    groups = import ./groups.nix;
-
-    # External Modules
-    externalSystemModules = [
+    systemModules = [
       home-manager.nixosModules.home-manager
       jovian.nixosModules.jovian
       nur.nixosModules.nur
     ];
-    externalUserModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+    userModules =  [
+    plasma-manager.homeManagerModules.plasma-manager
+    ];
 
   in
   {
@@ -46,8 +45,8 @@
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
+            systemModules ++
             groups.system.workstation ++
-            externalSystemModules ++
             groups.system.base ++
             groups.system.plasma ++
             groups.system.sddm ++
@@ -58,7 +57,7 @@
                   groups.user.plasma ++
                   groups.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
-                home-manager.sharedModules = externalUserModules;
+                home-manager.sharedModules = userModules;
               }
             ];
         };
@@ -71,8 +70,8 @@
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
+            systemModules ++
             groups.system.konsole ++
-            externalSystemModules ++
             groups.system.base ++
             groups.system.plasma ++
             groups.system.sddm ++
@@ -83,7 +82,7 @@
                   groups.user.plasma ++
                   groups.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
-                home-manager.sharedModules = externalUserModules;
+                home-manager.sharedModules = userModules;
               }
             ];
         };
@@ -96,8 +95,8 @@
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
+            systemModules ++
             groups.system.steamdeck ++
-            externalSystemModules ++
             groups.system.base ++
             groups.system.plasma ++
             groups.system.sddm ++
@@ -108,7 +107,7 @@
                   groups.user.plasma ++
                   groups.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
-                home-manager.sharedModules = externalUserModules;
+                home-manager.sharedModules = userModules;
               }
             ];
         };
@@ -121,8 +120,8 @@
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
+            systemModules ++
             groups.system.server ++
-            externalSystemModules ++
             groups.system.base ++
             groups.system.container ++ [
               {
@@ -130,7 +129,7 @@
                   groups.user.base ++
                   groups.user.container;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
-                home-manager.sharedModules = externalUserModules;
+                home-manager.sharedModules = userModules;
               }
             ];
         };
