@@ -16,11 +16,9 @@
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     agenix.url = "github:ryantm/agenix";
     nur.url = "github:nix-community/NUR";
-    cachix.url = "github:cachix/cachix";
-    cachix-deploy-flake.url = "github:cachix/cachix-deploy-flake";
   };
 
-  outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, cachix, cachix-deploy-flake, ... }:
+  outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, ... }:
   let
     groups = import ./groups.nix;
     system = "x86_64-linux";
