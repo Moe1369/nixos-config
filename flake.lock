@@ -37,9 +37,8 @@
         "type": "github"
       },
       "original": {
-        "owner": "cachix",
-        "repo": "cachix",
-        "type": "github"
+        "id": "cachix",
+        "type": "indirect"
       }
     },
     "cachix_2": {

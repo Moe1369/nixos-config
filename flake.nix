@@ -17,20 +17,24 @@
     agenix.url = "github:ryantm/agenix";
     nur.url = "github:nix-community/NUR";
     cachix.url = "github:cachix/cachix";
+    cachix-deploy-flake.url = "github:cachix/cachix-deploy-flake";
   };
 
-  outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, cachix, ... }:
+  outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, cachix, cachix-deploy-flake, ... }:
   let
     groups = import ./groups.nix;
     system = "x86_64-linux";
-    pkgs = import nixpkgs { inherit system; };
     lib = nixpkgs.lib;
+    pkgs = import nixpkgs {
+    inherit system;
+    config.allowUnfree = true;
+    };
 
     systemModules = [
       home-manager.nixosModules.home-manager
       jovian.nixosModules.jovian
       nur.nixosModules.nur
-      cachix.nixosModules.cachix
+
     ];
     userModules =  [
     plasma-manager.homeManagerModules.plasma-manager
