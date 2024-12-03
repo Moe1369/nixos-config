@@ -16,9 +16,10 @@
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     agenix.url = "github:ryantm/agenix";
     nur.url = "github:nix-community/NUR";
+    cachix.url = "github:cachix/cachix";
   };
 
-  outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, ... }:
+  outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, cachix, ... }:
   let
     groups = import ./groups.nix;
     system = "x86_64-linux";
@@ -29,6 +30,7 @@
       home-manager.nixosModules.home-manager
       jovian.nixosModules.jovian
       nur.nixosModules.nur
+      cachix.nixosModules.cachix
     ];
     userModules =  [
     plasma-manager.homeManagerModules.plasma-manager
@@ -58,6 +60,13 @@
                   groups.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = userModules;
+                services.cachix = {
+                    enable = true;
+                    useNix = true;
+                    binaryCaches = [ "jovian245252" ];
+          };
+        }
+      ];
               }
             ];
         };

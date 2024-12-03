@@ -1,4 +1,4 @@
-{ user, ... }:
+{ user, cachix, ... }:
 {
   jovian.steam = {
     enable = true;
