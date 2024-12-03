@@ -60,14 +60,10 @@
                   groups.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = userModules;
-                services.cachix = {
-                    enable = true;
-                    useNix = true;
-                    binaryCaches = [ "jovian245252" ];
-          };
-        }
-      ];
-  };
+              }
+            ];
+        };
+
       konsole =
         let
           user = "mo";
