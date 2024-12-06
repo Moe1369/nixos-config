@@ -45,9 +45,14 @@
     ];
     gaming = [
       ./modules/system/controller
-      ./modules/system/jovian-workstation
       ./modules/system/lact
       ./modules/system/steam
+    ];
+    jovian.konsole = [
+      ./modules/system/jovian-konsole
+    ];
+    jovian.steamdeck = [
+      ./modules/system/jovian-steamdeck
     ];
     container = [
       ./modules/system/docker

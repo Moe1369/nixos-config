@@ -16,9 +16,11 @@
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     agenix.url = "github:ryantm/agenix";
     nur.url = "github:nix-community/NUR";
+    cachix.url = "github:cachix/cachix";
+    cachix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, ... }:
+  outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, cachix, ... }:
   let
     groups = import ./groups.nix;
     system = "x86_64-linux";
@@ -32,7 +34,7 @@
       home-manager.nixosModules.home-manager
       jovian.nixosModules.jovian
       nur.nixosModules.nur
-
+      cachix.nixosModules.cachix
     ];
     userModules =  [
     plasma-manager.homeManagerModules.plasma-manager
@@ -79,7 +81,8 @@
             groups.system.base ++
             groups.system.plasma ++
             groups.system.sddm ++
-            groups.system.gaming ++ [
+            groups.system.gaming ++
+            groups.system.jovian.konsole ++ [
               {
                 home-manager.users.${user}.imports =
                   groups.user.base ++
@@ -104,7 +107,8 @@
             groups.system.base ++
             groups.system.plasma ++
             groups.system.sddm ++
-            groups.system.gaming ++ [
+            groups.system.gaming ++
+            groups.system.jovian.steamdeck ++[
               {
                 home-manager.users.${user}.imports =
                   groups.user.base ++
