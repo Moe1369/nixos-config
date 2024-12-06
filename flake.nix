@@ -78,7 +78,6 @@
             groups.system.konsole ++
             groups.system.base ++
             groups.system.plasma ++
-            groups.system.sddm ++
             groups.system.gaming ++
             groups.system.jovian.konsole ++ [
               {
@@ -104,7 +103,6 @@
             groups.system.steamdeck ++
             groups.system.base ++
             groups.system.plasma ++
-            groups.system.sddm ++
             groups.system.gaming ++
             groups.system.jovian.steamdeck ++[
               {
