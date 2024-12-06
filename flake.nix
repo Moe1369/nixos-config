@@ -53,7 +53,8 @@
             groups.system.base ++
             groups.system.plasma ++
             groups.system.sddm ++
-            groups.system.gaming ++ [
+            groups.system.gaming ++
+            groups.system.jovian.workstation ++ [
               {
                 home-manager.users.${user}.imports =
                   groups.user.base ++

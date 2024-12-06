@@ -48,6 +48,9 @@
       ./modules/system/lact
       ./modules/system/steam
     ];
+    jovian.workstation = [
+      ./modules/system/jovian-workstation
+    ];
     jovian.konsole = [
       ./modules/system/jovian-konsole
     ];
