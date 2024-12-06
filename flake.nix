@@ -32,7 +32,6 @@
       home-manager.nixosModules.home-manager
       jovian.nixosModules.jovian
       nur.nixosModules.nur
-      cachix.nixosModules.cachix
     ];
     userModules =  [
     plasma-manager.homeManagerModules.plasma-manager
