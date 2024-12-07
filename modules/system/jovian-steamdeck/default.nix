@@ -1,16 +1,12 @@
 { user, ... }:
 {
-  jovian.steam = {
-    enable = true;
-    autoStart = true;
-    user = user;
-    desktopSession = "plasma";
-  };
-  jovian.decky-loader.enable = true;
+  jovian.steam.enable = true;
+  jovian.steam.autoStart = true;
+  jovian.steam.user = user;
+  jovian.steam.desktopSession = "plasma";
+  jovian.decky-loader.enable = false;
+  jovian.steam.updater.splash = "steamos";
   jovian.hardware.amd.gpu.enableEarlyModesetting = true;
-  jovian.decky-loader.user = user;
-  jovian.devices.steamdeck = {
-    enable = true;
-    autoUpdate = true;
-  };
+  jovian.devices.steamdeck.enable = true;
+  jovian.devices.steamdeck.autoUpdate = true;
 }
