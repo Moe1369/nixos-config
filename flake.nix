@@ -31,7 +31,7 @@
     systemModules = [
       home-manager.nixosModules.home-manager
       jovian.nixosModules.jovian
-      nur.modules.nixos.default
+      nur.nixosModules.nur
     ];
     userModules =  [
     plasma-manager.homeManagerModules.plasma-manager
