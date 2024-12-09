@@ -1,6 +1,6 @@
 { user, ... }:
 {
-  imports = [ ./cachix ];
+  imports = [ ../cachix ];
   jovian.steam.enable = true;
   jovian.steam.autoStart = false;
   jovian.steam.user = user;
