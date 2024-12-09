@@ -16,6 +16,7 @@
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
     agenix.url = "github:ryantm/agenix";
     nur.url = "github:nix-community/NUR";
+    nur.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, ... }:
@@ -31,6 +32,7 @@
     systemModules = [
       home-manager.nixosModules.home-manager
       jovian.nixosModules.jovian
+      nur.modules.nixos.default
       nur.nixosModules.nur
     ];
     userModules =  [
