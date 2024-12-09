@@ -14,7 +14,7 @@
       inputs.home-manager.follows = "home-manager";
     };
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
-    jovian.nixpkgs.follows = "nixpkgs";
+    jovian.inputs.nixpkgs.follows = "nixpkgs";
     agenix.url = "github:ryantm/agenix";
     nur.url = "github:nix-community/NUR";
     nur.inputs.nixpkgs.follows = "nixpkgs";
