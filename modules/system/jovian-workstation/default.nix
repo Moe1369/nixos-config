@@ -1,11 +1,8 @@
 { user, ... }:
 {
-  nix.binaryCaches = [
-    "https://jovian-nixos.cachix.org"
-  ];
-  nix.binaryCachePublicKeys = [
-    "jovian-nixos.cachix.org-1:mAWLjAxLNlfxAnozUjOqGj4AxQwCl7MXwOfu7msVlAo="
-  ];
+  #substituters = https://jovian-nixos.cachix.org;
+  #trusted-public-keys = jovian-nixos.cachix.org-1:mAWLjAxLNlfxAnozUjOqGj4AxQwCl7MXwOfu7msVlAo=;
+
   jovian.steam.enable = true;
   jovian.steam.autoStart = false;
   jovian.steam.user = user;
