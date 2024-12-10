@@ -79,13 +79,13 @@
             systemModules ++
             groups.system.konsole ++
             groups.system.base ++
-            groups.system.plasma ++
+            groups.system.gnome ++
             groups.system.gaming ++
             groups.system.jovian.konsole ++ [
               {
                 home-manager.users.${user}.imports =
                   groups.user.base ++
-                  groups.user.plasma ++
+                  groups.user.gnome ++
                   groups.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = userModules;
@@ -104,13 +104,13 @@
             systemModules ++
             groups.system.steamdeck ++
             groups.system.base ++
-            groups.system.plasma ++
+            groups.system.gnome ++
             groups.system.gaming ++
             groups.system.jovian.steamdeck ++[
               {
                 home-manager.users.${user}.imports =
                   groups.user.base ++
-                  groups.user.plasma ++
+                  groups.user.gnome ++
                   groups.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = userModules;
