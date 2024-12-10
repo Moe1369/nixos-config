@@ -3,7 +3,7 @@
   jovian.steam.enable = true;
   jovian.steam.autoStart = true;
   jovian.steam.user = user;
-  jovian.steam.desktopSession = "plasma";
+  jovian.steam.desktopSession = "gnome";
   jovian.decky-loader.enable = false;
   jovian.steam.updater.splash = "steamos";
   jovian.hardware.amd.gpu.enableEarlyModesetting = true;
