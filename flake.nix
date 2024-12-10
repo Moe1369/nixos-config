@@ -117,28 +117,6 @@
               }
             ];
         };
-
-      server =
-        let
-          user = "administrator";
-          hostName = "server";
-        in
-        lib.nixosSystem {
-          specialArgs = { inherit user; inherit hostName; inherit system; };
-          modules =
-            systemModules ++
-            groups.system.base ++
-            groups.system.filesystem ++
-            groups.system.container ++ [
-              {
-                home-manager.users.${user}.imports =
-                  groups.user.base ++
-                  groups.user.container;
-                home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
-                home-manager.sharedModules = userModules;
-              }
-            ];
-        };
     };
   };
 }
