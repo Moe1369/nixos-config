@@ -48,9 +48,6 @@
     jovian.steamdeck = [
       ./modules/system/jovian-steamdeck
     ];
-    container = [
-      ./modules/system/docker
-    ];
   };
 
   user = {
@@ -68,6 +65,5 @@
     gaming = [
       ./modules/user/steam
     ];
-    container = [];
   };
 }

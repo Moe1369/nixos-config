@@ -106,7 +106,7 @@
             groups.system.filesystem ++
             groups.system.plasma ++
             groups.system.gaming ++
-            groups.system.jovian.steamdeck ++[
+            groups.system.jovian.steamdeck ++ [
               {
                 home-manager.users.${user}.imports =
                   groups.user.base ++
