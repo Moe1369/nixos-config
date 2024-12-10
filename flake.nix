@@ -51,8 +51,8 @@
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
             systemModules ++
-            groups.system.workstation ++
             groups.system.base ++
+            groups.system.filesystem ++
             groups.system.plasma ++
             groups.system.sddm ++
             groups.system.gaming ++
@@ -77,8 +77,8 @@
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
             systemModules ++
-            groups.system.konsole ++
             groups.system.base ++
+            groups.system.filesystem ++
             groups.system.plasma ++
             groups.system.gaming ++
             groups.system.jovian.konsole ++ [
@@ -102,8 +102,8 @@
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
             systemModules ++
-            groups.system.steamdeck ++
             groups.system.base ++
+            groups.system.filesystem ++
             groups.system.plasma ++
             groups.system.gaming ++
             groups.system.jovian.steamdeck ++[
@@ -127,8 +127,8 @@
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
             systemModules ++
-            groups.system.server ++
             groups.system.base ++
+            groups.system.filesystem ++
             groups.system.container ++ [
               {
                 home-manager.users.${user}.imports =

@@ -1,17 +1,5 @@
 {
   system = {
-    workstation = [
-      ./hosts/workstation
-    ];
-    konsole = [
-      ./hosts/konsole
-    ];
-    steamdeck = [
-      ./hosts/steamdeck
-    ];
-    server = [
-      ./hosts/server
-    ];
     base = [
       ./modules/system/apps-shell
       ./modules/system/boot
@@ -25,6 +13,9 @@
       ./modules/system/systemversion
       ./modules/system/upgrades
       ./modules/system/users
+    ];
+    filesystem = [
+      ./modules/system/filesystem
     ];
     gnome = [
       ./modules/system/apps-misc
