@@ -2,6 +2,6 @@
 {
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "decky" ];
+    extraGroups = [ "wheel" "networkmanager" ];
   };
 }
