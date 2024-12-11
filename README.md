@@ -8,8 +8,14 @@ Mirrored on [gitea.chrayed.de](https://gitea.chrayed.de/moe1369/nixos-config)
 
 - [X] Better autoupgrade
 - [X] Bash/ZSH Settings
-- [ ] ssh key deployment with [agenix](https://github.com/ryantm/agenix)
+- [ ] use [agenix](https://github.com/ryantm/agenix)
 - [x] alternative way to declare .nix files instead of dumping them into configuration.nix -> now uses groups in flake.nix
 - [x] Multi Host functionality for homelab
-- [ ] OCI container for common services
+- [ ] OCI container for common services -> learn about 
 - [X] Fix Home-Manager issues with immutable .config files during rebuild -> files kglobalshortcutsrc and kwinrc can't be overwritten because of plasma-manager
+- [ ] Don't use hashed Password for user creation
+- [ ] Smarter and more flexible folder layout
+  - [ ] export as much as possible from flake.nix to make it more clean
+- [ ] autoupgrade should clean every generation except the last 2
+- [ ] use cachix for long build times on steamdeck
+- [ ] Fix Konsole sleep issue when TV is off (Signal gets lost - reboot needed)
