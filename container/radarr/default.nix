@@ -18,8 +18,7 @@
       #"vl-radarr-config:/config:rw"
     #];
     extraOptions = [
-      "--network=nw-external"
-      "--network=nw-internal"
+      "--network=nw-intern"
     ];
     ports = ["7878:7878"];
   };
