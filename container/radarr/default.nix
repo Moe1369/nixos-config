@@ -13,10 +13,10 @@
     environment = {
       "TZ" = "Europe/Berlin";
     };
-    #volumes = [
+    volumes = [
+      "vl-radarr-config:/config:rw"
       #"/daten/arr-suite:/daten/arr-suite:rw"
-      #"vl-radarr-config:/config:rw"
-    #];
+    ];
     ports = ["7878:7878"];
   };
 }
