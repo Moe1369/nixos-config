@@ -19,7 +19,6 @@
     #];
     networks = [
       "nw-intern"
-      "nw-extern"
     ];
     ports = ["7878:7878"];
   };
