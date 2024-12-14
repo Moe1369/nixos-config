@@ -23,6 +23,7 @@
   virtualisation.oci-containers.containers."ct-auth-server" = {
     image = "ghcr.io/goauthentik/server";
     environment = {
+      "AUTHENTIK_SECRET_KEY" = "oKD8DdROaAlePagcvZ7GJkpGDpjTVkQAHSuI/U+nyBoWRh+qOzagcbrxb0PQNVkoxp9gmYQB6Tn3uWM6";
       "AUTHENTIK_POSTGRESQL__HOST" = "ct-auth-db";
       "AUTHENTIK_POSTGRESQL__NAME" = "authentik";
       "AUTHENTIK_POSTGRESQL__PASSWORD" = "shmJQWMIWJRI23jn19842!";
