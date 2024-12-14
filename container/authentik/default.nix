@@ -2,8 +2,10 @@
 {
   # Containers
   virtualisation.oci-containers.containers."authentik-cache" = {
-
     image = "docker.io/library/redis:alpine";
+    networks = [
+      "nw-authentik"
+    ];
     volumes = [
       "vl-auth-cache:/data:rw"
     ];
@@ -17,6 +19,9 @@
       "POSTGRES_PASSWORD" = "shmJQWMIWJRI23jn19842!";
       "POSTGRES_USER" = "authentik";
     };
+    networks = [
+      "nw-authentik"
+    ];
     volumes = [
       "vl-auth-db:/var/lib/postgresql/data:rw"
     ];
@@ -31,6 +36,9 @@
       "AUTHENTIK_POSTGRESQL__USER" = "authentik";
       "AUTHENTIK_REDIS__HOST" = "authentik-cache";
     };
+    networks = [
+      "nw-authentik"
+    ];
     volumes = [
       "vl-auth-media:/media:rw"
       "vl-auth-templates:/templates:rw"
@@ -51,6 +59,9 @@
       "AUTHENTIK_POSTGRESQL__USER" = "authentik";
       "AUTHENTIK_REDIS__HOST" = "authentik-cache";
     };
+    networks = [
+      "nw-authentik"
+    ];
     volumes = [
       "/run/docker.sock:/var/run/docker.sock:rw"
       "vl-auth-certs:/certs:rw"
