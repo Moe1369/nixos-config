@@ -14,6 +14,9 @@
       ./modules/system/upgrades
       ./modules/system/users
     ];
+    container = [
+      ./container/radarr
+    ];
     filesystem = [
       ./modules/system/filesystem
     ];

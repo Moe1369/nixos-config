@@ -52,6 +52,7 @@
           modules =
             systemModules ++
             modules.system.base ++
+            modules.system.container ++
             modules.system.filesystem ++
             modules.system.plasma ++
             modules.system.sddm ++
