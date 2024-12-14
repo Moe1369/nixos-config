@@ -17,8 +17,9 @@
       #"/daten/arr-suite:/daten/arr-suite:rw"
       #"vl-radarr-config:/config:rw"
     #];
-    extraOptions = [
-      "--network=nw-intern"
+    networks = [
+      "nw-intern"
+      "nw-extern"
     ];
     ports = ["7878:7878"];
   };
