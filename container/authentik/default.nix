@@ -1,5 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 {
+system.activationScripts.nw-authentik = ''
+    ${pkgs.docker}/bin/docker network create nw-authentik
+'';
   # Containers
   virtualisation.oci-containers.containers."authentik-cache" = {
     image = "docker.io/library/redis:alpine";
