@@ -10,6 +10,6 @@
       "vl-sonarr-config:/config:rw"
       #"/daten/arr-suite:/daten/arr-suite:rw"
     ];
-    ports = ["7878:7878"];
+    ports = ["8989:8989"];
   };
 }
