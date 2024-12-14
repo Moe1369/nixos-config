@@ -22,7 +22,7 @@
 
   outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, ... }:
   let
-    groups = import ./groups.nix;
+    modules = import ./modules.nix;
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = import nixpkgs {
@@ -36,7 +36,7 @@
       nur.modules.nixos.default
     ];
     userModules =  [
-    plasma-manager.homeManagerModules.plasma-manager
+      plasma-manager.homeManagerModules.plasma-manager
     ];
 
   in
@@ -51,17 +51,17 @@
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
             systemModules ++
-            groups.system.base ++
-            groups.system.filesystem ++
-            groups.system.plasma ++
-            groups.system.sddm ++
-            groups.system.gaming ++
-            groups.system.jovian.workstation ++ [
+            modules.system.base ++
+            modules.system.filesystem ++
+            modules.system.plasma ++
+            modules.system.sddm ++
+            modules.system.gaming ++
+            modules.system.jovian.workstation ++ [
               {
                 home-manager.users.${user}.imports =
-                  groups.user.base ++
-                  groups.user.plasma ++
-                  groups.user.gaming;
+                  modules.user.base ++
+                  modules.user.plasma ++
+                  modules.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = userModules;
               }
@@ -77,16 +77,16 @@
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
             systemModules ++
-            groups.system.base ++
-            groups.system.filesystem ++
-            groups.system.plasma ++
-            groups.system.gaming ++
-            groups.system.jovian.konsole ++ [
+            modules.system.base ++
+            modules.system.filesystem ++
+            modules.system.plasma ++
+            modules.system.gaming ++
+            modules.system.jovian.konsole ++ [
               {
                 home-manager.users.${user}.imports =
-                  groups.user.base ++
-                  groups.user.plasma ++
-                  groups.user.gaming;
+                  modules.user.base ++
+                  modules.user.plasma ++
+                  modules.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = userModules;
               }
@@ -102,16 +102,16 @@
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
             systemModules ++
-            groups.system.base ++
-            groups.system.filesystem ++
-            groups.system.plasma ++
-            groups.system.gaming ++
-            groups.system.jovian.steamdeck ++ [
+            modules.system.base ++
+            modules.system.filesystem ++
+            modules.system.plasma ++
+            modules.system.gaming ++
+            modules.system.jovian.steamdeck ++ [
               {
                 home-manager.users.${user}.imports =
-                  groups.user.base ++
-                  groups.user.plasma ++
-                  groups.user.gaming;
+                  modules.user.base ++
+                  modules.user.plasma ++
+                  modules.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = userModules;
               }
