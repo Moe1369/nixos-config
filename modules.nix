@@ -16,6 +16,8 @@
     ];
     container = [
       ./container/runtime
+      ./container/jellyseerr
+      ./container/emby
       ./container/radarr
       ./container/sonarr
     ];
