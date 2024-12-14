@@ -17,9 +17,6 @@
       #"/daten/arr-suite:/daten/arr-suite:rw"
       #"vl-radarr-config:/config:rw"
     #];
-    networks = [
-      "nw-intern"
-    ];
     ports = ["7878:7878"];
   };
 }
