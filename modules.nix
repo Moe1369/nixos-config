@@ -55,6 +55,7 @@
       ./modules/user/git
       ./modules/user/homeversion
       ./modules/user/shell
+      ./modules/user/ssh
     ];
     gnome = [
       ./modules/user/gnome
