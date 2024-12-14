@@ -15,7 +15,9 @@
       ./modules/system/users
     ];
     container = [
+      ./container/runtime
       ./container/radarr
+      ./container/sonarr
     ];
     filesystem = [
       ./modules/system/filesystem
