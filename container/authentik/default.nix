@@ -65,7 +65,10 @@
     networks = [
       "network-authentik"
     ];
-    ports = ["9000:9000"];
+    ports = [
+    "9000:9000"
+    "9443:9443"
+    ];
     volumes = [
       "/run/docker.sock:/var/run/docker.sock:rw"
       "volume-authentik-certs:/certs:rw"
