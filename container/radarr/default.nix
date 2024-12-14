@@ -14,7 +14,7 @@
       "TZ" = "Europe/Berlin";
     };
     volumes = [
-      "/daten/arr-suite:/daten/arr-suite:rw"
+      #"/daten/arr-suite:/daten/arr-suite:rw"
       "vl-radarr-config:/config:rw"
     ];
     log-driver = "journald";
