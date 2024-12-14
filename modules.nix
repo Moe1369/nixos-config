@@ -22,8 +22,11 @@
       ./container/radarr
       ./container/sonarr
     ];
-    filesystem = [
-      ./modules/system/filesystem
+    filesystem.client = [
+      ./modules/system/filesystem-client
+    ];
+    filesystem.server = [
+      ./modules/system/filesystem-server
     ];
     gnome = [
       ./modules/system/apps-misc

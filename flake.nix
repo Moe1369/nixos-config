@@ -53,7 +53,7 @@
             systemModules ++
             modules.system.base ++
             modules.system.container ++
-            modules.system.filesystem ++
+            modules.system.filesystem.client ++
             modules.system.plasma ++
             modules.system.sddm ++
             modules.system.gaming ++
@@ -79,7 +79,7 @@
           modules =
             systemModules ++
             modules.system.base ++
-            modules.system.filesystem ++
+            modules.system.filesystem.client ++
             modules.system.plasma ++
             modules.system.gaming ++
             modules.system.jovian.konsole ++ [
@@ -104,7 +104,7 @@
           modules =
             systemModules ++
             modules.system.base ++
-            modules.system.filesystem ++
+            modules.system.filesystem.client ++
             modules.system.plasma ++
             modules.system.gaming ++
             modules.system.jovian.steamdeck ++ [
@@ -113,6 +113,26 @@
                   modules.user.base ++
                   modules.user.plasma ++
                   modules.user.gaming;
+                home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
+                home-manager.sharedModules = userModules;
+              }
+            ];
+        };
+      server =
+        let
+          user = "administrator";
+          hostName = "server";
+        in
+        lib.nixosSystem {
+          specialArgs = { inherit user; inherit hostName; inherit system; };
+          modules =
+            systemModules ++
+            modules.system.base ++
+            modules.system.container
+            modules.system.filesystem.server ++ [
+              {
+                home-manager.users.${user}.imports =
+                  modules.user.base;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = userModules;
               }
