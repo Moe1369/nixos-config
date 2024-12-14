@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-system.activationScripts.nw-authentik = ''
+  system.activationScripts.network-authentik = ''
     ${pkgs.docker}/bin/docker network create network-authentik
-'';
+  '';
   # Containers
   virtualisation.oci-containers.containers."container-authentik-cache" = {
     image = "docker.io/library/redis:alpine";
@@ -65,6 +65,7 @@ system.activationScripts.nw-authentik = ''
     networks = [
       "network-authentik"
     ];
+    ports = ["9000:9000"];
     volumes = [
       "/run/docker.sock:/var/run/docker.sock:rw"
       "volume-authentik-certs:/certs:rw"

@@ -1,14 +1,20 @@
-{ ... }:
+{ pkgs, ... }:
 {
-  virtualisation.oci-containers.containers."jellyseerr-app" = {
+  system.activationScripts.network-jellyseerr = ''
+    ${pkgs.docker}/bin/docker network create network-jellyseerr
+  '';
+  virtualisation.oci-containers.containers."container-jellyseerr-app" = {
     autoStart = true;
     image = "fallenbagel/jellyseerr";
     environment = {
       "TZ" = "Europe/Berlin";
       "JELLYFIN_TYPE" = "emby";
     };
+    networks = [
+      "network-jellyseerr"
+    ];
     volumes = [
-      "vl-jellyseerr-config:/app/config:rw"
+      "volume-jellyseerr-config:/app/config:rw"
     ];
     ports = ["5055:5055"];
   };

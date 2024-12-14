@@ -1,6 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 {
-  virtualisation.oci-containers.containers."emby-app" = {
+  system.activationScripts.network-emby = ''
+    ${pkgs.docker}/bin/docker network create network-emby
+  '';
+  virtualisation.oci-containers.containers."container-emby-app" = {
     autoStart = true;
     image = "emby/embyserver";
     devices = [
@@ -9,8 +12,11 @@
     environment = {
       "TZ" = "Europe/Berlin";
     };
+    networks = [
+      "network-emby"
+    ];
     volumes = [
-      "vl-emby-config:/config:rw"
+      "volume-emby-config:/config:rw"
       #"/daten/arr-suite:/daten/arr-suite:rw"
     ];
     ports = ["8096:8096"];

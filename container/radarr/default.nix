@@ -1,13 +1,19 @@
-{ ... }:
+{ pkgs, ... }:
 {
-  virtualisation.oci-containers.containers."radarr-app" = {
+  system.activationScripts.network-radarr = ''
+    ${pkgs.docker}/bin/docker network create network-radarr
+  '';
+  virtualisation.oci-containers.containers."container-radarr-app" = {
     autoStart = true;
     image = "lscr.io/linuxserver/radarr:latest";
     environment = {
       "TZ" = "Europe/Berlin";
     };
+    networks = [
+      "network-radarr"
+    ];
     volumes = [
-      "vl-radarr-config:/config:rw"
+      "volume-radarr-config:/config:rw"
       #"/daten/arr-suite:/daten/arr-suite:rw"
     ];
     ports = ["7878:7878"];
