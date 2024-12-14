@@ -24,6 +24,7 @@
   virtualisation.oci-containers.containers."authentik-server" = {
     image = "ghcr.io/goauthentik/server";
     environment = {
+      "AUTHENTIK_SECRET_KEY" = "OS7C4vThZKf5tPGKlOu3QXgZIHWAF7HBfpk/Y6LMVh7QMdyOD6NwojmASlKb3lwtYA5OdZzDLB2GNSQg";
       "AUTHENTIK_POSTGRESQL__HOST" = "authentik-db";
       "AUTHENTIK_POSTGRESQL__NAME" = "authentik";
       "AUTHENTIK_POSTGRESQL__PASSWORD" = "shmJQWMIWJRI23jn19842!";
@@ -43,6 +44,7 @@
   virtualisation.oci-containers.containers."authentik-worker" = {
     image = "ghcr.io/goauthentik/server";
     environment = {
+      "AUTHENTIK_SECRET_KEY" = "OS7C4vThZKf5tPGKlOu3QXgZIHWAF7HBfpk/Y6LMVh7QMdyOD6NwojmASlKb3lwtYA5OdZzDLB2GNSQg";
       "AUTHENTIK_POSTGRESQL__HOST" = "authentik-db";
       "AUTHENTIK_POSTGRESQL__NAME" = "authentik";
       "AUTHENTIK_POSTGRESQL__PASSWORD" = "shmJQWMIWJRI23jn19842!";
