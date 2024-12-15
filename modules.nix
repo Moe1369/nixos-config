@@ -3,7 +3,12 @@
     base = [
       ./modules/system/apps-shell
       ./modules/system/boot
-      ./modules/system/devices
+      ./modules/system/bluetooth
+      ./modules/system/printing
+      ./modules/system/input
+      ./modules/system/security
+      ./modules/system/sound
+      ./modules/system/firmware
       ./modules/system/home-manager
       ./modules/system/locale
       ./modules/system/networking
@@ -44,7 +49,6 @@
       ./modules/system/apps-misc
       ./modules/system/browser
       ./modules/system/plasma
-      ./modules/system/plasma-nur
     ];
     gdm = [
       ./modules/system/gdm
