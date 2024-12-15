@@ -17,6 +17,7 @@
     container = [
       ./container/runtime
       ./container/authentik
+      ./container/bazarr
       ./container/jellyseerr
       ./container/emby
       ./container/radarr
