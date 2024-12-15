@@ -32,6 +32,7 @@
       ./container/emby
       ./container/jellyseerr
       ./container/radarr
+      ./container/recyclarr
       ./container/runtime
       ./container/sonarr
     ];
