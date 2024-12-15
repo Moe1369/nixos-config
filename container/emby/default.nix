@@ -17,7 +17,7 @@
     ];
     volumes = [
       "volume-emby-config:/config:rw"
-      "/data/arr-suite:/data/arr-suite:rw"
+      "/data:/data:rw"
     ];
     ports = ["8096:8096"];
   };

@@ -14,7 +14,7 @@
     ];
     volumes = [
       "volume-radarr-config:/config:rw"
-      "/data/arr-suite:/data/arr-suite:rw"
+      "/data:/data:rw"
     ];
     ports = ["7878:7878"];
   };

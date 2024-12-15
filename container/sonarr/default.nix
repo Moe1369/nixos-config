@@ -14,7 +14,7 @@
     ];
     volumes = [
       "volume-sonarr-config:/config:rw"
-      "/data/arr-suite:/data/arr-suite:rw"
+      "/data:/data:rw"
     ];
     ports = ["8989:8989"];
   };
