@@ -2,23 +2,24 @@
   system = {
     base = [
       ./modules/system/apps-shell
-      ./modules/system/boot
       ./modules/system/bluetooth
-      ./modules/system/printing
-      ./modules/system/input
-      ./modules/system/security
-      ./modules/system/sound
+      ./modules/system/boot
       ./modules/system/firmware
       ./modules/system/home-manager
+      ./modules/system/input
       ./modules/system/locale
       ./modules/system/networking
       ./modules/system/nixsettings
+      ./modules/system/printing
+      ./modules/system/security
       ./modules/system/shell
+      ./modules/system/sound
       ./modules/system/ssh
       ./modules/system/systemversion
       ./modules/system/upgrades
       ./modules/system/users
     ];
+
     cpu.amd = [
       ./modules/system/cpu-amd
     ];
