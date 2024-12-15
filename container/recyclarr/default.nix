@@ -15,8 +15,8 @@
       "network-radarr"
     ];
     volumes = [
-      "volume-recyclarr-config:/config:rw"
-      "./dotfiles/recyclarr.yml:/config/recyclarr.yml"
+      #"volume-recyclarr-config:/config:rw"
+      "./dotfiles/recyclarr.yml:/config/recyclarr.yml:rw"
     ];
   };
 }
