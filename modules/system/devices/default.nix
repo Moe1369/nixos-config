@@ -1,6 +1,5 @@
 { lib, config,... }:
 {
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   services.fwupd.enable = true;
   services.printing.enable = true;
   hardware.bluetooth.enable = true;

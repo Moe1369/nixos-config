@@ -52,6 +52,7 @@
           modules =
             systemModules ++
             modules.system.base ++
+            modules.system.cpu.amd ++
             modules.system.container ++
             modules.system.filesystem.client ++
             modules.system.plasma ++
@@ -79,6 +80,7 @@
           modules =
             systemModules ++
             modules.system.base ++
+            modules.system.cpu.amd ++
             modules.system.filesystem.client ++
             modules.system.plasma ++
             modules.system.gaming ++
@@ -104,6 +106,7 @@
           modules =
             systemModules ++
             modules.system.base ++
+            modules.system.cpu.amd ++
             modules.system.filesystem.client ++
             modules.system.plasma ++
             modules.system.gaming ++
@@ -128,7 +131,8 @@
           modules =
             systemModules ++
             modules.system.base ++
-            modules.system.container
+            modules.system.cpu.intel ++
+            modules.system.container ++
             modules.system.filesystem.server ++ [
               {
                 home-manager.users.${user}.imports =

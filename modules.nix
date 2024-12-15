@@ -14,6 +14,12 @@
       ./modules/system/upgrades
       ./modules/system/users
     ];
+    cpu.amd = [
+      ./modules/system/cpu-amd
+    ];
+    cpu.intel = [
+      ./modules/system/cpu-intel
+    ];
     container = [
       ./container/runtime
       ./container/authentik
