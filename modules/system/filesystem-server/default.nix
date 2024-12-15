@@ -1,5 +1,6 @@
 { ... }:
 {
+  networking.hostId = "efc6dacc";
   boot.zfs.extraPools = [ "root" "nix" "var" "daten" ];
 
   fileSystems."/boot" =
@@ -12,18 +13,19 @@
       fsType = "zfs";
     };
 
-  fileSystems."/nix" =
-    { device = "zpool-fast/nix";
-      fsType = "zfs";
-    };
-
   fileSystems."/home" =
     { device = "zpool-fast/home";
       fsType = "zfs";
     };
 
-  fileSystems."/docker" =
-    { device = "zpool-fast/docker";
+  fileSystems."/nix" =
+    { device = "zpool-fast/nix";
+      fsType = "zfs";
+    };
+
+
+  fileSystems."/var" =
+    { device = "zpool-fast/var";
       fsType = "zfs";
     };
 
