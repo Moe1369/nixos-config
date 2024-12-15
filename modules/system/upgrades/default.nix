@@ -7,7 +7,7 @@
         enable = true;
         dates = "04:00";
         persistent = true;
-        flake = "git+ssh://git@github.com/Moe1369/nixos-config.git"?ref=main${hostName};
+        flake = "git+ssh://git@github.com/Moe1369/nixos-config.git?ref=main${hostName}";
         flags = [
         ];
         allowReboot = false;
