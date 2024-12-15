@@ -8,17 +8,22 @@
     };
 
   fileSystems."/" =
-    { device = "zpool/root";
+    { device = "zpool-fast/root";
       fsType = "zfs";
     };
 
   fileSystems."/nix" =
-    { device = "zpool/nix";
+    { device = "zpool-fast/nix";
+      fsType = "zfs";
+    };
+
+  fileSystems."/docker" =
+    { device = "zpool-fast/docker";
       fsType = "zfs";
     };
 
   fileSystems."/data" =
-    { device = "zpool/data";
+    { device = "zpool-slow/data";
       fsType = "zfs";
     };
 
