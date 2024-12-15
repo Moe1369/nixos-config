@@ -17,6 +17,11 @@
       fsType = "zfs";
     };
 
+  fileSystems."/home" =
+    { device = "zpool-fast/home";
+      fsType = "zfs";
+    };
+
   fileSystems."/docker" =
     { device = "zpool-fast/docker";
       fsType = "zfs";
