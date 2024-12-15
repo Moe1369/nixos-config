@@ -52,8 +52,8 @@
           modules =
             systemModules ++
             modules.system.base ++
-            modules.system.cpu.amd ++
             modules.system.container ++
+            modules.system.cpu.amd ++
             modules.system.filesystem.client ++
             modules.system.plasma ++
             modules.system.sddm ++

@@ -14,7 +14,7 @@
     ];
     volumes = [
       "volume-bazarr-config:/config:rw"
-      #"/daten/arr-suite:/daten/arr-suite:rw"
+      "/data/arr-suite:/data/arr-suite:rw"
     ];
     ports = ["6767:6767"];
   };
