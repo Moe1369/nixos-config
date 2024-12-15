@@ -27,12 +27,12 @@
       ./modules/system/cpu-intel
     ];
     container = [
-      ./container/runtime
       ./container/authentik
       ./container/bazarr
-      ./container/jellyseerr
       ./container/emby
+      ./container/jellyseerr
       ./container/radarr
+      ./container/runtime
       ./container/sonarr
     ];
     filesystem.client = [
@@ -72,7 +72,6 @@
       ./modules/system/jovian-steamdeck
     ];
   };
-
   user = {
     base = [
       ./modules/user/git
