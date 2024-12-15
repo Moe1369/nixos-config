@@ -1,7 +1,7 @@
 { ... }:
 {
   networking.hostId = "efc6dacc";
-  boot.zfs.extraPools = [ "root" "nix" "var" "daten" ];
+  boot.zfs.extraPools = [ "root" "nix" "var" "data" "home"];
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-partlabel/EFI";
