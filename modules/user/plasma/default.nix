@@ -1,18 +1,18 @@
 { user, hostName, ... }:
 {
-  home.file."Code/.directory".source = ../../../dotfiles/directory;
-  home.file.".config/haruna/haruna.conf".source = ../../../dotfiles/haruna.conf;
-  home.file.".local/share/color-schemes/BreezeDunkelFarbe.colors".source = ../../../dotfiles/BreezeDunkelFarbe.colors;
-  home.file.".local/share/color-schemes/BreezeHellFarbe.colors".source = ../../../dotfiles/BreezeHellFarbe.colors;
-  home.file.".config/kwinrulesrc".source = ../../../dotfiles/kwinrulesrc;
-  home.file.".local/share/user-places.xbel".source = ../../../dotfiles/user-places.xbel-${hostName};
-  home.file.".config/kglobalshortcutsrc".source = ../../../dotfiles/kglobalshortcutsrc;
-  home.file.".config/kwinrc".source = ../../../dotfiles/kwinrc;
-  home.file.".config/klassy/klassyrc".source = ../../../dotfiles/klassyrc;
-  home.file.".config/klassy/windecopresetsrc".source = ../../../dotfiles/windecopresetsrc;
-  home.file.".config/krunnerrc".source = ../../../dotfiles/krunnerrc;
-  home.file.".config/kde-material-you-colors/config.conf".source = ../../../dotfiles/config.conf;
-  home.file.".config/autostart/kde-material-you-colors.desktop".source = ../../../dotfiles/kde-material-you-colors.desktop;
+  home.file."Code/.directory".source = ./dotfiles/directory;
+  home.file.".config/haruna/haruna.conf".source = ./dotfiles/haruna.conf;
+  home.file.".local/share/color-schemes/BreezeDunkelFarbe.colors".source = ./dotfiles/BreezeDunkelFarbe.colors;
+  home.file.".local/share/color-schemes/BreezeHellFarbe.colors".source = ./dotfiles/BreezeHellFarbe.colors;
+  home.file.".config/kwinrulesrc".source = ./dotfiles/kwinrulesrc;
+  home.file.".local/share/user-places.xbel".source = ./dotfiles/user-places.xbel-${hostName};
+  home.file.".config/kglobalshortcutsrc".source = ./dotfiles/kglobalshortcutsrc;
+  home.file.".config/kwinrc".source = ./dotfiles/kwinrc;
+  home.file.".config/klassy/klassyrc".source = ./dotfiles/klassyrc;
+  home.file.".config/klassy/windecopresetsrc".source = ./dotfiles/windecopresetsrc;
+  home.file.".config/krunnerrc".source = ./dotfiles/krunnerrc;
+  home.file.".config/kde-material-you-colors/config.conf".source = ./dotfiles/config.conf;
+  home.file.".config/autostart/kde-material-you-colors.desktop".source = ./dotfiles/kde-material-you-colors.desktop;
   home.file.wallpaper = {
     recursive = true;
     source = ../../../assets;
