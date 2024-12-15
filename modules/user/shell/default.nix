@@ -1,4 +1,4 @@
 { ... }:
 {
-  home.file.".zshrc".source = ../../../dotfiles/zshrc;
+  home.file.".zshrc".source = ./dotfiles/zsh-config;
 }
