@@ -25,6 +25,16 @@
       "volume-authentik-db:/var/lib/postgresql/data:rw"
     ];
   };
+  virtualisation.oci-containers.containers."container-authentik-ldap" = {
+    image = "ghcr.io/goauthentik/ldap";
+    networks = [
+      "network-internal"
+    ];
+    ports = [
+      "389:3389"
+      "636:6636"
+    ];
+  };
   virtualisation.oci-containers.containers."container-authentik-server" = {
     image = "ghcr.io/goauthentik/server";
     environment = {
