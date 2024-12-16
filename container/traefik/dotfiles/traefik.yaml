@@ -1,0 +1,26 @@
+api:
+  insecure: true
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+
+entryPoints:
+  web:
+    address: ":80"
+    http:
+      redirections:
+        entryPoint:
+          to: websecure
+
+  websecure:
+    address: ":443"
+
+certificatesResolvers:
+  porkbun:
+    acme:
+      email: mohamed@chrayed.de
+      storage: /tls/porkbun.json
+      dnsChallenge:
+        provider: porkbun
+        delayBeforeCheck: 0

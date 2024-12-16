@@ -5,16 +5,21 @@
   '';
   virtualisation.oci-containers.containers."container-traefik-app" = {
     autoStart = true;
+    command = "--api.insecure=true --providers.docker";
     image = "traefik";
     environment = {
       "TZ" = "Europe/Berlin";
+      "PORKBUN_SECRET_API_KEY" = "sk1_f5d9b0238d65dc7bae261bc2426d198107387ab5bbbbdce366d346f6776304d0";
+      "PORKBUN_API_KEY" = "pk1_fd24e6bcbff857b26dc334a0bfba8bd3d75cac0290f8bb9366ee46c30c68b23d";
     };
     networks = [
       "network-traefik"
     ];
     volumes = [
       "/var/run/docker.sock:/var/run/docker.sock:ro"
+      "volume-traefik-tls:/tls"
+      "./dotfiles/traefik.yaml:/traefik.yaml:ro"
     ];
-    ports = ["80:80" "443:443"];
+    ports = ["80:80" "443:443" "8080:8080"];
   };
 }
