@@ -3,7 +3,7 @@ api:
 
 providers:
   docker:
-    endpoint: "unix:///var/run/docker.sock"
+    endpoint: "/var/run/docker.sock"
 
 entryPoints:
   web:
