@@ -57,8 +57,9 @@
       "container-authentik-db"
     ];
     labels = {
-      "caddy" = "chrayed.de";
-      "caddy.reverse_proxy" = "{{upstreams 9000}}";
+      "caddy" = "emby.chrayed.de";
+      "caddy.reverse_proxy" = "{{upstreams 8096}}";
+    };
   };
   virtualisation.oci-containers.containers."container-authentik-worker" = {
     image = "ghcr.io/goauthentik/server";
