@@ -7,7 +7,7 @@
       "TZ" = "Europe/Berlin";
     };
     networks = [
-      "network-sonarr"
+      "network-internal"
     ];
     volumes = [
       "volume-sonarr-config:/config:rw"

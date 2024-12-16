@@ -34,6 +34,7 @@
       ./container/radarr
       ./container/recyclarr
       ./container/runtime
+      ./container/sabnzbd
       ./container/sonarr
       ./container/caddy
     ];
