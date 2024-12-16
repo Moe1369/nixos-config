@@ -136,7 +136,8 @@
             modules.system.filesystem.server ++ [
               {
                 home-manager.users.${user}.imports =
-                  modules.user.base;
+                  modules.user.base ++
+                  modules.user.container;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = userModules;
               }
