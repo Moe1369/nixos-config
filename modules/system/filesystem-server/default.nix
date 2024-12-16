@@ -1,7 +1,7 @@
 { ... }:
 {
   networking.hostId = "efc6dacc";
-  boot.zfs.devNodes = "/dev/disk/by-id";
+  boot.zfs.devNodes = "/dev/disk/by-partlabel";
   boot.zfs.extraPools = [ "docker" "data" ];
 
     fileSystems."/" =
