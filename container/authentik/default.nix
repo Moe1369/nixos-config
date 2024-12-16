@@ -25,7 +25,7 @@
       "volume-authentik-db:/var/lib/postgresql/data:rw"
     ];
   };
-  virtualisation.oci-containers.containers."container-authentik-ldap" = {
+  virtualisation.oci-containers.containers."container-authentik-outpostldap" = {
     image = "ghcr.io/goauthentik/ldap";
     environment = {
       "AUTHENTIK_HOST" = "https://chrayed.de";
