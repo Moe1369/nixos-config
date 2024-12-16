@@ -2,45 +2,27 @@
 {
   networking.hostId = "efc6dacc";
   boot.zfs.devNodes = "/dev/disk/by-id";
-  boot.zfs.extraPools = [ "root" "var" "nix" "home" "data" ];
+  boot.zfs.extraPools = [ "docker" "data" ];
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-id/nvme-CT1000P3SSD8_2304E6A27E90-part1";
-      fsType = "vfat";
+    fileSystems."/" =
+    { device = "/dev/disk/by-partlabel/root";
+      fsType = "ext4";
     };
 
-  fileSystems."/" =
-    { device = "zpool-fast/root";
-      fsType = "zfs";
-      options = [ "zfsutil" ];
-    };
-
-  fileSystems."/nix" =
-    { device = "zpool-fast/nix";
-      fsType = "zfs";
-      options = [ "zfsutil" ];
-    };
-
-  fileSystems."/var" =
-    { device = "zpool-fast/var";
-      fsType = "zfs";
-      options = [ "zfsutil" ];
-    };
-
-  fileSystems."/home" =
-    { device = "zpool-fast/home";
+  fileSystems."/var/lib/docker" =
+    { device = "ssd/docker";
       fsType = "zfs";
       options = [ "zfsutil" ];
     };
 
   fileSystems."/data" =
-    { device = "zpool-slow/data";
+    { device = "hdd/data";
       fsType = "zfs";
       options = [ "zfsutil" ];
     };
 
-  swapDevices = [{
-    device = "/dev/disk/by-id/nvme-CT1000P3SSD8_2304E6A27E90-part2";
-    randomEncryption = true;
+  swapDevices = [ {
+    device = "/var/lib/swapfile";
+    size = 16*1024;
   }];
 }
