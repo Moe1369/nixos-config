@@ -28,9 +28,9 @@
   virtualisation.oci-containers.containers."container-authentik-ldap" = {
     image = "ghcr.io/goauthentik/ldap";
     environment = {
-      "AUTHENTIK_HOST" = "https://chrayed.de";
+      "AUTHENTIK_HOST" = "http://container-authentik-server";
       "AUTHENTIK_INSECURE" = "true";
-      "AUTHENTIK_TOKEN" = "qrTheT9tT1MDOLOLFgEeYh0sfat4RQhmW72AtiuHIrDoGvoedmFbCauAyv44";
+      "AUTHENTIK_TOKEN" = "q32z4razdX4AY4KXM4ZfKixg85rEQhbBWQzgxwyYugyliZ7bWW2D9Z53zmu9";
     };
     networks = [
       "network-internal"
