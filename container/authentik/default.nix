@@ -26,7 +26,7 @@
     ];
   };
   virtualisation.oci-containers.containers."container-authentik-ldap" = {
-    image = "ghcr.io/goauthentik/ldap:latest";
+    image = "ghcr.io/goauthentik/ldap";
     environment = {
       "AUTHENTIK_HOST" = "https://chrayed.de";
       "AUTHENTIK_INSECURE" = "true";
@@ -35,10 +35,10 @@
     networks = [
       "network-internal"
     ];
-    ports = [
-      "389:3389"
-      "636:6636"
-    ];
+   # ports = [
+   #   "389:3389"
+   #   "636:6636"
+   # ];
     dependsOn = [
       "container-authentik-server"
       "container-authentik-worker"
