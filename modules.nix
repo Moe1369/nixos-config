@@ -81,9 +81,6 @@
       ./modules/user/shell
       ./modules/user/ssh
     ];
-    container = [
-      ./modules/user/traefik
-    ];
     gnome = [
       ./modules/user/gnome
     ];
