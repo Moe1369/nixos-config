@@ -17,7 +17,7 @@
     devices = [
         "/dev/dri:/dev/dri"
     ];
-    user = "administrator:users";
+    user = "1000:100";
     environment = {
       "TZ" = "Europe/Berlin";
     };
