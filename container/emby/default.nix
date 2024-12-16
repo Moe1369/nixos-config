@@ -17,7 +17,6 @@
     devices = [
         "/dev/dri:/dev/dri"
     ];
-    user = "root:render";
     environment = {
       "TZ" = "Europe/Berlin";
     };
