@@ -39,6 +39,9 @@
       "389:3389"
       "636:6636"
     ];
+    dependsOn = [
+      "container-authentik-server"
+    ];
   };
   virtualisation.oci-containers.containers."container-authentik-server" = {
     image = "ghcr.io/goauthentik/server";
