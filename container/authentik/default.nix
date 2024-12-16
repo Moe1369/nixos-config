@@ -57,8 +57,8 @@
       "container-authentik-db"
     ];
     labels = {
-      "caddy" = "emby.chrayed.de";
-      "caddy.reverse_proxy" = "{{upstreams 8096}}";
+      "caddy" = "chrayed.de";
+      "caddy.reverse_proxy" = "{{upstreams 9000}}";
     };
   };
   virtualisation.oci-containers.containers."container-authentik-worker" = {
