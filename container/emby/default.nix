@@ -14,7 +14,6 @@
     };
     networks = [
       "network-emby"
-      "network-traefik"
     ];
     volumes = [
       "volume-emby-config:/config:rw"
@@ -22,10 +21,8 @@
     ];
     ports = ["8096:8096"];
     labels = {
-      "traefik.enable" = "true";
-      "traefik.http.routers.emby.entrypoints" = "web";
-      "traefik.http.routers.emby.rule" = "Host(`emby.chrayed.de`)";
-      "traefik.http.services.emby.loadBalancer.port" = "8096";
+      "caddy" = "emby.chrayed.de";
+      "caddy.reverse_proxy" = "{{upstreams 8096}}";
     };
   };
 }
