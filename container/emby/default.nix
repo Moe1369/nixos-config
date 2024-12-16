@@ -14,6 +14,7 @@
     };
     networks = [
       "network-emby"
+      "network-caddy"
     ];
     volumes = [
       "volume-emby-config:/config:rw"
