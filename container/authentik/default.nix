@@ -35,10 +35,10 @@
     networks = [
       "network-internal"
     ];
-   # ports = [
-   #   "389:3389"
-   #   "636:6636"
-   # ];
+    ports = [
+      "389:3389"
+      "636:6636"
+    ];
     dependsOn = [
       "container-authentik-server"
       "container-authentik-worker"
