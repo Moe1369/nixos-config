@@ -2,7 +2,7 @@
 {
   networking.hostId = "efc6dacc";
   boot.zfs.devNodes = "/dev/disk/by-id";
-  boot.zfs.extraPools = [ "ssd" "data" ];
+  boot.zfs.extraPools = [ "ssd" "hdd" ];
 
     fileSystems."/" =
     { device = "/dev/disk/by-partlabel/root";
