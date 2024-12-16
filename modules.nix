@@ -35,6 +35,7 @@
       ./container/recyclarr
       ./container/runtime
       ./container/sonarr
+      ./container/traefik
     ];
     filesystem.client = [
       ./modules/system/filesystem-client
