@@ -1,8 +1,5 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  system.activationScripts.network-bazarr = ''
-    ${pkgs.docker}/bin/docker network create network-bazarr
-  '';
   virtualisation.oci-containers.containers."container-bazarr-app" = {
     autoStart = true;
     image = "lscr.io/linuxserver/bazarr:latest";
@@ -10,7 +7,7 @@
       "TZ" = "Europe/Berlin";
     };
     networks = [
-      "network-bazarr"
+      "network-internal"
     ];
     volumes = [
       "volume-bazarr-config:/config:rw"

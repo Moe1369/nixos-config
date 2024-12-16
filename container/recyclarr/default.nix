@@ -1,8 +1,5 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  system.activationScripts.network-recyclarr = ''
-    ${pkgs.docker}/bin/docker network create network-recyclarr
-  '';
   virtualisation.oci-containers.containers."container-recyclarr-app" = {
     autoStart = true;
     image = "ghcr.io/recyclarr/recyclarr:latest";
@@ -10,9 +7,7 @@
       "TZ" = "Europe/Berlin";
     };
     networks = [
-      "network-recyclarr"
-      "network-sonarr"
-      "network-radarr"
+      "network-internal"
     ];
     volumes = [
       "volume-recyclarr-config:/config:rw"

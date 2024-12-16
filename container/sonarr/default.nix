@@ -1,8 +1,5 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  system.activationScripts.network-sonarr = ''
-    ${pkgs.docker}/bin/docker network create network-sonarr
-  '';
   virtualisation.oci-containers.containers."container-sonarr-app" = {
     autoStart = true;
     image = "lscr.io/linuxserver/sonarr:latest";

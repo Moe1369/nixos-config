@@ -1,8 +1,5 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  system.activationScripts.network-emby = ''
-    ${pkgs.docker}/bin/docker network create network-emby
-  '';
   virtualisation.oci-containers.containers."container-emby-app" = {
     autoStart = true;
     image = "emby/embyserver";
@@ -13,8 +10,8 @@
       "TZ" = "Europe/Berlin";
     };
     networks = [
-      "network-emby"
-      "network-caddy"
+      "network-internal"
+      "network-external"
     ];
     volumes = [
       "volume-emby-config:/config:rw"

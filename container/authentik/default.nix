@@ -1,13 +1,9 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  system.activationScripts.network-authentik = ''
-    ${pkgs.docker}/bin/docker network create network-authentik
-  '';
-  # Containers
   virtualisation.oci-containers.containers."container-authentik-cache" = {
     image = "docker.io/library/redis:alpine";
     networks = [
-      "network-authentik"
+      "network-internal"
     ];
     volumes = [
       "volume-authentik-cache:/data:rw"
@@ -23,7 +19,7 @@
       "POSTGRES_USER" = "authentik";
     };
     networks = [
-      "network-authentik"
+      "network-internal"
     ];
     volumes = [
       "volume-authentik-db:/var/lib/postgresql/data:rw"
@@ -40,8 +36,8 @@
       "AUTHENTIK_REDIS__HOST" = "container-authentik-cache";
     };
     networks = [
-      "network-authentik"
-      "network-caddy"
+      "network-internal"
+      "network-external"
     ];
     ports = [
     "9000:9000"
@@ -72,7 +68,7 @@
       "AUTHENTIK_REDIS__HOST" = "container-authentik-cache";
     };
     networks = [
-      "network-authentik"
+      "network-internal"
     ];
     volumes = [
       "/run/docker.sock:/var/run/docker.sock:rw"

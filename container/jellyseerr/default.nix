@@ -1,8 +1,5 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  system.activationScripts.network-jellyseerr = ''
-    ${pkgs.docker}/bin/docker network create network-jellyseerr
-  '';
   virtualisation.oci-containers.containers."container-jellyseerr-app" = {
     autoStart = true;
     image = "fallenbagel/jellyseerr";
@@ -11,7 +8,7 @@
       "JELLYFIN_TYPE" = "emby";
     };
     networks = [
-      "network-jellyseerr"
+      "network-internal"
     ];
     volumes = [
       "volume-jellyseerr-config:/app/config:rw"

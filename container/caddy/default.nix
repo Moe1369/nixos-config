@@ -1,16 +1,13 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  system.activationScripts.network-caddy = ''
-    ${pkgs.docker}/bin/docker network create network-caddy
-  '';
   virtualisation.oci-containers.containers."container-caddy-app" = {
     autoStart = true;
     image = "lucaslorentz/caddy-docker-proxy:ci-alpine";
     environment = {
-      "CADDY_INGRESS_NETWORKS" = "network-caddy";
+      "CADDY_INGRESS_NETWORKS" = "network-external";
     };
     networks = [
-      "network-caddy"
+      "network-external"
     ];
     volumes = [
       "/var/run/docker.sock:/var/run/docker.sock"
