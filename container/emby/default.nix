@@ -14,6 +14,7 @@
     };
     networks = [
       "network-emby"
+      "network-traefik"
     ];
     volumes = [
       "volume-emby-config:/config:rw"

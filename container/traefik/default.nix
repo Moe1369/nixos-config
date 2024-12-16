@@ -5,7 +5,7 @@
   '';
   virtualisation.oci-containers.containers."container-traefik-app" = {
     autoStart = true;
-    command = "--api.insecure=true --providers.docker";
+    cmd = "--api.insecure=true --providers.docker";
     image = "traefik";
     environment = {
       "TZ" = "Europe/Berlin";
