@@ -19,6 +19,7 @@
     ];
     environment = {
       "TZ" = "Europe/Berlin";
+      "GIDLIST" = "303";
     };
     networks = [
       "network-internal"
