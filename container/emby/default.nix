@@ -1,5 +1,17 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  hardware.opengl = {
+    enable = true;
+    drisupport = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      intel-compute-runtime
+      onevpl-intel-gpu
+      vaapiVdpau
+      libvdpau-va-gl
+      intel-vaapi-driver
+    ];
+  };
   virtualisation.oci-containers.containers."container-emby-app" = {
     autoStart = true;
     image = "emby/embyserver";
