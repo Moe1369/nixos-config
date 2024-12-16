@@ -32,7 +32,7 @@
       "--providers.docker.network=network-traefik"
       "--entrypoints.websecure.http.tls.options=tls-opts@file"
       "--entrypoints.websecure.http.tls.certresolver=dns-porkbun"
-      "--entrypoints.websecure.http.tls.domains.main=chrayed.de"
+      "--entrypoints.websecure.http.tls.domains[0].main=emby.chrayed.de"
       "--providers.file.directory=/rules"
       "--providers.file.watch=true"
       "--certificatesResolvers.dns-porkbun.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory"
