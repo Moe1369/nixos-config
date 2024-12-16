@@ -13,13 +13,12 @@
   };
   virtualisation.oci-containers.containers."container-emby-app" = {
     autoStart = true;
-    image = "emby/embyserver:beta";
+    image = "lscr.io/linuxserver/emby:latest";
     devices = [
         "/dev/dri:/dev/dri"
     ];
     environment = {
       "TZ" = "Europe/Berlin";
-      "GIDLIST" = "303,26";
     };
     networks = [
       "network-internal"
