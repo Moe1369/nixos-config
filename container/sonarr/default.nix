@@ -5,8 +5,8 @@
     image = "lscr.io/linuxserver/sonarr:latest";
     environment = {
       "TZ" = "Europe/Berlin";
-      "PUID" = "1000";
-      "PGID" = "100";
+      "PUID" = "0";
+      "PGID" = "0";
     };
     networks = [
       "network-internal"
