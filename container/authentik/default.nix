@@ -41,6 +41,7 @@
     };
     networks = [
       "network-authentik"
+      "network-caddy"
     ];
     ports = [
     "9000:9000"
@@ -55,6 +56,9 @@
       "container-authentik-cache"
       "container-authentik-db"
     ];
+    labels = {
+      "caddy" = "chrayed.de";
+      "caddy.reverse_proxy" = "{{upstreams 9000}}";
   };
   virtualisation.oci-containers.containers."container-authentik-worker" = {
     image = "ghcr.io/goauthentik/server";
