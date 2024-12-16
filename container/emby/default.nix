@@ -1,11 +1,11 @@
 { pkgs, ... }:
 {
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver
       intel-compute-runtime
-      onevpl-intel-gpu
+      vpl-gpu-rt
       vaapiVdpau
       libvdpau-va-gl
       intel-vaapi-driver
