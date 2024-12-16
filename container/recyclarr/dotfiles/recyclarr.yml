@@ -11,14 +11,9 @@ sonarr:
     base_url: http://container-sonarr-app:8989
     api_key: 21811d916522404eae24cb2e1c32a655
     include:
-      - template: sonarr-v4-custom-formats-anime
-      - template: sonarr-v4-custom-formats-web-1080p
-      - template: sonarr-v4-custom-formats-web-2160p
-      - template: sonarr-v4-quality-profile-anime
-      - template: sonarr-v4-quality-profile-web-1080p
-      - template: sonarr-v4-quality-profile-web-2160p
-      - template: sonarr-quality-definition-anime
       - template: sonarr-quality-definition-series
+      - template: sonarr-v4-quality-profile-web-2160p
+      - template: sonarr-v4-custom-formats-web-2160p
     quality_profiles:
       - name: WEB-2160p
         reset_unmatched_scores:
@@ -26,7 +21,7 @@ sonarr:
         upgrade:
           allowed: true
           until_quality: Bluray-2160p
-        score_set: sqp-1-2160p
+        score_set: default
         quality_sort: top
         qualities:
           - name: Bluray-2160p Remux
@@ -64,23 +59,17 @@ radarr:
     base_url: http://container-radarr-app:7878
     api_key: 81dc7e319c2745138bf86f19a0e4cf2d
     include:
-      - template: radarr-custom-formats-sqp-1-1080p
-      - template: radarr-custom-formats-sqp-1-web-1080p
-      - template: radarr-custom-formats-sqp-1-2160p
-      - template: radarr-quality-definition-sqp-streaming
-      - template: radarr-quality-definition-sqp-uhd
-      - template: radarr-quality-profile-sqp-1-2160p-4k-only-default
-      - template: radarr-quality-profile-sqp-1-2160p-4k-only-imax-e
-      - template: radarr-quality-profile-sqp-1-2160p-default
-      - template: radarr-quality-profile-sqp-1-2160p-imax-e
+    - template: radarr-custom-formats-sqp-5
+    - template: radarr-quality-profile-sqp-5
+    - template: radarr-quality-definition-sqp-uhd
     quality_profiles:
-      - name: Remux + Web 2160p
+      - name: SQP-5
         reset_unmatched_scores:
           enabled: true
         upgrade:
           allowed: true
           until_quality: Bluray-2160p
-        score_set: sqp-1-2160p
+        score_set: sqp-5
         quality_sort: top
         qualities:
           - name: Remux-2160p
