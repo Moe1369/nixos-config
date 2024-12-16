@@ -1,7 +1,8 @@
 { ... }:
 {
   networking.hostId = "efc6dacc";
-  #boot.zfs.extraPools = [ "root" "data" ];
+  boot.zfs.devNodes = "/dev/disk/by-id";
+  boot.zfs.extraPools = [ "root" "var" "nix" "home" "data" ];
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-id/nvme-CT1000P3SSD8_2304E6A27E90-part1";
