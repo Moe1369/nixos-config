@@ -20,5 +20,11 @@
       "/data:/data:rw"
     ];
     ports = ["8096:8096"];
+    labels = {
+      "traefik.enable" = "true";
+      "traefik.http.routers.dozzle.entrypoints" = "web";
+      "traefik.http.routers.dozzle.rule" = "Host(`emby.chrayed.de`)";
+      "traefik.http.services.dozzle.loadBalancer.port" = "8096";
+    };
   };
 }
