@@ -5,10 +5,10 @@
   '';
   virtualisation.oci-containers.containers."container-traefik-app" = {
     autoStart = true;
-    #cmd = [
-    #  "--api.insecure=true"
-    #  "--providers.docker"
-    #];
+    cmd = [
+      "--api.insecure=true"
+      "--providers.docker"
+    ];
     image = "traefik";
     environment = {
       "TZ" = "Europe/Berlin";
@@ -20,8 +20,8 @@
     ];
     volumes = [
       "/var/run/docker.sock:/var/run/docker.sock:ro"
-      "volume-traefik-tls:/tls:rw"
-      "./dotfiles/traefik.yaml:/traefik.yaml:ro"
+     # "volume-traefik-tls:/tls:rw"
+     # "./dotfiles/traefik.yaml:/traefik.yaml:ro"
     ];
     ports = ["80:80" "443:443" "8080:8080"];
   };
