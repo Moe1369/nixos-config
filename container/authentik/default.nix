@@ -41,6 +41,9 @@
     ];
     dependsOn = [
       "container-authentik-server"
+      "container-authentik-worker"
+      "container-authentik-cache"
+      "container-authentik-db"
     ];
   };
   virtualisation.oci-containers.containers."container-authentik-server" = {
