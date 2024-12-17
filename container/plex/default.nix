@@ -5,6 +5,7 @@
     image = "lscr.io/linuxserver/plex:latest";
     environment = {
       "TZ" = "Europe/Berlin";
+      "VERSION" = "docker";
       "PUID" = "0";
       "PGID" = "0";
     };
