@@ -16,6 +16,6 @@
       "volume-plex-config:/config:rw"
       "/data:/data:rw"
     ];
-    ports = ["8081:80"];
+    ports = ["32400:32400"];
   };
 }
