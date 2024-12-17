@@ -29,7 +29,6 @@
       ./container/authentik
       ./container/bazarr
       ./container/emby
-      ./container/jellyfin
       ./container/jellyseerr
       ./container/radarr
       ./container/recyclarr
