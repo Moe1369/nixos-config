@@ -19,7 +19,6 @@
       ./modules/system/upgrades
       ./modules/system/users
     ];
-
     cpu.amd = [
       ./modules/system/cpu-amd
     ];
