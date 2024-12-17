@@ -23,7 +23,7 @@
       "caddy.forward_auth" = "https://radarr.chrayed.de";
       "caddy.forward_auth.uri" = "/outpost.goauthentik.io/auth/caddy";
       "caddy.forward_auth.copy_headers" = "X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version";
-      "caddy.forward_auth.trusted_proxies" = "private ranges";
+      "caddy.forward_auth.trusted_proxies" = "10.0.0.0/8";
       "caddy.reverse_proxy_1" = "{{upstreams 7878}}";
   };
 };
