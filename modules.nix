@@ -30,7 +30,6 @@
       ./container/bazarr
       ./container/emby
       ./container/jellyseerr
-      ./container/plex
       ./container/radarr
       ./container/recyclarr
       ./container/runtime
