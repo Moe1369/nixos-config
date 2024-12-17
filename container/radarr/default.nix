@@ -10,6 +10,7 @@
     };
     networks = [
       "network-internal"
+      "network-external"
     ];
     volumes = [
       "volume-radarr-config:/config:rw"
