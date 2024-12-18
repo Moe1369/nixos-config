@@ -32,6 +32,7 @@
       ./container/jellyseerr
       ./container/radarr
       ./container/recyclarr
+      ./container/reiverr
       ./container/runtime
       ./container/sabnzbd
       ./container/sonarr
