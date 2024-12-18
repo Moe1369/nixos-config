@@ -28,15 +28,16 @@
     container = [
       ./container/authentik
       ./container/bazarr
+      ./container/caddy
       ./container/emby
       ./container/jellyseerr
+      ./container/plex
       ./container/radarr
       ./container/recyclarr
       #./container/reiverr
       ./container/runtime
       ./container/sabnzbd
       ./container/sonarr
-      ./container/caddy
     ];
     filesystem.client = [
       ./modules/system/filesystem-client
