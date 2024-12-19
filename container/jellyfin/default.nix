@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   virtualisation.oci-containers.containers."container-jellyfin-app" = {
     autoStart = true;
@@ -9,7 +9,7 @@
     environment = {
       "TZ" = "Europe/Berlin";
     };
-    user = [ "0:0" ];
+    user = [ "root:root" ];
     networks = [
       "network-internal"
       "network-external"
@@ -30,7 +30,7 @@
   virtualisation.oci-containers.containers."container-jellyfinvue-app" = {
     autoStart = true;
     image = "ghcr.io/jellyfin/jellyfin-vue";
-    user = [ "0:0" ];
+    user = [ "root:root" ];
     networks = [
       "network-internal"
       "network-external"
