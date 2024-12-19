@@ -10,6 +10,7 @@
       "TZ" = "Europe/Berlin";
       "PUID" = "0";
       "PGID" = "0";
+      "PLEX_CLAIM" = "claim-hjA_CBE2k65wzsf97-wm";
     };
     networks = [
       "network-internal"
