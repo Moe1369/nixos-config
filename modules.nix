@@ -30,6 +30,7 @@
       ./container/bazarr
       ./container/caddy
       ./container/emby
+      ./container/jellyfin
       ./container/jellyseerr
       #./container/plex
       ./container/radarr
