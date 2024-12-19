@@ -30,7 +30,7 @@
   };
   virtualisation.oci-containers.containers."container-jellyfinvue-app" = {
     autoStart = true;
-    image = "ghcr.io/jellyfin/jellyfin-vue";
+    image = "ghcr.io/jellyfin/jellyfin-vue:unstable";
     networks = [
       "network-internal"
       "network-external"
