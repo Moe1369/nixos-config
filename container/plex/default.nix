@@ -34,5 +34,8 @@
       "caddy" = "plex.chrayed.de";
       "caddy.reverse_proxy" = "{{upstreams 32400}}";
     };
+    extraOptions = [
+      "--pull=always"
+    ];
   };
 }

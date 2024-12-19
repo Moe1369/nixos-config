@@ -15,5 +15,8 @@
       "caddy" = "reiverr.chrayed.de";
       "caddy.reverse_proxy" = "{{upstreams 9494}}";
     };
+    extraOptions = [
+      "--pull=always"
+    ];
   };
 }

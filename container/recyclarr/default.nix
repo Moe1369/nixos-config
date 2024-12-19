@@ -14,5 +14,8 @@
     volumes = [
       "volume-recyclarr-config:/config:rw"
     ];
+    extraOptions = [
+      "--pull=always"
+    ];
   };
 }

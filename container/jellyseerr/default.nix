@@ -19,5 +19,8 @@
       "caddy" = "jellyseerr.chrayed.de";
       "caddy.reverse_proxy" = "{{upstreams 5055}}";
     };
+    extraOptions = [
+      "--pull=always"
+    ];
   };
 }

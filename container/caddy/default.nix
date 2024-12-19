@@ -14,5 +14,8 @@
       "volume-caddy-config:/data:rw"
     ];
     ports = ["80:80" "443:443"];
+    extraOptions = [
+      "--pull=always"
+    ];
   };
 }

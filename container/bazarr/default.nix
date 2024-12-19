@@ -16,5 +16,8 @@
       "/data:/data:rw"
     ];
     ports = ["6767:6767"];
+    extraOptions = [
+      "--pull=always"
+    ];
   };
 }
