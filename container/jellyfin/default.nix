@@ -8,8 +8,9 @@
     ];
     environment = {
       "TZ" = "Europe/Berlin";
+      "PUID" = "0";
+      "PGID" = "0";
     };
-    user = [ "root:root" ];
     networks = [
       "network-internal"
       "network-external"
@@ -30,11 +31,15 @@
   virtualisation.oci-containers.containers."container-jellyfinvue-app" = {
     autoStart = true;
     image = "ghcr.io/jellyfin/jellyfin-vue";
-    user = [ "root:root" ];
     networks = [
       "network-internal"
       "network-external"
     ];
+    environment = {
+      "TZ" = "Europe/Berlin";
+      "PUID" = "0";
+      "PGID" = "0";
+    };
     labels = {
       "caddy" = "jellyfin.chrayed.de";
       "caddy.reverse_proxy" = "{{upstreams 80}}";
