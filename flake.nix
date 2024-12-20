@@ -61,7 +61,7 @@
               {
                 home-manager.users.${user}.imports =
                   modules.user.base ++
-                  modules.user.gdm ++
+                  modules.user.gnome ++
                   modules.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = userModules;
