@@ -6,7 +6,7 @@
 
   # Install Applications
   programs.file-roller.enable = true;
-  services.gnome.tracker.enable = true;
+  services.gnome.tinysparql.enable = true;
   environment.systemPackages = with pkgs; [
   gnome-text-editor
   dconf-editor
