@@ -54,14 +54,14 @@
             modules.system.base ++
             modules.system.cpu.amd ++
             modules.system.filesystem.client ++
-            modules.system.plasma ++
-            modules.system.sddm ++
+            modules.system.gnome ++
+            modules.system.gdm ++
             modules.system.gaming ++
             modules.system.jovian.workstation ++ [
               {
                 home-manager.users.${user}.imports =
                   modules.user.base ++
-                  modules.user.plasma ++
+                  modules.user.gdm ++
                   modules.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = userModules;

@@ -23,6 +23,7 @@
   adwsteamgtk
   gdm-settings
   graphite-cursors
+  tsukimi
   gnomeExtensions.appindicator
   gnomeExtensions.rounded-window-corners-reborn
   gnomeExtensions.blur-my-shell
