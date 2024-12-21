@@ -1,8 +1,5 @@
 { user, ... }:
 {
-gtk.enable = true;
-gtk.theme = "adw-gtk3";
-gtk.cursorTheme = "adwaita";
 # Global Hotkeys
 dconf.settings = {
    "org/gnome/shell/keybindings" = {
