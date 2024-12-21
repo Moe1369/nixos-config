@@ -81,9 +81,10 @@ dconf.settings = {
       monospace-font-name = "IBM Plex Mono 11";
       gtk-theme = "adw-gtk3";
       enable-hot-corners = false;
+      cursor-theme = "Adwaita";
    };
     "org/gnome/shell/extensions/rounded-window-corners-reborn" = {
-      border-width = -3;
+      border-width = -2;
       skip-libadwaita-app = false;
    };
     "org/gnome/shell/extensions/clipboard-indicator" = {
