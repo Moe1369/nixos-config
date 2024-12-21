@@ -1,8 +1,11 @@
 { user, ... }:
 {
+gtk.enable = true;
+gtk.theme = "adw-gtk3";
+gtk.cursorTheme = "adwaita";
 # Global Hotkeys
 dconf.settings = {
-"org/gnome/shell/keybindings" = {
+   "org/gnome/shell/keybindings" = {
    focus-active-notification = [];
    open-new-window-application-1 = [];
    open-new-window-application-2 = [];
@@ -15,7 +18,7 @@ dconf.settings = {
    open-new-window-application-9 = [];
    toggle-message-tray = ["<Super>N"];
    };
-"org/gnome/settings-daemon/plugins/media-keys" = {
+   "org/gnome/settings-daemon/plugins/media-keys" = {
    help = [];
    home = ["<Super>E"];
    screenreader = [];
@@ -69,7 +72,7 @@ dconf.settings = {
     toggle-on-all-workspaces = ["<Super>S"];
     unmaximize = [];
    };
-      "org/gnome/mutter" = {
+     "org/gnome/mutter" = {
      experimental-features = ["variable-refresh-rate"];
      center-new-windows = true;
      edge-tiling = true;
