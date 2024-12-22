@@ -24,7 +24,7 @@ dconf.settings = {
    magnifier-zoom-out = [];
    };
    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-    binding = ["<Super>Return"];
+    #binding = ["<Super>Return"];
     command = ["kgx --tab"];
     name = ["Console"];
    };
@@ -54,6 +54,7 @@ dconf.settings = {
     move-to-workspace-left = [];
     move-to-workspace-right = [];
     move-to-workspace-up = [];
+    show-desktop = ["<Super>D"];
     switch-applications = ["<Alt>Tab"];
     switch-applications-backward = ["<Shift><Alt>Tab"];
     switch-group = ["<Super>Tab"];
