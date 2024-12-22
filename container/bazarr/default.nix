@@ -23,11 +23,6 @@
   virtualisation.oci-containers.containers."container-bazarr-sync" = {
     autoStart = true;
     image = "ghcr.io/ajmandourah/bazarr-sync:latest";
-    environment = {
-      "TZ" = "Europe/Berlin";
-      "PUID" = "0";
-      "PGID" = "0";
-    };
     networks = [
       "network-internal"
     ];
