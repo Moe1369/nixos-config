@@ -97,7 +97,7 @@ dconf.settings = {
    "org/gnome/desktop/background" = {
     color-shading-type = "solid";
     picture-options = "zoom";
-    picture-uri = "file://" + /home/${user}/Bilder/Wallpaper/wallpaper-asia.jpg;
+    #picture-uri = "file://" + /home/${user}/Bilder/Wallpaper/wallpaper-asia.jpg;
    }; 
       "org/gnome/shell/extensions/nightthemeswitcher/commands" = {
 	enabled = true;
