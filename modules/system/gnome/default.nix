@@ -38,7 +38,6 @@
   environment.gnome.excludePackages = (with pkgs; [
   xterm
   gnome-software
-  gnome-contacts
   gnome-connections
   gnome-maps
   gnome-weather
@@ -48,8 +47,6 @@
   gnome-music
   gnome-terminal
   epiphany
-  geary
-  evince
   gnome-characters
   totem
   tali
