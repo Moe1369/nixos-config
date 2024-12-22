@@ -23,6 +23,11 @@ dconf.settings = {
    magnifier-zoom-in = [];
    magnifier-zoom-out = [];
    };
+   "org/gnome/settings-daemon/plugins/media-keys/custom/keybindings/custom0" = {
+    binding = ["<Super>Return"];
+    command = ["kgx --tab"];
+    name = ["Console"];
+   };
     "org/gnome/desktop/wm/keybindings" = {
     activate-window-menu = [];
     always-on-top = ["<Super>T"];
