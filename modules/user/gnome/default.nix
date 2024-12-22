@@ -97,13 +97,23 @@ dconf.settings = {
    "org/gnome/desktop/background" = {
     color-shading-type = "solid";
     picture-options = "zoom";
- #   picture-uri = "file://" + /home/${user}/Bilder/Wallpaper/wallpaper-asia.jpg;
+    picture-uri = "file://" + /home/${user}/Bilder/Wallpaper/wallpaper-asia.jpg;
    }; 
       "org/gnome/shell/extensions/nightthemeswitcher/commands" = {
 	enabled = true;
 	sunrise = "gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3' && gsettings set org.gnome.desktop.interface color-scheme 'default'";
 	sunset = "gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark' && gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'";
-   }; 
+   };
+   "org/gnome/shell" = {
+   enabled-extensions = [
+   	"light-style@gnome-shell-extensions.gcampax.github.com"
+   	"clipboard-indicator@tudmotu.com"
+   	"AlphabeticalAppGrid@stuarthayhurst"
+   	"rounded-window-corners@fxgn"
+   	"appindicatorsupport@rgcjonas.gmail.com"
+    	"nightthemeswitcher@romainvigier.fr"
+    	"azwallpaper@azwallpaper.gitlab.com" ];
+   };
   };
   # Wallpaper
   home.file.wallpaper = {

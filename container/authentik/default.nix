@@ -100,6 +100,7 @@
       "AUTHENTIK_POSTGRESQL__PASSWORD" = "shmJQWMIWJRI23jn19842!";
       "AUTHENTIK_POSTGRESQL__USER" = "authentik";
       "AUTHENTIK_REDIS__HOST" = "container-authentik-cache";
+      "AUTHENTIK_LISTEN__TRUSTED_PROXY_CIDRS" = "172.16.0.0/12";
     };
     networks = [
       "network-internal"
