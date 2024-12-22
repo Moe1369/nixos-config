@@ -26,9 +26,6 @@
     networks = [
       "network-internal"
     ];
-    volumes = [
-      "volume-bazarr-sync:/usr/src/app:rw"
-    ];
     extraOptions = [
       "--pull=always"
     ];
