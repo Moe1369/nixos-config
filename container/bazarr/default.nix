@@ -20,4 +20,22 @@
       "--pull=always"
     ];
   };
+  virtualisation.oci-containers.containers."container-bazarr-sync" = {
+    autoStart = true;
+    image = "lscr.io/linuxserver/bazarr:latest";
+    environment = {
+      "TZ" = "Europe/Berlin";
+      "PUID" = "0";
+      "PGID" = "0";
+    };
+    networks = [
+      "network-internal"
+    ];
+    volumes = [
+      "volume-bazarr-sync:/usr/src/app:rw"
+    ];
+    extraOptions = [
+      "--pull=always"
+    ];
+  };
 }
