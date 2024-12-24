@@ -54,14 +54,14 @@
             modules.system.base ++
             modules.system.cpu.amd ++
             modules.system.filesystem.client ++
-            modules.system.gnome ++
-            modules.system.gdm ++
+            modules.system.plasma ++
+            modules.system.sddm ++
             modules.system.gaming ++
             modules.system.jovian.workstation ++ [
               {
                 home-manager.users.${user}.imports =
                   modules.user.base ++
-                  modules.user.gnome ++
+                  modules.user.plasma ++
                   modules.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = userModules;
@@ -81,13 +81,13 @@
             modules.system.base ++
             modules.system.cpu.amd ++
             modules.system.filesystem.client ++
-            modules.system.gnome ++
+            modules.system.plasma ++
             modules.system.gaming ++
             modules.system.jovian.konsole ++ [
               {
                 home-manager.users.${user}.imports =
                   modules.user.base ++
-                  modules.user.gnome ++
+                  modules.user.plasma ++
                   modules.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = userModules;
@@ -107,13 +107,13 @@
             modules.system.base ++
             modules.system.cpu.amd ++
             modules.system.filesystem.client ++
-            modules.system.gnome ++
+            modules.system.plasma ++
             modules.system.gaming ++
             modules.system.jovian.steamdeck ++ [
               {
                 home-manager.users.${user}.imports =
                   modules.user.base ++
-                  modules.user.gnome ++
+                  modules.user.plasma ++
                   modules.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = userModules;
