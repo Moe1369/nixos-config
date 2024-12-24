@@ -20,14 +20,4 @@
       "--pull=always"
     ];
   };
-  virtualisation.oci-containers.containers."container-bazarr-sync" = {
-    autoStart = true;
-    image = "ghcr.io/ajmandourah/bazarr-sync:latest";
-    networks = [
-      "network-internal"
-    ];
-    extraOptions = [
-      "--pull=always"
-    ];
-  };
 }
