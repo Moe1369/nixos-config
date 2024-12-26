@@ -54,10 +54,10 @@
             modules.system.base ++
             modules.system.cpu.amd ++
             modules.system.filesystem.client ++
+            modules.system.gpu.amd ++
             modules.system.plasma ++
             modules.system.sddm ++
-            modules.system.gaming ++
-            modules.system.jovian.workstation ++ [
+            modules.system.gaming [
               {
                 home-manager.users.${user}.imports =
                   modules.user.base ++
