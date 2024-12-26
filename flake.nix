@@ -54,7 +54,7 @@
             modules.system.base ++
             modules.system.cpu.amd ++
             modules.system.filesystem.client ++
-            modules.system.gpu.amd ++
+            modules.system.jovian.workstation ++
             modules.system.plasma ++
             modules.system.sddm ++
             modules.system.gaming ++ [
