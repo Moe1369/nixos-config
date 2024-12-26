@@ -19,6 +19,9 @@
       ./modules/system/upgrades
       ./modules/system/users
     ];
+    gpu.amd = [
+      ./modules/system/gpu-amd
+    ];
     cpu.amd = [
       ./modules/system/cpu-amd
     ];
