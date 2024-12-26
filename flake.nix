@@ -57,7 +57,7 @@
             modules.system.gpu.amd ++
             modules.system.plasma ++
             modules.system.sddm ++
-            modules.system.gaming [
+            modules.system.gaming ++ [
               {
                 home-manager.users.${user}.imports =
                   modules.user.base ++
