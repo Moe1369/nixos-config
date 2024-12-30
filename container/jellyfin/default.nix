@@ -21,28 +21,8 @@
     ];
     ports = ["8097:8096"];
     labels = {
-      "caddy" = "jellyfin-alt.chrayed.de";
-      "caddy.reverse_proxy" = "{{upstreams 8096}}";
-    };
-    extraOptions = [
-      "--pull=always"
-    ];
-  };
-  virtualisation.oci-containers.containers."container-jellyfinvue-app" = {
-    autoStart = true;
-    image = "ghcr.io/jellyfin/jellyfin-vue:unstable";
-    networks = [
-      "network-internal"
-      "network-external"
-    ];
-    environment = {
-      "TZ" = "Europe/Berlin";
-      "PUID" = "0";
-      "PGID" = "0";
-    };
-    labels = {
       "caddy" = "jellyfin.chrayed.de";
-      "caddy.reverse_proxy" = "{{upstreams 80}}";
+      "caddy.reverse_proxy" = "{{upstreams 8096}}";
     };
     extraOptions = [
       "--pull=always"
