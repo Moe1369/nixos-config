@@ -213,11 +213,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1735049224,
-        "narHash": "sha256-fWUd9kyXdepphJ7cCzOsuSo7l0kbFCkUqfgKqZyFZzE=",
+        "lastModified": 1736525117,
+        "narHash": "sha256-aU5lfnaYgQIGMQlVTov11wCUrI+6iYD6t/cOKyvPQWg=",
         "owner": "nix-community",
         "repo": "plasma-manager",
-        "rev": "d16bbded0ae452bc088489e7dca3ef58d8d1830b",
+        "rev": "9ef5045ad5cae2bae08def8d7926a728f0e40019",
         "type": "github"
       },
       "original": {
