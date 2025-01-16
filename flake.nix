@@ -23,7 +23,8 @@
 
   outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, ... }:
   let
-    modules = import ./groups.nix;
+    groups = import ./groups.nix;
+    modules = import ./modules.nix;
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = import nixpkgs {inherit system;};
