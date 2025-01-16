@@ -25,13 +25,13 @@
   let
     groups = import ./groups.nix;
     modules.system.external = [
-home-manager.nixosModules.home-manager
+      home-manager.nixosModules.home-manager
       jovian.nixosModules.jovian
       nur.modules.nixos.default
-];
+    ];
     modules.user.external = [
- plasma-manager.homeManagerModules.plasma-manager
-];
+      plasma-manager.homeManagerModules.plasma-manager
+    ];
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = import nixpkgs {inherit system;};
@@ -67,7 +67,7 @@ home-manager.nixosModules.home-manager
 
       konsole =
         let
-          user = "mo";
+          user = "deck";
           hostName = "konsole";
         in
         lib.nixosSystem {
