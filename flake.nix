@@ -24,7 +24,14 @@
   outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, ... }:
   let
     groups = import ./groups.nix;
-    modules = import ./modules.nix;
+    modules.system.external = [
+home-manager.nixosModules.home-manager
+      jovian.nixosModules.jovian
+      nur.modules.nixos.default
+];
+    modules.user.external = [
+ plasma-manager.homeManagerModules.plasma-manager
+];
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = import nixpkgs {inherit system;};
@@ -79,7 +86,7 @@
                   groups.user.plasma ++
                   groups.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
-                home-manager.sharedModules = {modules.user.external;};
+                home-manager.sharedModules = modules.user.external;
               }
             ];
         };
