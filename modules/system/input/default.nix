@@ -1,4 +1,4 @@
 { ... }:
 {
-  services.libinput.enable = false;
+  services.libinput.enable = true;
 }

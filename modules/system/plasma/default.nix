@@ -28,6 +28,7 @@
     pywal
     ]);
 
+  # Needed for proper rebuild
   system.activationScripts.deleteFile = ''
     rm -f /home/${user}/.config/kglobalshortcutsrc
   '';

@@ -9,5 +9,4 @@
   jovian.steam.updater.splash = "steamos";
   jovian.hardware.amd.gpu.enableEarlyModesetting = true;
   jovian.devices.steamdeck.enable = true;
-  jovian.devices.steamdeck.autoUpdate = true;
 }

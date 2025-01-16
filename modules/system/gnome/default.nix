@@ -22,7 +22,6 @@
   adw-gtk3
   adwsteamgtk
   gdm-settings
-  graphite-cursors
   tsukimi
   gnomeExtensions.appindicator
   gnomeExtensions.rounded-window-corners-reborn

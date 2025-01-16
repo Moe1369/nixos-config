@@ -1,7 +1,5 @@
 {
   description = "Moe.OS";
-
-  # Define Inputs
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager = {
@@ -13,11 +11,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    jovian.url = "github:Jovian-Experiments/Jovian-NixOS/development";
-    jovian.inputs.nixpkgs.follows = "nixpkgs";
-    agenix.url = "github:ryantm/agenix";
-    nur.url = "github:nix-community/NUR";
-    nur.inputs.nixpkgs.follows = "nixpkgs";
+    jovian = {
+      url = "github:Jovian-Experiments/Jovian-NixOS/development";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, ... }:
@@ -27,9 +28,7 @@
     lib = nixpkgs.lib;
     pkgs = import nixpkgs {
     inherit system;
-    config.allowUnfree = true;
     };
-
     systemModules = [
       home-manager.nixosModules.home-manager
       jovian.nixosModules.jovian
@@ -38,7 +37,6 @@
     userModules =  [
       plasma-manager.homeManagerModules.plasma-manager
     ];
-
   in
   {
     nixosConfigurations = {
