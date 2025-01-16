@@ -79,7 +79,7 @@
                   groups.user.plasma ++
                   groups.user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
-                home-manager.sharedModules = modules.user.external;
+                home-manager.sharedModules = {modules.user.external};
               }
             ];
         };
