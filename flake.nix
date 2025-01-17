@@ -126,7 +126,7 @@
           modules =
             modules.system.external ++
             groups.system.base ++
-            groups.system.cpu.intel ++
+#            groups.system.cpu.intel ++
             groups.system.services ++
             groups.system.filesystem.server ++ [
               {
