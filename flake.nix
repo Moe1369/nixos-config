@@ -23,7 +23,21 @@
 
   outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, ... }:
   let
-    groups = import ./groups.nix;
+
+  system.base = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/base);
+  system.desktop = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/desktop);
+  system.filesystem.client = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/filesystem/client);  system.filesystem.server = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/filesystem/server);  system.gaming = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/gaming);
+  system.gnome = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/gnome);
+  system.jovian = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/jovian);
+  system.microcode = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/microcode);
+  system.plasma = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/plasma);
+  system.services = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/services);
+  user.base = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./user/base);
+  user.gaming = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./user/gaming);
+  user.gnome = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./user/gnome);
+  user.plasma = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./user/plasma);
+
+#    groups = import ./groups.nix;
     modules.system.external = [
       home-manager.nixosModules.home-manager
       jovian.nixosModules.jovian
@@ -32,7 +46,7 @@
     modules.user.external = [
       plasma-manager.homeManagerModules.plasma-manager
     ];
-    system = "x86_64-linux";
+  #  system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = import nixpkgs {inherit system;};
   in
@@ -47,18 +61,18 @@
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
             modules.system.external ++
-            groups.system.base ++
-            groups.system.cpu.amd ++
-            groups.system.filesystem.client ++
-            groups.system.jovian.workstation ++
-            groups.system.plasma ++
-            groups.system.sddm ++
-            groups.system.gaming ++ [
+            system.base ++
+            system.cpu.amd ++
+            system.filesystem.client ++
+            system.jovian.workstation ++
+            system.plasma ++
+            system.sddm ++
+            system.gaming ++ [
               {
                 home-manager.users.${user}.imports =
-                  groups.user.base ++
-                  groups.user.plasma ++
-                  groups.user.gaming;
+                  user.base ++
+                  user.plasma ++
+                  user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = modules.user.external;
               }
@@ -74,17 +88,17 @@
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
             modules.system.external ++
-            groups.system.base ++
-            groups.system.cpu.amd ++
-            groups.system.filesystem.client ++
-            groups.system.plasma ++
-            groups.system.gaming ++
-            groups.system.jovian.konsole ++ [
+            system.base ++
+            system.cpu.amd ++
+            system.filesystem.client ++
+            system.plasma ++
+            system.gaming ++
+            system.jovian.konsole ++ [
               {
                 home-manager.users.${user}.imports =
-                  groups.user.base ++
-                  groups.user.plasma ++
-                  groups.user.gaming;
+                  user.base ++
+                  user.plasma ++
+                  user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = modules.user.external;
               }
@@ -100,17 +114,17 @@
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
             modules.system.external ++
-            groups.system.base ++
-            groups.system.cpu.amd ++
-            groups.system.filesystem.client ++
-            groups.system.plasma ++
-            groups.system.gaming ++
-            groups.system.jovian.steamdeck ++ [
+            system.base ++
+            system.cpu.amd ++
+            system.filesystem.client ++
+            system.plasma ++
+            system.gaming ++
+            system.jovian.steamdeck ++ [
               {
                 home-manager.users.${user}.imports =
-                  groups.user.base ++
-                  groups.user.plasma ++
-                  groups.user.gaming;
+                  user.base ++
+                  user.plasma ++
+                  user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = modules.user.external;
               }
@@ -125,13 +139,13 @@
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
             modules.system.external ++
-            groups.system.base ++
+            system.base ++
 #            groups.system.cpu.intel ++
-            groups.system.services ++
-            groups.system.filesystem.server ++ [
+            system.services ++
+            system.filesystem.server ++ [
               {
                 home-manager.users.${user}.imports =
-                  groups.user.base;
+                  user.base;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.sharedModules = modules.user.external;
               }
