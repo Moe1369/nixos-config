@@ -23,34 +23,36 @@
 
   outputs = { nixpkgs, home-manager, plasma-manager, jovian, nur, ... }:
   let
+    
+    system = "x86_64-linux";
+    lib = nixpkgs.lib;
+    pkgs = import nixpkgs {inherit system;};
 
-  system.base = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/base);
-  system.desktop = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/desktop);
-  system.filesystem.client = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/filesystem/client);  
-  system.filesystem.server = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/filesystem/server);  
-  system.gaming = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/gaming);
-  system.gnome = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/gnome);
-  system.jovian = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/jovian);
-  system.microcode = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/microcode);
-  system.plasma = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/plasma);
-  system.services = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/services);
-  user.base = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./user/base);
-  user.gaming = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./user/gaming);
-  user.gnome = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./user/gnome);
-  user.plasma = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./user/plasma);
+    root.base = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/base);
+    root.desktop = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/desktop);
+    root.filesystem.client = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/filesystem/client);  
+    root.filesystem.server = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/filesystem/server);  
+    root.gaming = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/gaming);
+    root.gnome = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/gnome);
+    root.jovian = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/jovian);
+    root.plasma = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/plasma);
+    root.services = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/services);
 
-#    groups = import ./groups.nix;
-    modules.system.external = [
+    home.base = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./home/base);
+    home.gaming = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./home/gaming);
+    home.gnome = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./home/gnome);
+    home.plasma = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./home/plasma);
+    
+    root.external = [
       home-manager.nixosModules.home-manager
       jovian.nixosModules.jovian
       nur.modules.nixos.default
     ];
-    modules.user.external = [
+
+    home.external = [
       plasma-manager.homeManagerModules.plasma-manager
     ];
-  #  system = "x86_64-linux";
-    lib = nixpkgs.lib;
-    pkgs = import nixpkgs {inherit system;};
+
   in
   {
     nixosConfigurations = {
@@ -62,21 +64,21 @@
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
-            modules.system.external ++
-            system.base ++
-            system.cpu.amd ++
-            system.filesystem.client ++
-            system.jovian.workstation ++
-            system.plasma ++
-            system.sddm ++
-            system.gaming ++ [
+            root.external ++
+            root.base ++
+            root.cpu.amd ++
+            root.filesystem.client ++
+            root.jovian ++
+            root.plasma ++
+            root.sddm ++
+            root.gaming ++ [
               {
-                home-manager.users.${user}.imports =
-                  user.base ++
-                  user.plasma ++
-                  user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
-                home-manager.sharedModules = modules.user.external;
+                home-manager.users.${user}.imports =
+                  home.base ++
+                  home.plasma ++
+                  home.gaming;
+                home-manager.sharedModules = home.external;
               }
             ];
         };
@@ -89,20 +91,20 @@
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
-            modules.system.external ++
-            system.base ++
-            system.cpu.amd ++
-            system.filesystem.client ++
-            system.plasma ++
-            system.gaming ++
-            system.jovian.konsole ++ [
+            root.external ++
+            root.base ++
+            root.cpu.amd ++
+            root.filesystem.client ++
+            root.plasma ++
+            root.gaming ++
+            root.jovian ++ [
               {
-                home-manager.users.${user}.imports =
-                  user.base ++
-                  user.plasma ++
-                  user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
-                home-manager.sharedModules = modules.user.external;
+                home-manager.users.${user}.imports =
+                  home.base ++
+                  home.plasma ++
+                  home.gaming;
+                home-manager.sharedModules = home.external;
               }
             ];
         };
@@ -115,20 +117,20 @@
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
-            modules.system.external ++
-            system.base ++
-            system.cpu.amd ++
-            system.filesystem.client ++
-            system.plasma ++
-            system.gaming ++
-            system.jovian.steamdeck ++ [
+            root.external ++
+            root.base ++
+            root.cpu.amd ++
+            root.filesystem.client ++
+            root.plasma ++
+            root.gaming ++
+            root.jovian ++ [
               {
-                home-manager.users.${user}.imports =
-                  user.base ++
-                  user.plasma ++
-                  user.gaming;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
-                home-manager.sharedModules = modules.user.external;
+                home-manager.users.${user}.imports =
+                  home.base ++
+                  home.plasma ++
+                  home.gaming;
+                home-manager.sharedModules = home.external;
               }
             ];
         };
@@ -140,16 +142,15 @@
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
           modules =
-            modules.system.external ++
-            system.base ++
-#            groups.system.cpu.intel ++
-            system.services ++
-            system.filesystem.server ++ [
+            root.external ++
+            root.base ++
+            root.services ++
+            root.filesystem.server ++ [
               {
-                home-manager.users.${user}.imports =
-                  user.base;
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
-                home-manager.sharedModules = modules.user.external;
+                home-manager.users.${user}.imports =
+                  home.base;
+                home-manager.sharedModules = home.external;
               }
             ];
         };
