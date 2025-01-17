@@ -11,6 +11,6 @@
   jovian.steamos.enableBluetoothConfig = true;
   jovian.devices.steamdeck = lib.mkIf (config.networking.hostName == "steamdeck") {
     enable = true;
-  }
+  };
   #jovian.devices.steamdeck.enable = true;
 }
