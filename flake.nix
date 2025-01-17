@@ -119,7 +119,6 @@
           modules =
             root.external ++
             root.base ++
-            root.cpu.amd ++
             root.filesystem.client ++
             root.plasma ++
             root.gaming ++
