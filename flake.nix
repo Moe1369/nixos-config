@@ -67,7 +67,7 @@
 
       konsole =
         let
-          user = "deck";
+          user = "mo";
           hostName = "konsole";
         in
         lib.nixosSystem {
