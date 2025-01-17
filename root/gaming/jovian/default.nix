@@ -1,4 +1,4 @@
-{ user, hostName, lib, ... }:
+{ user, hostName, lib, config, ... }:
 {
   jovian.steam.enable = true;
   jovian.steam.autoStart = true;

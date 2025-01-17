@@ -1,4 +1,4 @@
-{ user, lib, hostName, ... }:
+{ user, lib, hostName, config, ... }:
 {
   services.displayManager = lib.mkIf (config.networking.hostName == "workstation") {
     sddm.wayland.enable = true;
