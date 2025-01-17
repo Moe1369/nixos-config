@@ -127,7 +127,7 @@
             modules.system.external ++
             groups.system.base ++
             groups.system.cpu.intel ++
-            groups.system.container ++
+            groups.system.services ++
             groups.system.filesystem.server ++ [
               {
                 home-manager.users.${user}.imports =

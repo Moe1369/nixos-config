@@ -1,100 +1,17 @@
+{lib, user, hostName, ...}:
 {
-  system = {
-    base = [
-      ./modules/system/apps-shell
-      ./modules/system/bluetooth
-      ./modules/system/boot
-      ./modules/system/firmware
-      ./modules/system/home-manager
-      ./modules/system/input
-      ./modules/system/locale
-      ./modules/system/networking
-      ./modules/system/nixsettings
-      ./modules/system/printing
-      ./modules/system/security
-      ./modules/system/shell
-      ./modules/system/sound
-      ./modules/system/ssh
-      ./modules/system/systemversion
-      ./modules/system/upgrades
-      ./modules/system/users
-    ];
-    gpu.amd = [
-      ./modules/system/gpu-amd
-    ];
-    cpu.amd = [
-      ./modules/system/cpu-amd
-    ];
-    cpu.intel = [
-      ./modules/system/cpu-intel
-    ];
-    container = [
-      ./container/authentik
-      ./container/bazarr
-      ./container/caddy
-      ./container/emby
-      ./container/jellyfin
-      ./container/jellyseerr
-      #./container/plex
-      ./container/radarr
-      ./container/recyclarr
-      #./container/reiverr
-      ./container/runtime
-      ./container/sabnzbd
-      ./container/sonarr
-    ];
-    filesystem.client = [
-      ./modules/system/filesystem-client
-    ];
-    filesystem.server = [
-      ./modules/system/filesystem-server
-    ];
-    gnome = [
-      ./modules/system/apps-misc
-      ./modules/system/browser
-      ./modules/system/gnome
-    ];
-    plasma = [
-      ./modules/system/apps-misc
-      ./modules/system/browser
-      ./modules/system/plasma
-    ];
-    gdm = [
-      ./modules/system/gdm
-    ];
-    sddm = [
-      ./modules/system/sddm
-    ];
-    gaming = [
-      ./modules/system/controller
-      ./modules/system/lact
-      ./modules/system/steam
-    ];
-    jovian.workstation = [
-      ./modules/system/jovian-workstation
-    ];
-    jovian.konsole = [
-      ./modules/system/jovian-konsole
-    ];
-    jovian.steamdeck = [
-      ./modules/system/jovian-steamdeck
-    ];
-  };
-  user = {
-    base = [
-      ./modules/user/git
-      ./modules/user/homeversion
-      ./modules/user/shell
-      ./modules/user/ssh
-    ];
-    gnome = [
-      ./modules/user/gnome
-    ];
-    plasma = [
-      ./modules/user/plasma
-    ];
-    gaming = [
-      ./modules/user/steam
-    ];
-  };
+  system.base = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/base);
+  system.desktop = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/desktop);
+  system.filesystem.client = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/filesystem/client);
+  system.filesystem.server = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/filesystem/server);
+  system.gaming = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/gaming);
+  system.gnome = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/gnome);
+  system.jovian = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/jovian);
+  system.microcode = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/microcode);
+  system.plasma = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/plasma);
+  system.services = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./system/services);
+  user.base = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./user/base);
+  user.gaming = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./user/gaming);
+  user.gnome = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./user/gnome);
+  user.plasma = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./user/plasma);
 }
