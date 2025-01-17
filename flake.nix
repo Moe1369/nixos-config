@@ -34,7 +34,6 @@
     root.filesystem.server = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/filesystem/server);  
     root.gaming = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/gaming);
     root.gnome = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/gnome);
-    root.jovian = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/jovian);
     root.plasma = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/plasma);
     root.services = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/services);
 
@@ -66,9 +65,7 @@
           modules =
             root.external ++
             root.base ++
-            root.cpu.amd ++
             root.filesystem.client ++
-            root.jovian ++
             root.plasma ++
             root.sddm ++
             root.gaming ++ [
@@ -95,8 +92,7 @@
             root.base ++
             root.filesystem.client ++
             root.plasma ++
-            root.gaming ++
-            root.jovian ++ [
+            root.gaming ++ [
               {
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.users.${user}.imports =
@@ -120,8 +116,7 @@
             root.base ++
             root.filesystem.client ++
             root.plasma ++
-            root.gaming ++
-            root.jovian ++ [
+            root.gaming ++ [
               {
                 home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.users.${user}.imports =

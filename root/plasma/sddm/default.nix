@@ -1,7 +1,10 @@
-{ user, ... }:
+{ user, lib, hostName, ... }:
 {
-  services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = user;
+  services.displayManager = lib.mkIf (config.networking.hostName == "workstation") {
+    sddm.wayland.enable = true;
+    sddm.enable = true;
+    autoLogin.enable = true;
+    autoLogin.user = user;
+  };
+
 }
