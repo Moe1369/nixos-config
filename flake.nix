@@ -28,19 +28,21 @@
     lib = nixpkgs.lib;
     pkgs = import nixpkgs {inherit system;};
 
-    root.base = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/base);
-    root.desktop = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/desktop);
-    root.filesystem.client = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/filesystem/client);  
-    root.filesystem.server = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/filesystem/server);  
-    root.gaming = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/gaming);
-    root.gnome = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/gnome);
-    root.plasma = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/plasma);
-    root.services = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./root/services);
+    filterNixFiles = dir: lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive dir);
 
-    home.base = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./home/base);
-    home.gaming = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./home/gaming);
-    home.gnome = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./home/gnome);
-    home.plasma = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./home/plasma);
+    root.base = filterNixFiles ./root/base;
+    root.desktop = filterNixFiles ./root/desktop;
+    root.filesystem.client = filterNixFiles ./root/filesystem/client;
+    root.filesystem.server = filterNixFiles ./root/filesystem/server;
+    root.gaming = filterNixFiles ./root/gaming;
+    root.gnome = filterNixFiles ./root/gnome;
+    root.plasma = filterNixFiles ./root/plasma;
+    root.services = filterNixFiles ./root/services;
+
+    home.base = filterNixFiles ./home/base;
+    home.gaming = filterNixFiles ./home/gaming;
+    home.gnome = filterNixFiles ./home/gnome;
+    home.plasma = filterNixFiles ./home/plasma;
     
     root.external = [
       home-manager.nixosModules.home-manager
