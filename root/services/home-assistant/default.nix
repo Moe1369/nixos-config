@@ -9,7 +9,10 @@
       "PGID" = "0";
     };
     networks = [
-      "host"
+      "network-internal"
+    ];
+    ports = [
+      "8123:8123"
     ];
     volumes = [
       "volume-home-assistant-config:/config:rw"
