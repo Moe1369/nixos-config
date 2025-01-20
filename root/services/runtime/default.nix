@@ -8,7 +8,9 @@
   '';
   virtualisation.docker = {
     enable = true;
-    autoPrune.enable = true;
+    autoPrune.enable = false;
+    rootless = true;
+    setSocketVariable = true;
   };
   virtualisation.oci-containers.backend = "docker";
 }
