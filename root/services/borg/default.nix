@@ -1,6 +1,6 @@
 {pkgs, ...}:
 {
-    services.borgbackups.jobs."server" = {
+    services.borgbackup.jobs."server" = {
         paths = "/docker";
         encryption = "none";
         environment.BORG_RSH = "ssh -i /home/administrator/.ssh/extern";
