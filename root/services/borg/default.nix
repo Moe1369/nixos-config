@@ -1,10 +1,10 @@
 {pkgs, ...}:
 {
     services.borgbackup.jobs."server" = {
-        paths = "/docker";
+        paths = "/var/lib/docker";
         encryption.mode = "none";
         environment.BORG_RSH = "ssh -i /home/administrator/.ssh/extern";
-        repo = "ssh://q1wxyk20@q1wxyk20.repo.borgbase.com/./repo";
+        repo = "ssh://x";
         compression = "auto,zstd";
         startAt = "daily";
     };
