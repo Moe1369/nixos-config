@@ -9,8 +9,8 @@
   virtualisation.docker = {
     enable = true;
     autoPrune.enable = false;
-    rootless = true;
-    setSocketVariable = true;
+    rootless.enable = true;
+    rootless.setSocketVariable = true;
   };
   virtualisation.oci-containers.backend = "docker";
 }
