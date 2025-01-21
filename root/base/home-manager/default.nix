@@ -1,5 +1,5 @@
 # Home Manager Settings.
-{ home-manager, pkgs, ... }:
+{ home-manager, pkgs, user, hostName, ... }:
 {
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
