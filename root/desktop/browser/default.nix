@@ -1,3 +1,4 @@
+# Only install Chrome. Declaritive options not needed.
 { pkgs, ... }:
 {
   environment.systemPackages =

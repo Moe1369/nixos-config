@@ -1,5 +1,7 @@
+# Filesystem settings for homeserver. Singledisk root with ext4 and external disks. External disks with ZFS.
 { ... }:
 {
+  # ZFS NEEDS hostID
   networking.hostId = "efc6dacc";
   boot.zfs.devNodes = "/dev/disk/by-id";
   boot.zfs.extraPools = [ "ssd" "hdd" ];

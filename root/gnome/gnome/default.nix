@@ -1,10 +1,10 @@
 { pkgs, ... }:
 {
-  # Install gnome
+  # Install Gnome.
   services.xserver.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  # Install Applications
+  # Install applications.
   programs.file-roller.enable = true;
   services.gnome.tinysparql.enable = true;
   environment.systemPackages = with pkgs; [
@@ -33,7 +33,7 @@
   gnomeExtensions.alphabetical-app-grid
   gnomeExtensions.night-theme-switcher
   ];
-  # Don't install unneeded applications
+  # Don't install unneeded applications.
   environment.gnome.excludePackages = (with pkgs; [
   xterm
   gnome-software

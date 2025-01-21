@@ -1,3 +1,4 @@
+# Normal desktop programs for both gnome and plasma.
 { pkgs, ... }:
 {
   environment.systemPackages =

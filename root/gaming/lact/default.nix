@@ -1,6 +1,6 @@
+# Use LACT for GPU overclocking
 { pkgs,... }:
 {
-  # Install LACT Package
   environment.systemPackages =
    (with pkgs; [
     lact

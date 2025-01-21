@@ -1,3 +1,4 @@
+# Enable bluetooth on boot.
 { ... }:
 {
   hardware.bluetooth.enable = true;

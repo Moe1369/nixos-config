@@ -1,3 +1,4 @@
+# Autoupdate settings. Maybe make it weekly.
 { hostName, ... }:
 {
     nix.optimise.automatic = true;

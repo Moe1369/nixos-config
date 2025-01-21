@@ -1,3 +1,4 @@
+# ZSH global settings. No HM needed.
 { pkgs,  ... }:
 {
   programs.zsh.enable = true;

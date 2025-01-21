@@ -1,3 +1,4 @@
+# Simple networking settings. Uses DHCP.
 { lib,  hostName, ... }:
 {
   networking.hostName = hostName;

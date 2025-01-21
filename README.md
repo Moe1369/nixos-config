@@ -1,8 +1,7 @@
 ## NixOS config
 
-Personal NixOS configuration mostly used for learning the Nix language. Makes use of the experimental Flake and Home-Manager features.
+Daily Driver Nixos configuration.
 
-Mirrored on [gitea.chrayed.de](https://gitea.chrayed.de/moe1369/nixos-config)
 
 ### Todo
 

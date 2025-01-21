@@ -1,3 +1,4 @@
+# Install GPU drivers.
 { ... }:
 {
 hardware.graphics = {

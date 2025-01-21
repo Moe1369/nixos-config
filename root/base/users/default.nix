@@ -1,3 +1,4 @@
+# Define users. Hashed Password reused across devices.
 { user, ... }:
 {
   users.users.${user} = {

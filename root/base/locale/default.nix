@@ -1,3 +1,4 @@
+# Locale settings.
 { ... }:
 {
   time.timeZone = "Europe/Berlin";

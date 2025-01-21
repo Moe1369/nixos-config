@@ -1,3 +1,4 @@
+# Shell Apps for every host.
 { pkgs, ... }:
 {
   environment.systemPackages =

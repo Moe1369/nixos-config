@@ -1,3 +1,4 @@
+# Filesystem for clients. Use partlabel as device to make it reusable. Singledisk setup.
 { ... }:
 {
     fileSystems."/" =

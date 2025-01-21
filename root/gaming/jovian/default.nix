@@ -1,3 +1,4 @@
+# Jovian Experiments for SteamOS like experience.
 { user, hostName, lib, config, ... }:
 {
   jovian.steam.enable = true;

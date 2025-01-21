@@ -1,3 +1,4 @@
+# SSH settings. Defined authorized internal key and enables key authentication.
 { user, ... }:
 {
     services.openssh = {

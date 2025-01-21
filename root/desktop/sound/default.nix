@@ -1,3 +1,4 @@
+# Use pipewire and alsa instead of pulseaudio.
 { ... }:
 {
   hardware.pulseaudio.enable = false;
