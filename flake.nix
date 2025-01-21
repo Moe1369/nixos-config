@@ -72,7 +72,6 @@
             root.sddm ++
             root.gaming ++ [
               {
-                home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.users.${user}.imports =
                   home.base ++
                   home.plasma ++
@@ -96,7 +95,6 @@
             root.plasma ++
             root.gaming ++ [
               {
-                home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.users.${user}.imports =
                   home.base ++
                   home.plasma ++
@@ -120,7 +118,6 @@
             root.plasma ++
             root.gaming ++ [
               {
-                home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.users.${user}.imports =
                   home.base ++
                   home.plasma ++
@@ -142,7 +139,6 @@
             root.services ++
             root.filesystem.server ++ [
               {
-                home-manager.extraSpecialArgs = { inherit user; inherit hostName; };
                 home-manager.users.${user}.imports =
                   home.base;
                 home-manager.sharedModules = home.external;
