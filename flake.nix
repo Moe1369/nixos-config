@@ -70,7 +70,6 @@
             root.base ++
             root.filesystem.client ++
             root.plasma ++
-            root.sddm ++
             root.gaming ++ [
               {
                 home-manager.users.${user}.imports =
