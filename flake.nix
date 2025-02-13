@@ -93,7 +93,8 @@
             root.base ++
             root.filesystem.client ++
             root.plasma ++
-            root.gaming ++ [
+            root.gaming ++ 
+            root.jovian ++ [
               {
                 home-manager.users.${user}.imports =
                   home.base ++
@@ -116,7 +117,8 @@
             root.base ++
             root.filesystem.client ++
             root.plasma ++
-            root.gaming ++ [
+            root.gaming ++ 
+            root.jovian ++ [
               {
                 home-manager.users.${user}.imports =
                   home.base ++
