@@ -17,8 +17,8 @@
     volumes = [
       "volume-home-assistant-config:/config:rw"
     ];
-    extraOptions = [
-      "--pull=always"
-    ];
+   #extraOptions = [
+   #   "--pull=always"
+   # ];
   };
 }

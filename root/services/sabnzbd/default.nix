@@ -16,8 +16,8 @@
       "/data:/data:rw"
     ];
     ports = ["8080:8080"];
-    extraOptions = [
-      "--pull=always"
-    ];
+    #extraOptions = [
+    #  "--pull=always"
+    #];
   };
 }

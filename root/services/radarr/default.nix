@@ -26,8 +26,8 @@
       "caddy.forward_auth.trusted_proxies" = "10.0.0.0/8";
       "caddy.reverse_proxy_1" = "{{upstreams 7878}}";
     };
-    extraOptions = [
-      "--pull=always"
-    ];
+    #extraOptions = [
+    #  "--pull=always"
+    #];
   };
 }

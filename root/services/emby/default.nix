@@ -35,8 +35,8 @@
       "caddy" = "emby.chrayed.de";
       "caddy.reverse_proxy" = "{{upstreams 8096}}";
     };
-    extraOptions = [
-      "--pull=always"
-    ];
+    #extraOptions = [
+    #  "--pull=always"
+    #];
   };
 }
