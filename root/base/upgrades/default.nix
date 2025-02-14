@@ -1,6 +1,6 @@
 # Autoupdate settings. Maybe make it weekly.
-#{ hostName, ... }:
-#{
+{ hostName, ... }:
+{
    # nix.optimise.automatic = true;
    # nix.optimise.dates = [ "03:45" ];
    # system.autoUpgrade = {
@@ -12,4 +12,4 @@
    #     ];
    #     allowReboot = false;
    # };
-#}
+}
