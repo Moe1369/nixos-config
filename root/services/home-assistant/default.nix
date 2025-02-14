@@ -3,6 +3,9 @@
   virtualisation.oci-containers.containers."container-home-assistant-app" = {
     autoStart = true;
     image = "ghcr.io/home-assistant/home-assistant:stable";
+    devices = [
+        "/dev/ttyUSB0:/dev/ttyUSB0"
+    ];
     environment = {
       "TZ" = "Europe/Berlin";
       "PUID" = "0";
