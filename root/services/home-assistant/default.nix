@@ -19,6 +19,7 @@
     ];
     volumes = [
       "volume-home-assistant-config:/config:rw"
+      "/var/run/docker.sock:/var/run/docker.sock:ro"
     ];
    #extraOptions = [
    #   "--pull=always"
