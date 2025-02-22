@@ -50,11 +50,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1740207663,
-        "narHash": "sha256-7j8rL5I50lsdZiSCky845RabRcXpsKztawO7ZbsYr/I=",
+        "lastModified": 1740208852,
+        "narHash": "sha256-V5fJ9ilbPDroLLftzVw1uWniE7GmE0QzrAbD8Xak6Og=",
         "owner": "Jovian-Experiments",
         "repo": "Jovian-NixOS",
-        "rev": "2872f3c9b7e665d78ce5ad0d5f98144a0970a087",
+        "rev": "b555a7faa4831d47b3e11c78195d339f5ae58b3b",
         "type": "github"
       },
       "original": {
@@ -110,11 +110,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1740203399,
-        "narHash": "sha256-zhw0N0JHGUGi4d8oguwB5BuMqzLcGHYkMstTr8ob/oU=",
+        "lastModified": 1740212503,
+        "narHash": "sha256-gMjpUXoqZg98WculwFkeI2DObIUzEKc0VhuteEI1Q90=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "35cc96a38e78a66b7c6ac1af49c0e14299dad13a",
+        "rev": "1cc6ce305efb7cf0faee4f4b267d44049737b49a",
         "type": "github"
       },
       "original": {
