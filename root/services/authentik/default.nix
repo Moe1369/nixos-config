@@ -36,7 +36,7 @@
     environment = {
       "AUTHENTIK_HOST" = "http://container-authentik-server:9000";
       "AUTHENTIK_INSECURE" = "true";
-      "AUTHENTIK_TOKEN" = "yZPlmWkdLsteKXXAJJPFO0Txd7o9zZlIfFdyBlGh0LjPjatYjpcqSYHwzMQ9";
+      "AUTHENTIK_TOKEN" = "ukqBuyQbXR3QWnbK72xCA9bA6TEdmJdGuV0oTk1a4GPhSUU9cPNa6roTZNKA";
     };
     networks = [
       "network-internal"

@@ -58,10 +58,10 @@
   in
   {
     nixosConfigurations = {
-      workstation =
+      Computer-Mo =
         let
           user = "mo";
-          hostName = "workstation";
+          hostName = "Computer-Mo";
         in
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
@@ -71,54 +71,6 @@
             root.filesystem.client ++
             root.plasma ++
             root.gaming ++ [
-              {
-                home-manager.users.${user}.imports =
-                  home.base ++
-                  home.plasma ++
-                  home.gaming;
-                home-manager.sharedModules = home.external;
-              }
-            ];
-        };
-
-      konsole =
-        let
-          user = "mo";
-          hostName = "konsole";
-        in
-        lib.nixosSystem {
-          specialArgs = { inherit user; inherit hostName; inherit system; };
-          modules =
-            root.external ++
-            root.base ++
-            root.filesystem.client ++
-            root.plasma ++
-            root.gaming ++ 
-            root.jovian ++ [
-              {
-                home-manager.users.${user}.imports =
-                  home.base ++
-                  home.plasma ++
-                  home.gaming;
-                home-manager.sharedModules = home.external;
-              }
-            ];
-        };
-
-      steamdeck =
-        let
-          user = "deck";
-          hostName = "steamdeck";
-        in
-        lib.nixosSystem {
-          specialArgs = { inherit user; inherit hostName; inherit system; };
-          modules =
-            root.external ++
-            root.base ++
-            root.filesystem.client ++
-            root.plasma ++
-            root.gaming ++ 
-            root.jovian ++ [
               {
                 home-manager.users.${user}.imports =
                   home.base ++
