@@ -2,7 +2,7 @@
 { ... }:
 {
     fileSystems."/" =
-    { device = "/dev/disk/by-partlabel/root";
+    { device = "/dev/disk/by-partlabel/ROOT";
       fsType = "xfs";
     };
 
