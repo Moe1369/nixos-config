@@ -35,7 +35,6 @@
     root.filesystem.client = filterNixFiles ./root/filesystem/client;
     root.filesystem.server = filterNixFiles ./root/filesystem/server;
     root.gaming = filterNixFiles ./root/gaming;
-    root.jovian = filterNixFiles ./root/jovian;
     root.gnome = filterNixFiles ./root/gnome;
     root.plasma = filterNixFiles ./root/plasma;
     root.services = filterNixFiles ./root/services;
