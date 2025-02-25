@@ -17,7 +17,6 @@
     haruna
     krita
     kdePackages.kcolorchooser
-    xwaylandvideobridge
     kdePackages.kfind
     kdePackages.kcalc
     kdePackages.filelight
