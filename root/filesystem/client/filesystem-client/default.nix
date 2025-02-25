@@ -2,12 +2,12 @@
 { ... }:
 {
     fileSystems."/" =
-    { device = "/dev/disk/by-label/ROOT";
-      fsType = "xfs";
+    { device = "/dev/disk/by-partlabel/root";
+      fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-label/BOOT";
+    { device = "/dev/disk/by-label/EFI";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
