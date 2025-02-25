@@ -31,10 +31,10 @@
       "/data:/data:rw"
     ];
     ports = ["8096:8096"];
-    labels = {
-      "caddy" = "emby.chrayed.de";
-      "caddy.reverse_proxy" = "{{upstreams 8096}}";
-    };
+    #labels = {
+    #  "caddy" = "emby.chrayed.de";
+    #  "caddy.reverse_proxy" = "{{upstreams 8096}}";
+    #};
     #extraOptions = [
     #  "--pull=always"
     #];

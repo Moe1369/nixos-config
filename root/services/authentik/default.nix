@@ -83,10 +83,10 @@
       "container-authentik-cache"
       "container-authentik-db"
     ];
-    labels = {
-      "caddy" = "chrayed.de";
-      "caddy.reverse_proxy" = "{{upstreams 9000}}";
-    };
+   # labels = {
+   #   "caddy" = "chrayed.de";
+   #   "caddy.reverse_proxy" = "{{upstreams 9000}}";
+   # };
     #extraOptions = [
     #  "--pull=always"
     #];

@@ -15,10 +15,10 @@
       "volume-jellyseerr-config:/app/config:rw"
     ];
     ports = ["5055:5055"];
-    labels = {
-      "caddy" = "jellyseerr.chrayed.de";
-      "caddy.reverse_proxy" = "{{upstreams 5055}}";
-    };
+    #labels = {
+    #  "caddy" = "jellyseerr.chrayed.de";
+    #  "caddy.reverse_proxy" = "{{upstreams 5055}}";
+    #};
     #extraOptions = [
     #  "--pull=always"
     #];
