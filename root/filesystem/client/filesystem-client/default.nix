@@ -3,7 +3,7 @@
 {
     fileSystems."/" =
     { device = "/dev/disk/by-partlabel/root";
-      fsType = "ext4";
+      fsType = "xfs";
     };
 
   fileSystems."/boot" =
