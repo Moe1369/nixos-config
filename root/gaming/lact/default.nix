@@ -7,9 +7,9 @@
     ]);
 
   # Enable Modprobe
- # boot.extraModprobeConfig = ''
- #   options amdgpu ppfeaturemask=0xFFF7FFFF
-#'';
+  boot.extraModprobeConfig = ''
+    options amdgpu ppfeaturemask=0xFFF7FFFF
+ '';
 
   # Enable Systemd Service
   systemd.services.lact = {
