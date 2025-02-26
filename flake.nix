@@ -11,10 +11,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    jovian = {
-      url = "github:Jovian-Experiments/Jovian-NixOS/development";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -46,7 +42,6 @@
     
     root.external = [
       home-manager.nixosModules.home-manager
-      jovian.nixosModules.jovian
       nur.modules.nixos.default
     ];
 
