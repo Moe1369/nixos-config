@@ -21,9 +21,9 @@
       "volume-home-assistant-config:/config:rw"
       "/var/run/docker.sock:/var/run/docker.sock:ro"
     ];
-   #extraOptions = [
-   #   "--pull=always"
-   # ];
+    extraOptions = [
+       "--pull=always"
+     ];
   };
   virtualisation.oci-containers.containers."container-home-assistant-mqtt" = {
     autoStart = true;
