@@ -14,6 +14,7 @@
     kdePackages.okular
     kdePackages.kdenlive
     kdePackages.elisa
+    kdePackages.wallpaper-engine-plugin
     haruna
     krita
     kdePackages.kcolorchooser
