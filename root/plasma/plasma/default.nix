@@ -15,6 +15,7 @@
     kdePackages.kdenlive
     kdePackages.elisa
     kdePackages.wallpaper-engine-plugin
+    kdePackages.qtwebengine
     haruna
     krita
     kdePackages.kcolorchooser
