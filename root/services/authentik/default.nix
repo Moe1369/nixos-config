@@ -9,9 +9,9 @@
       "volume-authentik-cache:/data:rw"
     ];
     cmd = [ "--save" "60" "1" "--loglevel" "warning" ];
-   # extraOptions = [
-   #   "--pull=always"
-   # ];
+    extraOptions = [
+      "--pull=always"
+    ];
   };
 
   virtualisation.oci-containers.containers."container-authentik-db" = {
@@ -27,9 +27,9 @@
     volumes = [
       "volume-authentik-db:/var/lib/postgresql/data:rw"
     ];
-    #extraOptions = [
-    # "--pull=always"
-    #];
+    extraOptions = [
+     "--pull=always"
+    ];
   };
   virtualisation.oci-containers.containers."container-authentik-ldap" = {
     image = "ghcr.io/goauthentik/ldap";
@@ -51,9 +51,9 @@
       "container-authentik-cache"
       "container-authentik-db"
     ];
-    #extraOptions = [
-    #  "--pull=always"
-    #];
+    extraOptions = [
+      "--pull=always"
+    ];
   };
   virtualisation.oci-containers.containers."container-authentik-server" = {
     image = "ghcr.io/goauthentik/server";
@@ -68,7 +68,6 @@
     };
     networks = [
       "network-internal"
-      "network-external"
     ];
     ports = [
     "9000:9000"
@@ -83,13 +82,9 @@
       "container-authentik-cache"
       "container-authentik-db"
     ];
-   # labels = {
-   #   "caddy" = "chrayed.de";
-   #   "caddy.reverse_proxy" = "{{upstreams 9000}}";
-   # };
-    #extraOptions = [
-    #  "--pull=always"
-    #];
+    extraOptions = [
+      "--pull=always"
+    ];
   };
   virtualisation.oci-containers.containers."container-authentik-worker" = {
     image = "ghcr.io/goauthentik/server";
@@ -116,8 +111,8 @@
       "container-authentik-cache"
       "container-authentik-db"
     ];
-    #extraOptions = [
-    #  "--pull=always"
-    #];
+    extraOptions = [
+      "--pull=always"
+    ];
   };
 }

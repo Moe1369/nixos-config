@@ -17,8 +17,8 @@
     volumes = [
       "volume-grocy-config:/config:rw"
     ];
-   #extraOptions = [
-   #   "--pull=always"
-   # ];
+   extraOptions = [
+      "--pull=always"
+    ];
   };
 }
