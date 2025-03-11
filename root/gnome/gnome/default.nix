@@ -24,6 +24,7 @@
   gdm-settings
   tsukimi
   gnomeExtensions.appindicator
+  gnomeExtensions.hdr-auto-enable
   gnomeExtensions.rounded-window-corners-reborn
   gnomeExtensions.blur-my-shell
   gnomeExtensions.blur-my-light-shell
@@ -46,6 +47,7 @@
   gnome-music
   gnome-terminal
   epiphany
+  geary
   gnome-characters
   totem
   tali
