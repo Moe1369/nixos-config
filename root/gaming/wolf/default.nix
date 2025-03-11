@@ -1,10 +1,5 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  environment.systemPackages =
-   (with pkgs; [
-    amf
-    ]);
-
   virtualisation.docker = {
     enable = true;
     autoPrune.enable = false;

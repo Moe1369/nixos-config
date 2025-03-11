@@ -7,5 +7,6 @@
     pciutils
     aha
     vesktop
+    obs-studio
     ]);
 }
