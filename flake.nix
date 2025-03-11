@@ -64,12 +64,12 @@
             root.base ++
             root.desktop ++
             root.filesystem.client ++
-            root.gnome ++
+            root.plasma ++
             root.gaming ++ [
               {
                 home-manager.users.${user}.imports =
                   home.base ++
-                  home.gnome ++
+                  home.plasma ++
                   home.gaming;
                 home-manager.sharedModules = home.external;
               }
