@@ -1,5 +1,5 @@
 # Gnome Display Manager.
-{ user, ... }:
+{ user, lib, config, ... }:
 {
 # Enable GDM only on workstation.
 services.xserver = lib.mkIf (config.networking.hostName == "Computer-Mo") {
