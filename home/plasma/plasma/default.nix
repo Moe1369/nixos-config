@@ -5,9 +5,9 @@
   home.file.".config/kwinrulesrc".source = ./dotfiles/kwin-rules;
   home.file.".local/share/user-places.xbel".source = ./dotfiles/userplaces-${hostName};
   home.file.".config/kglobalshortcutsrc".source = ./dotfiles/kdeshortcuts-config;
- # home.file.".config/kwinrc".source = ./dotfiles/kwin-config;
+  home.file.".config/kwinrc".source = ./dotfiles/kwin-config;
   home.file.".config/klassy/klassyrc".source = ./dotfiles/klassy-config;
- # home.file.".config/klassy/windecopresetsrc".source = ./dotfiles/kwindecoration-config;
+  home.file.".config/klassy/windecopresetsrc".source = ./dotfiles/kwindecoration-config;
   home.file.".config/krunnerrc".source = ./dotfiles/krunner-config;
   home.file.".config/kde-material-you-colors/config.conf".source = ./dotfiles/kmyc-config;
   home.file.".config/autostart/kde-material-you-colors.desktop".source = ./dotfiles/kmyc-desktop;
