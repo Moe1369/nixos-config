@@ -1,50 +1,21 @@
 [Desktops]
-Id_1=cf3f8eee-b507-4b73-9837-0a30a510754a
+Id_1=7dca4d41-ba2c-4dc0-b0f5-497acd392a03
 Number=1
 Rows=1
 
 [Plugins]
-minimizeallEnabled=true
-
-[PrimaryOutline]
-ActiveOutlinePalette=0
-ActiveOutlineUseCustom=false
-ActiveOutlineUsePalette=true
-InactiveOutlinePalette=0
-InactiveOutlineThickness=0.75
-InactiveOutlineUseCustom=false
-InactiveOutlineUsePalette=true
-OutlineThickness=1.25
-
-[SecondOutline]
-ActiveSecondOutlinePalette=0
-ActiveSecondOutlineUseCustom=false
-ActiveSecondOutlineUsePalette=true
-InactiveSecondOutlinePalette=0
-InactiveSecondOutlineUseCustom=false
-InactiveSecondOutlineUsePalette=true
-
-[Shadow]
-ActiveShadowAlpha=106
-ActiveShadowPalette=0
-InactiveShadowAlpha=108
-InactiveShadowPalette=0
+kwin4_effect_shapecornersEnabled=false
 
 [Tiling]
 padding=4
 
-[Tiling][e56e54c5-76c9-5a45-96ca-fad80cc9ecac]
+[Tiling][31cb2e6f-8fcd-5fe5-a149-bc6b7dfb3bf5]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Xwayland]
 Scale=1
 
 [org.kde.kdecoration2]
+ButtonsOnLeft=F
 library=org.kde.klassy
 theme=Klassy
-
-[ًRound-Corners]
-InactiveCornerRadius=2
-InactiveShadowSize=5
-ShadowSize=10
-Size=2
