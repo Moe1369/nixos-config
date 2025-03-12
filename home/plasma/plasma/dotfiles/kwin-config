@@ -43,8 +43,8 @@ Scale=1
 library=org.kde.klassy
 theme=Klassy
 
-[ًRound-Corners]
-InactiveCornerRadius=2
-InactiveShadowSize=5
-ShadowSize=10
-Size=2
+#[ًRound-Corners]
+#InactiveCornerRadius=2
+#InactiveShadowSize=5
+#ShadowSize=10
+#Size=2
