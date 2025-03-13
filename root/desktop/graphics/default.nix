@@ -3,6 +3,7 @@
  {
    environment.systemPackages =
    (with pkgs; [
+    ffmpeg-full
     amf
     ]);
   hardware.graphics = {
