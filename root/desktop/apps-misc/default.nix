@@ -8,7 +8,5 @@
     aha
     vesktop
     obs-studio
-    amf
-    ffmpeg-full
     ]);
 }
