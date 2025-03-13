@@ -5,6 +5,8 @@
    (with pkgs; [
     ffmpeg-full
     amf
+    nur.repos.materus.amdgpu-pro-libs.firmware
+    nur.repos.materus.amdgpu-pro-libs.amf
     ]);
   hardware.graphics = {
     enable = true;
