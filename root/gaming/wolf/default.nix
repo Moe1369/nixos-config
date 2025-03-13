@@ -30,7 +30,7 @@
     ];
     extraOptions = [
       "--pull=always"
-      "--device-cgroup-rule c 13:* rmw"
+      "--device-cgroup-rule=c 13:* rmw"
     ];
   };
 }
