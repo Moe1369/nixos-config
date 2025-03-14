@@ -7,7 +7,7 @@
   virtualisation.oci-containers.backend = "docker";
   virtualisation.oci-containers.containers."container-wolf-app" = {
     autoStart = true;
-    image = "ghcr.io/games-on-whales/wolf:stable";
+    image = "wolf:latest";
     devices = [
         "/dev/dri:/dev/dri"
         "/dev/uinput:/dev/uinput"
@@ -22,6 +22,8 @@
       "host"
     ];
     volumes = [
+      "/opt/wolf/libs/libamdenc64.so.1.0:/usr/lib/libamdenc64.so:ro"
+      "/opt/wolf/libs/libamfrt64.so.1.4.35:/usr/lib/libamfrt64.so.1:ro"
       "/etc/wolf:/etc/wolf:rw"
       "/var/run/docker.sock:/var/run/docker.sock:rw"
       "/tmp/sockets:/tmp/sockets:rw"
