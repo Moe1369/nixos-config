@@ -13,11 +13,13 @@
   mission-center
   amberol
   clapper
+  speedtest
+  pdfarranger
   video-trimmer
-  diebahn
   commit
   cartridges
   gnome-obfuscate
+  parabolic
   gnome-tweaks
   adw-gtk3
   adwsteamgtk
