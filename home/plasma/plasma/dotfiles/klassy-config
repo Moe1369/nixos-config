@@ -3,6 +3,6 @@ TitleAlignment=AlignLeft
 
 [Windeco]
 ButtonIconStyle=StyleRedmond11
-IconSize=IconMedium
+ButtonShape=ShapeIntegratedRoundedRectangleGrouped
 RoundBottomCornersWhenNoBorders=true
-WindowCornerRadius=3.0000000000000004
+WindowCornerRadius=3
