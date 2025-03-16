@@ -50,7 +50,7 @@
       nur.modules.nixos.default
     ];
     root.jovian = [
-      jovian.modules.nixos.default
+      jovian.nixosModules.jovian
     ];
 
     home.external = [
