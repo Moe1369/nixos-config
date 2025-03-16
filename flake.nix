@@ -97,8 +97,7 @@
             root.desktop ++
             root.filesystem.client ++
             root.plasma ++
-            root.consolegaming ++
-            root.console ++[
+            root.consolegaming ++[
               {
                 home-manager.users.${user}.imports =
                   home.base ++
