@@ -34,8 +34,8 @@
     root.desktop = filterNixFiles ./root/desktop;
     root.filesystem.client = filterNixFiles ./root/filesystem/client;
     root.filesystem.server = filterNixFiles ./root/filesystem/server;
-    root.gaming = filterNixFiles ./root/gaming;
-    root.console = filterNixFiles ./root/console;
+    root.desktopgaming = filterNixFiles ./root/desktopgaming;
+    root.consolegaming = filterNixFiles ./root/consolegaming;
     root.gnome = filterNixFiles ./root/gnome;
     root.plasma = filterNixFiles ./root/plasma;
     root.services = filterNixFiles ./root/services;
@@ -73,7 +73,7 @@
             root.desktop ++
             root.filesystem.client ++
             root.plasma ++
-            root.gaming ++[
+            root.desktopgaming ++[
               {
                 home-manager.users.${user}.imports =
                   home.base ++
@@ -85,7 +85,7 @@
         };
       konsole =
         let
-          user = "mo";
+          user = "deck";
           hostName = "konsole";
         in
         lib.nixosSystem {
@@ -97,7 +97,7 @@
             root.desktop ++
             root.filesystem.client ++
             root.plasma ++
-            root.gaming ++
+            root.consolegaming ++
             root.console ++[
               {
                 home-manager.users.${user}.imports =
