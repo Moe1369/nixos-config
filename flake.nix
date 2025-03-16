@@ -83,10 +83,10 @@
               }
             ];
         };
-      Konsole =
+      konsole =
         let
           user = "mo";
-          hostName = "Konsole";
+          hostName = "konsole";
         in
         lib.nixosSystem {
           specialArgs = { inherit user; inherit hostName; inherit system; };
