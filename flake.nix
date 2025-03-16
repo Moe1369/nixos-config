@@ -15,9 +15,13 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    jovian = {
+      url = "github:Jovian-Experiments/Jovian-NixOS/development";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, plasma-manager, nur, ... }:
+  outputs = { nixpkgs, home-manager, plasma-manager, nur, jovian, ... }:
   let
     
     system = "x86_64-linux";
@@ -31,6 +35,7 @@
     root.filesystem.client = filterNixFiles ./root/filesystem/client;
     root.filesystem.server = filterNixFiles ./root/filesystem/server;
     root.gaming = filterNixFiles ./root/gaming;
+    root.console = filterNixFiles ./root/jovian;
     root.gnome = filterNixFiles ./root/gnome;
     root.plasma = filterNixFiles ./root/plasma;
     root.services = filterNixFiles ./root/services;
@@ -43,6 +48,9 @@
     root.external = [
       home-manager.nixosModules.home-manager
       nur.modules.nixos.default
+    ];
+    root.jovian = [
+      jovian.modules.nixos.default
     ];
 
     home.external = [
@@ -65,7 +73,32 @@
             root.desktop ++
             root.filesystem.client ++
             root.plasma ++
-            root.gaming ++ [
+            root.gaming ++[
+              {
+                home-manager.users.${user}.imports =
+                  home.base ++
+                  home.plasma ++
+                  home.gaming;
+                home-manager.sharedModules = home.external;
+              }
+            ];
+        };
+      Konsole =
+        let
+          user = "mo";
+          hostName = "Konsole";
+        in
+        lib.nixosSystem {
+          specialArgs = { inherit user; inherit hostName; inherit system; };
+          modules =
+            root.external ++
+            root.jovian ++
+            root.base ++
+            root.desktop ++
+            root.filesystem.client ++
+            root.plasma ++
+            root.gaming ++
+            root.console ++[
               {
                 home-manager.users.${user}.imports =
                   home.base ++
