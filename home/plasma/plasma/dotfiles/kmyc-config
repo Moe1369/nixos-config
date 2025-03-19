@@ -37,11 +37,11 @@ ncolor = 0
 
 # Light scheme icons theme
 # Commented by default
-#iconslight = Papirus-Light
+iconslight = klassy
 
 # Dark scheme icons theme
 # Commented by default
-#iconsdark = Papirus-Dark
+iconsdark = klassy-dark
 
 # Use pywal to theme other programs using Material You colors
 # https://github.com/dylanaraps/pywal/wiki/Customization
