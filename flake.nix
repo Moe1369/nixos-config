@@ -34,8 +34,8 @@
     root.desktop = filterNixFiles ./root/desktop;
     root.filesystem.client = filterNixFiles ./root/filesystem/client;
     root.filesystem.server = filterNixFiles ./root/filesystem/server;
-    root.desktopgaming = filterNixFiles ./root/desktopgaming;
-    root.consolegaming = filterNixFiles ./root/consolegaming;
+    root.gaming.desktop = filterNixFiles ./root/gaming/desktop;
+    root.gaming.console = filterNixFiles ./root/gaming/console;
     root.gnome = filterNixFiles ./root/gnome;
     root.plasma = filterNixFiles ./root/plasma;
     root.services = filterNixFiles ./root/services;
@@ -73,7 +73,7 @@
             root.desktop ++
             root.filesystem.client ++
             root.plasma ++
-            root.desktopgaming ++[
+            root.gaming.desktop ++[
               {
                 home-manager.users.${user}.imports =
                   home.base ++
@@ -97,7 +97,7 @@
             root.desktop ++
             root.filesystem.client ++
             root.plasma ++
-            root.consolegaming ++[
+            root.gaming.console ++[
               {
                 home-manager.users.${user}.imports =
                   home.base ++
