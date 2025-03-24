@@ -1,5 +1,5 @@
 # Install GPU drivers.
-{ pkgs, ... }:
+{ ... }:
  {
   hardware.graphics = {
     enable = true;
