@@ -26,6 +26,7 @@
     kdePackages.ksystemlog
     kdePackages.partitionmanager
     kdePackages.plasma-browser-integration
+    kdePackages.koi
     python312Packages.kde-material-you-colors
     pywal
     ]);
