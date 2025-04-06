@@ -8,5 +8,6 @@
     aha
     vesktop
     obs-studio
+    teams-for-linux
     ]);
 }
