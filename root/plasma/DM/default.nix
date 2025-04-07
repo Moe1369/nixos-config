@@ -7,5 +7,4 @@
     autoLogin.enable = true;
     autoLogin.user = user;
   };
-
 }
