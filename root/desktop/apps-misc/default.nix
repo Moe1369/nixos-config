@@ -4,6 +4,7 @@
   environment.systemPackages =
    (with pkgs; [
     ibm-plex
+    adwaita-fonts
     pciutils
     aha
     vesktop
