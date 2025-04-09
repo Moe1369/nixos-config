@@ -4,7 +4,5 @@
   environment.systemPackages =
    (with pkgs; [
     google-chrome
-    vivaldi
-    vivaldi-ffmpeg-codecs
     ]);
 }
