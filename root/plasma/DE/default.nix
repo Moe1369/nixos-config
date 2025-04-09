@@ -7,7 +7,6 @@
   environment.systemPackages =
    (with pkgs; [
     nur.repos.shadowrz.klassy-qt6
-    kde-rounded-corners
     kdePackages.kate
     kdePackages.isoimagewriter
     kdePackages.gwenview
