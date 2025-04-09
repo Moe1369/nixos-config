@@ -17,6 +17,7 @@
     immutableByDefault = false;
     workspace.wallpaperSlideShow.path = /home/${user}/Bilder/Wallpaper;
     workspace.wallpaperSlideShow.interval = 864000;
+    workspace.windowDecorations.theme = "org.kde.klassy";
     kscreenlocker.appearance.wallpaper = "/home/${user}/Bilder/Wallpaper/wallpaper-beach.png";
     kscreenlocker.lockOnResume = false;
     kscreenlocker.lockOnStartup = false;
