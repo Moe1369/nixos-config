@@ -16,10 +16,10 @@
   boot.extraModulePackages = [ ];
     boot.plymouth = {
       enable = true;
-      theme = "sliced";
+      theme = "rings";
       themePackages = with pkgs; [
         (adi1090x-plymouth-themes.override {
-          selected_themes = [ "sliced" ];
+          selected_themes = [ "rings" ];
         })
       ];
     };
