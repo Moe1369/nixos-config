@@ -12,6 +12,15 @@
   boot.initrd.verbose = false;
   boot.initrd.kernelModules = [];
   boot.kernelModules = [ ];
-  boot.plymouth.enable = false;
-  boot.plymouth.theme= "bgrt";
+  # Plymouth themes.
+  boot.extraModulePackages = [ ];
+    boot.plymouth = {
+      enable = true;
+      theme = "breeze";
+      themePackages = with pkgs; [
+        (kdePackages.breeze-plymouth.override {
+          selected_themes = [ "breeze" ];
+        })
+      ];
+    };
 }
