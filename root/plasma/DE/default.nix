@@ -28,6 +28,7 @@
     kdePackages.koi
     python312Packages.kde-material-you-colors
     pywal
+    material-kwin-decoration
     ]);
 
   # Needed for proper rebuild
