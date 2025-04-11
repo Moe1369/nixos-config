@@ -12,15 +12,6 @@
   boot.initrd.verbose = false;
   boot.initrd.kernelModules = [];
   boot.kernelModules = [ ];
-  # Plymouth themes.
-  boot.extraModulePackages = [ ];
-    boot.plymouth = {
-      enable = true;
-      theme = "rings";
-      themePackages = with pkgs; [
-        (adi1090x-plymouth-themes.override {
-          selected_themes = [ "rings" ];
-        })
-      ];
-    };
+  boot.plymouth.enable = true;
+  boot.plymouth.theme= "bgrt";
 }
