@@ -12,6 +12,6 @@
   boot.initrd.verbose = false;
   boot.initrd.kernelModules = [];
   boot.kernelModules = [ ];
-  boot.plymouth.enable = true;
+  boot.plymouth.enable = false;
   boot.plymouth.theme= "bgrt";
 }
