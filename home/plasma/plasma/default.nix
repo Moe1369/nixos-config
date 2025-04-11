@@ -50,7 +50,7 @@
       size = 24;
       theme = "Breeze_Light";
     };
-    workspace.lookAndFeel = "org.kde.breeze.desktop";
+    #workspace.lookAndFeel = "org.kde.breeze.desktop";
     workspace.colorScheme = "MaterialYouLight";
     panels = [
     {
