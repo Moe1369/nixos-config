@@ -1,9 +1,15 @@
 # Steam desktop client.
-{ user, ... }:
+{ pkgs, ... }:
 {
-  jovian.steam.enable = true;
-  jovian.steam.autoStart = false;
-  jovian.steam.user = user;
-  jovian.steam.desktopSession = "plasma";
-  jovian.hardware.has.amd.gpu = true;
+  programs.steam = {
+    enable = true;
+    extest.enable = true;
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
+    extraPackages = with pkgs;[
+      gamescope
+      mangohud
+    ];
+  };
 }
