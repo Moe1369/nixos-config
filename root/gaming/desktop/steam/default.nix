@@ -1,19 +1,9 @@
 # Steam desktop client.
-{ pkgs, ... }:
+{ user, ... }:
 {
-  programs.steam = {
-    enable = true;
-    extest.enable = true;
-    package = pkgs.steam.override {
-      extraPkgs = pkgs: with pkgs; [
-        libkrb5
-        keyutils
-      ];
-    };
-  };
-  programs.gamescope.enable = true;
-  environment.systemPackages =
-   (with pkgs; [
-    mangohud
-     ]);
+  jovian.steam.enable = true;
+  jovian.steam.autoStart = false;
+  jovian.steam.user = user;
+  jovian.steam.desktopSession = "plasma";
+  jovian.hardware.has.amd.gpu = true;
 }
