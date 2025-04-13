@@ -4,8 +4,12 @@
   programs.steam = {
     enable = true;
     extest.enable = true;
-    gamescopeSession.enable = true;
-    gamescopeSession.steamArgs = ["-tenfoot" "-pipewire-dmabuf" "--hdr-enabled"];
+    package = pkgs.steam.override {
+      extraPkgs = pkgs: with pkgs; [
+        libkrb5
+        keyutils
+      ];
+    };
   };
   programs.gamescope.enable = true;
   environment.systemPackages =
