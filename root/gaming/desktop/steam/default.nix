@@ -4,13 +4,10 @@
   programs.steam = {
     enable = true;
     extest.enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-    localNetworkGameTransfers.openFirewall = true;
-    gamescope.enable = true;
     gamescopeSession.enable = true;
     gamescopeSession.steamArgs = ["-tenfoot" "-pipewire-dmabuf"];
   };
+  programs.gamescope.enable = true;
   environment.systemPackages =
    (with pkgs; [
     mangohud
