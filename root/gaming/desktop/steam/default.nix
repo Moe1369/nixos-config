@@ -7,11 +7,12 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
+    gamescope.enable = true;
+    gamescopeSession.enable = true;
+    gamescopeSession.steamArgs = ["-tenfoot" "-pipewire-dmabuf"];
   };
   environment.systemPackages =
    (with pkgs; [
-    gamescope
     mangohud
-    protonup-qt
-    ]);
+     ]);
 }
