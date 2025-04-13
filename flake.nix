@@ -71,6 +71,7 @@
             root.external ++
             root.base ++
             root.desktop ++
+            root.jovian ++
             root.filesystem.client ++
             root.plasma ++
             root.gaming.desktop ++[
