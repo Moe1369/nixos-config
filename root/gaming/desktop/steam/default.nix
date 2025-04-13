@@ -5,7 +5,7 @@
     enable = true;
     extest.enable = true;
     gamescopeSession.enable = true;
-    gamescopeSession.steamArgs = ["-tenfoot" "-pipewire-dmabuf"];
+    gamescopeSession.steamArgs = ["-tenfoot" "-pipewire-dmabuf" "--hdr-enabled"];
   };
   programs.gamescope.enable = true;
   environment.systemPackages =
