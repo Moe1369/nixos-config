@@ -24,7 +24,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, plasma-manager, nur, jovian, nix-flatpak ... }:
+  outputs = { nixpkgs, home-manager, plasma-manager, nur, jovian, nix-flatpak, ... }:
   let
     
     system = "x86_64-linux";
