@@ -1,10 +1,5 @@
-{ pkgs, user,  ... }:
-{
-  # Install plasma without xserver. Use wayland.
-  services.desktopManager.plasma6.enable = true;
-  services.xserver.enable = false;
-  # Install applications.
-  environment.systemPackages =
+{ pkgs, ...}: {
+environment.systemPackages =
    (with pkgs; [
     nur.repos.shadowrz.klassy-qt6
     kdePackages.kate
