@@ -29,10 +29,4 @@
     python312Packages.kde-material-you-colors
     pywal
     ]);
-
-  # Needed for proper rebuild
-  system.activationScripts.deleteFile = ''
-    rm -f /home/${user}/.config/kglobalshortcutsrc
-  '';
-
 }
