@@ -19,9 +19,12 @@
       url = "github:Jovian-Experiments/Jovian-NixOS/development";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak ={
+      url ="github:gmodena/nix-flatpak/?ref=latest";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, plasma-manager, nur, jovian, ... }:
+  outputs = { nixpkgs, home-manager, plasma-manager, nur, jovian, nix-flatpak ... }:
   let
     
     system = "x86_64-linux";
@@ -48,6 +51,7 @@
     root.external = [
       home-manager.nixosModules.home-manager
       nur.modules.nixos.default
+      nix-flatpak.nixosModules.nix-flatpak
     ];
     root.jovian = [
       jovian.nixosModules.jovian
