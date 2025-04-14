@@ -177,7 +177,7 @@ pywal=True
 # 7 = Rainbow
 # 8 = FruitSalad
 # Default is 5
-scheme_variant = 4
+scheme_variant = 5
 
 # Colorfulness
 # Changes chroma (colorfulness) of theme
