@@ -13,5 +13,13 @@
       gamescope
       mangohud
     ];
+    gamescopeSession.enable = true;
+    gamescopeSession.args = [
+      "--hdr-enabled"
+    ];
+    gamescopeSession.steamArgs = [
+      "-tenfoot"
+      "-pipewire-dmabuf"
+    ];
   };
 }
