@@ -7,7 +7,7 @@
   };
   programs.opengamepadui = {
     enable = true;
-    inputplumber.enable = true;
+    #inputplumber.enable = true;
     gamescopeSession.enable = true;
     gamescopeSession.args = [
       "--hdr-enabled"
