@@ -1,9 +1,4 @@
-{ pkgs, ... }:
-{
-  # Install Gnome.
-  services.xserver.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
+{ pkgs, ...}:{
   # Install applications.
   programs.file-roller.enable = true;
   services.gnome.tinysparql.enable = true;
@@ -26,10 +21,7 @@
   gdm-settings
   tsukimi
   gnomeExtensions.appindicator
-  gnomeExtensions.hdr-auto-enable
   gnomeExtensions.rounded-window-corners-reborn
-  gnomeExtensions.blur-my-shell
-  gnomeExtensions.blur-my-light-shell
   gnomeExtensions.clipboard-indicator
   gnomeExtensions.middle-click-to-close-in-overview
   gnomeExtensions.wallpaper-slideshow
