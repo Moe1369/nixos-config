@@ -1,6 +1,18 @@
 # Steam desktop client.
 { pkgs, ... }:
 {
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+  };
+  programs.opengamepadui = {
+    enable = true;
+    inputplumber = true;
+    gamescopeSession.enable = true;
+    gamescopeSession.args = [
+      "--hdr-enabled"
+    ];
+  };
   programs.steam = {
     enable = true;
     extest.enable = true;
