@@ -20,6 +20,8 @@
     gamescopeSession.enable = true;
     gamescopeSession.args = [
       "--hdr-enabled"
+      "--hdr-itm-enable"
+
     ];
     gamescopeSession.steamArgs = [
       "-tenfoot"
