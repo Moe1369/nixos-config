@@ -20,9 +20,9 @@
       "--hdr-itm-enable"
       "--adaptive-sync"
     ];
-    gamescopeSession.env = [
-      ""
-    ];
+    #gamescopeSession.env = [
+    #  ""
+    #];
     gamescopeSession.steamArgs = [
       "-tenfoot"
       "-pipewire-dmabuf"
