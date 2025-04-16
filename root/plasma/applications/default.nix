@@ -22,13 +22,6 @@ environment.systemPackages =
     kdePackages.plasma-browser-integration
     kdePackages.koi
     python312Packages.kde-material-you-colors
-    kdePackages.alpaka
     pywal
     ]);
-services.ollama = {
-  enable = true;
-  loadModels = [ "codellama" "llama3.2" ];
-  acceleration = "rocm";
-  rocmOverrideGfx = "10.3.0";
-};
 }
