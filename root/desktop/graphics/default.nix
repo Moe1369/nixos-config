@@ -1,8 +1,9 @@
 # Install GPU drivers and vulkan hdr layer
 { pkgs, ... }:
  {
-  environment.systemPackages = [
-    pkgs.vulkan-hdr-layer-kwin6
+  environment.systemPackages = with pkgs;[
+    vulkan-hdr-layer-kwin6
+    vulkan-tools
   ];
   hardware.graphics = {
     enable = true;
