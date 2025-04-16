@@ -1,7 +1,7 @@
 # Boot options.
-{ pkgs, ... }:
+{ ... }:
 {
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  #boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.consoleMode = "max";
   boot.loader.efi.canTouchEfiVariables = true;
@@ -12,8 +12,9 @@
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.verbose = false;
   boot.initrd.enable = true;
+  hardware.amdgpu.initrd.enable = true;
   boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.kernelModules = [ ];
+  boot.kernelModules = [ "amdgpu" ];
   boot.plymouth.enable = true;
   boot.plymouth.theme = "bgrt";
 }
