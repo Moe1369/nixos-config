@@ -1,8 +1,10 @@
 # Install GPU drivers and vulkan hdr layer
 { pkgs, ... }:
  {
+  hardware.amdgpu.initrd.enable = true;
+  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.kernelModules = [ "amdgpu" ];
   environment.systemPackages = with pkgs;[
-    vulkan-hdr-layer-kwin6
     vulkan-tools
   ];
   hardware.graphics = {
