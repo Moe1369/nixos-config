@@ -6,6 +6,7 @@
   boot.kernelModules = [ "amdgpu" ];
   environment.systemPackages = with pkgs;[
     vulkan-tools
+    vulkan-hdr-layer-kwin6
   ];
   hardware.graphics = {
     enable = true;
