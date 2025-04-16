@@ -5,14 +5,6 @@
     enable = true;
     capSysNice = true;
   };
-  programs.opengamepadui = {
-    enable = true;
-    #inputplumber.enable = true;
-    gamescopeSession.enable = true;
-    gamescopeSession.args = [
-      "--hdr-enabled"
-    ];
-  };
   programs.steam = {
     enable = true;
     extest.enable = true;
