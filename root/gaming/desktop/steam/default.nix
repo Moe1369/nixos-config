@@ -21,6 +21,7 @@
     gamescopeSession.args = [
       "--hdr-enabled"
       "--hdr-itm-enable"
+      "--adaptive-sync"
 
     ];
     gamescopeSession.steamArgs = [
