@@ -6,6 +6,9 @@
     enable = true;
     extest.enable = true;
     gamescopeSession.enable = true;
+    gamescopeSession.args = [
+      "--mangoapp"
+    ];
     gamescopeSession.steamArgs = [
       "-steamdeck"
       "-steamos3"
