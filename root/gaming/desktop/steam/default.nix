@@ -9,6 +9,7 @@
     extraPackages = with pkgs;[
       gamescope
       mangohud
+      vulkan-hdr-layer-kwin6
     ];
   };
 }
