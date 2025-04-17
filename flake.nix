@@ -47,7 +47,7 @@
     
     root.external = [
       home-manager.nixosModules.home-manager
-      jovian.nixosModules.jovian
+      #jovian.nixosModules.jovian
       nur.modules.nixos.default
     ];
 
