@@ -1,11 +1,10 @@
-{ user, lib, hostName, config, ... }:
+{ user, ... }:
 {
   # Only use sddm on Computer-Mo.
-  services.displayManager = lib.mkIf (config.networking.hostName == "Computer-Mo") {
+  services.displayManager =  {
     sddm.wayland.enable = true;
     sddm.enable = true;
     autoLogin.enable = true;
     autoLogin.user = user;
-    defaultSession = "plasma";
   };
 }

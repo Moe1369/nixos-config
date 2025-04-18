@@ -24,16 +24,11 @@ in
     steamos-select-branch
     steamos-session-select
   ];
-
   hardware.steam-hardware.enable = true;
-
   programs.steam = {
     enable = true;
     extest.enable = true;
     gamescopeSession.enable = true;
-    gamescopeSession.env = {
-      ENABLE_HDR_WSI = 1;
-    };
     gamescopeSession.args = [
       "--mangoapp"
     ];
