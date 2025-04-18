@@ -6,5 +6,6 @@
     sddm.enable = true;
     autoLogin.enable = true;
     autoLogin.user = user;
+    defaultSession = "plasma";
   };
 }

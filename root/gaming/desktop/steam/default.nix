@@ -31,6 +31,9 @@ in
     enable = true;
     extest.enable = true;
     gamescopeSession.enable = true;
+    gamescopeSession.env = {
+      ENABLE_HDR_WSI = 1;
+    };
     gamescopeSession.args = [
       "--mangoapp"
     ];
