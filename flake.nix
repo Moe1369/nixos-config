@@ -15,10 +15,6 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    jovian = {
-      url = "github:Jovian-Experiments/Jovian-NixOS/development";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { nixpkgs, home-manager, plasma-manager, nur, jovian, ... }:
@@ -37,17 +33,18 @@
     root.gaming.desktop = filterNixFiles ./root/gaming/desktop;
     root.gaming.console = filterNixFiles ./root/gaming/console;
     root.gnome = filterNixFiles ./root/gnome;
+    root.hyprland = filterNixFiles ./root/hyprland;
     root.plasma = filterNixFiles ./root/plasma;
     root.services = filterNixFiles ./root/services;
 
     home.base = filterNixFiles ./home/base;
     home.gaming = filterNixFiles ./home/gaming;
     home.gnome = filterNixFiles ./home/gnome;
+    home.hyprland = filterNixFiles ./home/hyprland;
     home.plasma = filterNixFiles ./home/plasma;
     
     root.external = [
       home-manager.nixosModules.home-manager
-      #jovian.nixosModules.jovian
       nur.modules.nixos.default
     ];
 
@@ -70,36 +67,12 @@
             root.base ++
             root.desktop ++
             root.filesystem.client ++
-            root.plasma ++
+            root.hyprland ++
             root.gaming.desktop ++[
               {
                 home-manager.users.${user}.imports =
                   home.base ++
-                  home.plasma ++
-                  home.gaming;
-                home-manager.sharedModules = home.external;
-              }
-            ];
-        };
-      konsole =
-        let
-          user = "mo";
-          hostName = "konsole";
-        in
-        lib.nixosSystem {
-          specialArgs = { inherit user; inherit hostName; inherit system; };
-          modules =
-            root.external ++
-            root.jovian ++
-            root.base ++
-            root.desktop ++
-            root.filesystem.client ++
-            root.plasma ++
-            root.gaming.console ++[
-              {
-                home-manager.users.${user}.imports =
-                  home.base ++
-                  home.plasma ++
+                  home.hyprland ++
                   home.gaming;
                 home-manager.sharedModules = home.external;
               }
