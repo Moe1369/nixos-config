@@ -1,6 +1,7 @@
 {pkgs, ...}:
 {
     programs.hyprland.enable = true;
+    programs.waybar.enable = true;
     programs.hyprlock.enable = true;
     programs.uwsm.enable = true;
     programs.hyprland.withUWSM = true;
@@ -8,5 +9,7 @@
         pkgs.kitty
         pkgs.wofi
         pkgs.anyrun
+        pkgs.ptyxis
+        pkgs.hyprpolkitagent
     ];
 }

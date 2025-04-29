@@ -40,7 +40,7 @@
     home.base = filterNixFiles ./home/base;
     home.gaming = filterNixFiles ./home/gaming;
     home.gnome = filterNixFiles ./home/gnome;
-    home.hyprland = filterNixFiles ./home/hyprland;
+    #home.hyprland = filterNixFiles ./home/hyprland;
     home.plasma = filterNixFiles ./home/plasma;
     
     root.external = [
