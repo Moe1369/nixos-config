@@ -17,7 +17,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, plasma-manager, nur, jovian, ... }:
+  outputs = { nixpkgs, home-manager, plasma-manager, nur, ... }:
   let
     
     system = "x86_64-linux";
