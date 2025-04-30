@@ -2,9 +2,10 @@
 {
     services.borgbackup.jobs."server" = {
         paths = "/var/lib/docker";
-        encryption.mode = "none";
+        encryption.mode = "repokey-blake2";
+        encryption.passCommand = "cat /root/passphrase";
         environment.BORG_RSH = "ssh -i /home/administrator/.ssh/extern";
-        repo = "ssh://q1wxyk20@q1wxyk20.repo.borgbase.com/./repo";
+        repo = "ssh://e6cr76lv@e6cr76lv.repo.borgbase.com/./repo";
         compression = "auto,zstd";
         startAt = "daily";
     };
