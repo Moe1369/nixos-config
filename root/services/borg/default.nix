@@ -5,7 +5,7 @@
         encryption.mode = "repokey-blake2";
         encryption.passCommand = "cat /root/passphrase";
         environment.BORG_RSH = "ssh -i /home/administrator/.ssh/extern";
-        repo = "ssh://e6cr76lv@e6cr76lv.repo.borgbase.com/./repo";
+        repo = "e6cr76lv@e6cr76lv.repo.borgbase.com:repo";
         compression = "auto,zstd";
         startAt = "daily";
     };
