@@ -13,7 +13,7 @@
   };
   virtualisation.oci-containers.containers."container-emby-app" = {
     autoStart = true;
-    image = "lscr.io/linuxserver/emby:latest";
+    image = "lscr.io/linuxserver/emby:beta";
     devices = [
         "/dev/dri:/dev/dri"
     ];
