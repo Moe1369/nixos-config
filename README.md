@@ -7,7 +7,7 @@ Old Nixos configuration.
 
 - [X] Better autoupgrade
 - [X] Bash/ZSH Settings
-- [ ] ssh key deployment with [agenix](https://github.com/ryantm/agenix)
+- [ ] secrets deployment with [agenix](https://github.com/ryantm/agenix)
 - [x] alternative way to declare .nix files instead of dumping them into configuration.nix -> now uses groups in flake.nix
 - [x] Multi Host functionality for homelab
 - [X] OCI container for common services
