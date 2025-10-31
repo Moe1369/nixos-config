@@ -1,6 +1,6 @@
 ## NixOS config
 
-Daily Driver Nixos configuration.
+Old Nixos configuration.
 
 
 ### Todo
