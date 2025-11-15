@@ -1,0 +1,3 @@
+IdentityFile ~/.ssh/extern
+IdentityFile ~/.ssh/intern
+IdentityFile ~/.ssh/arbeit

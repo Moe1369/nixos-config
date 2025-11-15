@@ -1,0 +1,108 @@
+sonarr:
+  series:
+    media_naming:
+      series: emby
+      season: default
+      episodes:
+        rename: true
+        standard: default
+        daily: default
+        anime: default
+    base_url: 'http://container-sonarr-app:8989'
+    api_key: 21811d916522404eae24cb2e1c32a655
+    include:
+      - template: sonarr-v4-quality-profile-web-2160p
+      - template: sonarr-v4-custom-formats-web-2160p
+    quality_profiles:
+      - name: WEB-2160p
+        reset_unmatched_scores:
+          enabled: true
+        min_format_score: -10000
+        upgrade:
+          allowed: true
+          until_quality: Bluray-2160p
+        score_set: default
+        quality_sort: top
+        qualities:
+          - name: Bluray-2160p
+          - name: Bluray-2160p Remux
+          - name: 2160p MQ
+              - WEBDL-2160p
+              - WEBRip-2160p
+          - name: Bluray-1080p Remux
+          - name: Bluray-1080p
+          - name: 1080p MQ
+            qualities:
+              - WEBDL-1080p
+              - WEBRip-1080p
+          - name: LQ
+            qualities:
+              - HDTV-2160p
+              - HDTV-1080p
+          - name: Trash
+            qualities:
+              - Bluray-720p
+              - WEBDL-720p
+              - WEBRip-720p
+              - HDTV-720p
+              - Bluray-576p
+              - Bluray-480p
+              - WEBDL-480p
+              - WEBRip-480p
+              - DVD
+              - SDTV
+radarr:
+  movies:
+    media_naming:
+      folder: emby
+      movie:
+        rename: true
+        standard: emby
+    base_url: 'http://container-radarr-app:7878'
+    api_key: 81dc7e319c2745138bf86f19a0e4cf2d
+    include:
+      - template: radarr-quality-profile-sqp-1-2160p-default
+      - template: radarr-custom-formats-sqp-1-2160p
+    custom_formats:
+      - trash_ids:
+            - b17886cb4158d9fea189859409975758
+            - 55a5b50cb416dea5a50c4955896217ab
+    quality_profiles:
+      - name: SQP-1 (2160p)
+        reset_unmatched_scores:
+          enabled: true
+        min_format_score: -10000
+        upgrade:
+          allowed: true
+          until_quality: Bluray-2160p
+        score_set: SQP-1
+        quality_sort: top
+        qualities:
+          - name: Bluray-2160p
+          - name: Remux-2160p
+          - name: 2160-MQ
+            qualities:
+              - WEBDL-2160p
+              - WEBRip-2160p
+          - name: Remux-1080p
+          - name: Bluray-1080p
+          - name: 1080p
+            qualities:
+              - WEBDL-1080p
+              - WEBRip-1080p
+          - name: LQ
+            qualities:
+              - HDTV-2160p
+              - HDTV-1080p
+          - name: Trash
+            qualities:
+              - Bluray-720p
+              - WEBDL-720p
+              - WEBRip-720p
+              - HDTV-720p
+              - Bluray-576p
+              - WEBRip-480p
+              - WEBDL-480p
+              - Bluray-480p
+              - DVD
+              - SDTV
